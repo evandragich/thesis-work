@@ -1,0 +1,22 @@
+---
+title: "DS Assessment Log"
+author: "Evan Dragich"
+date: "Last compiled on `r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This document will serve as a record of my work on the Introductory Data Science assessment strand of my thesis project. The work listed for each date reflects what I did leading up to that week's meeting; hence no section for the initial 1/12/22 meeting.
+
+## 1/19
+
+
+
+```{r cars}
+summary(cars)
+```
+
+
