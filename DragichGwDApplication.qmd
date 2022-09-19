@@ -1,0 +1,66 @@
+---
+title: "Exploring Data Science Education: From Tutorials to Assessment"
+subtitle: "Proposal: Graduation with Distinction"
+date: "Spring 2023"
+author: |
+  | Evan Dragich
+  | supervised by Dr. Mine Çetinkaya-Rundel, PhD.
+format:
+  pdf:
+    number-sections: false
+---
+
+research proposal for your paper (thesis) including title and brief plan of implementation. Your proposal should succinctly address motivation/research questions, 
+
+## Background
+
+## Methodology, 
+
+## Data Access and Technology Needs, 
+
+## Ethical Implications, 
+
+In Spring 2022, the previous work involving interviews with professors was approved under Duke IRB protocol #2022-0399, with exemption #2 granted, related to the educational assessment nature of the research, and that participants could not be linked to their responses nor reaosnably put at risk of harm.
+
+## Timeline
+
+## Proposed target conference or publication
+
+## Bibliography
+
+https://duke.qualtrics.com/jfe/form/SV_08tGxcsGXuTKSvr?Q_JFE=qdg
+
+2.	Title and description of proposed study
+Provide a one to two paragraph description of the proposed study, including topic, course goals, research / readings to be conducted, and a rationale for independent study as opposed to regular course work.  
+
+Data Science Assessment
+
+This project has two main components: (1) Writing and piloting of the data science assessment and (2) Development of materials for data science education. For (1), we are writing and administering an assessment to measure students’ knowledge of data science. As part of gathering validity evidence, we will be administering the assessment to several faculty who teach introductory data science to get feedback and then to students in order to evaluate how the items are working and to inform potential modifications. The assessment is currently being written based on the guidelines on instruction and assessment compiled by the American Statistical Association as well as scholarship related to introductory data science education. Our goal in this semester is to complete the first draft of the assessment and then administer to faculty. For (2), we will be working on updating the interactive tutorials in the dsbox R package and submit the package to CRAN by the end of the semester.
+
+
+3.	Nature of the final product 
+Describe the nature and length of the final product (e.g., academic paper, artistic product, research report, etc.) .) If this is connected to an internship, the work product of the independent study must be clearly described and related to coursework at a level expected for the independent course number given. 
+
+For the pilot data science assessment, we will present a current draft of the assessment (likely 40 multiple choice questions) as well as reports from faculty interviews.  With the dsbox package, we aim to finalize a set of updated tutorials and create publishable package website/documentation.
+ 
+4.	Scheduled meetings and work expectations
+Provide information on frequency and length of meetings with instructor, and expected work commitments and/or timetables: 
+
+Meetings will be once a week for 1 hour with Dr. Mine Çetinkaya-Rundel and some weeks with the multi-institution research group working on the project. The student will plan to work independently 8-12 hours a week on said projects; the distribution of time spent between tasks (1) and (2) will depend on the pace of the multi-institution research group.
+
+5.	Grade to be based on
+Provide information on how your work in the course is to be evaluated. Please be explicit. Sample text is provided below.
+
+A range - Weekly progress met or exceeded expectations at the course level of the independent study without much prompting; student is able to independently implement methods, correctly interpret and accurately communicate results; the end product is functional and meets expectations; an accompanying write up describing the methodology is produced; reproducibility practices have been used and documented so that the work is reproducible. For research independent studies, results are suitable for inclusion in a celebration of undergraduate research without much revision. 
+
+B range - Weekly progress usually met expectations at the course level of the independent study or required only minor prompting;  student is mostly able to independently implement methods and correctly interpret and accurately communicate results, but one or more of those areas does not fully meet the expectations outlined in the proposal; interpretation and communication of results is not fully correct, such that the final product / write up is somewhat unclear, not quite accurate, or needs further editing. Some attention was paid to reproducibility practices but their use and documentation was incomplete; the work is probably reproducible. For research independent studies, results might be suitable for inclusion in a celebration of undergraduate research if some revisions are made. 
+
+C range or lower - Weekly progress often did not meet expectations at the course level of the independent study and/or student missed many meetings and required much prompting; student has not independently implemented methods and correctly interpreted and accurately communicated results; submitted work and progress, even after revisions, does not fully meet the expectations outlined in the proposal; student does not have a good handle on the methodology and is not able to implement it; a poor final product / write up is produced. The work is not reproducible. For research independent studies, results are not suitable for inclusion in a celebration of undergraduate research unless major revisions are made. 
+
+	 
+6.	Reading list 
+For a regular independent study, provide a list of texts that will be studied over the course of the semester. For an internship-related independent study, provide a list of sources that will be used in the academic product related to the internship.  For a research independent study, provide a bibliography of secondary sources related to your research proposal. 
+
+Çetinkaya-Rundel, M., & Ellison, V. (2021). A Fresh Look at Introductory Data Science. Journal of Statistics and Data Science Education, 29(sup1), S16–S26. https://doi.org/10.1080/10691898.2020.1804497
+Delmas, R. C., Garfield, J., Ooms, A., & Chance, B. L.  (2006, April 9). Assessing Students’ Conceptual Understanding After A First Course In Statistics. Paper presented at the Annual Meetings of The American Educational Research Association, San Francisco, CA, United States.  
+Delmas, R. C., Garfield, J., Ooms, A., & Chance, B. L. (2007). Assessing students’ conceptual understanding after a first course in statistics. Statistics Education Research Journal, 6, 28–58.
