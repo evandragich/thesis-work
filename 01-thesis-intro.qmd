@@ -1,7 +1,16 @@
 ---
-title: "01-thesis-intro"
-format: html
-editor: visual
+title: "Exploring Data Science Education: From Tutorials to Assessment"
+subtitle: "Proposal: Graduation with Distinction"
+date: "Spring 2023"
+author: |
+  | Evan Dragich
+  | supervised by Dr. Mine Çetinkaya-Rundel, PhD.
+format:
+  pdf:
+    number-sections: false
+bibliography: thesis.bib
+nocite: |
+  @*
 ---
 
 ## Quarto
