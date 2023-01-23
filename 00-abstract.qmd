@@ -38,6 +38,8 @@ Here we present the current assessment, a set of 36 language-agnostic items meas
 
 Briefly describe what you hope participants will take away from your poster or beyond submission. If appropriate, comment on how the topic connects to the theme of "Communicating with/about Data"
 
+By sharing the work, we hope that participants will become familiar with an assessment they may use for designing intro data science curriculum or researching classroom innovations. We also hope that this instrument can serve as an inspiration or a starting point to be tailored by future researchers more specifically to their courses or to another discipline (eg. by adding more programming concepts instead of data visualization to better serve a computing-focused introductory data science class, etc.)
+
 ### Permissions: \*
 
 Do you have the appropriate permissions to share the data included with your poster (e.g., IRB, intellectual property)?
