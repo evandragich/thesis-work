@@ -4,23 +4,17 @@ format: html
 editor: visual
 ---
 
-## Quarto
+started with all questions in one document, joined with some discussions on items coverage and stuff
+put stuff in easy format to browse
+ran 3 interviews with faculty
+  CS coverage, potential focus on different topics
+  summarising feedback from live sessions, working with the rest of the group to incorporate
+  highlight a few things: one thing that hadn't really thought about that Kristin pointed out, something we hadnt thoguht about that Amelia/Nick pointed out. one paragraph each, nothing crazy but just explaining what its like to get feedback
+  
+  with students with exposure: goal is to see if these topics are in your wheelhouse and if wording makes sense as a student
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
 
-## Running Code
+big themes: balancing size and pacing, not buying lede in ethics questions, how to write questions that arent too obvious and get at specific things, think about spacing out ethics quetsions to not prime
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+somethign good would be good to have content: use 15 passages and assign them to rough buckets
 
-```{r}
-1 + 1
-```
-
-You can add options to executable code like this
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).
