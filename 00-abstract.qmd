@@ -10,18 +10,7 @@ editor: source
 
 Creating a standardized assessment to measure learning in introductory data science courses
 
-### Presentation Type: \*
-
-:ballot_box_with_check: **Poster**
-
-For Posters, describe the teaching environment (e.g., type of institution, type of students, number of students per class), what takeaways viewers of the poster should expect, and whether the work has IRB approval. It is helpful, but not necessary, for those submitting posters to have some citations to support their work.
-
-Beyond
-
-For "Beyond", provide a description of the activity, demonstration, applet, etc., if possible and describe how you incorporate the demonstration, activity, or method into your classroom, and how you assess (formative or summative) the demonstration. Provide a brief description of the teaching environment (e.g., type of class, number of students, etc.) in which you use the activity. For Beyond submission, the committee will be looking at potential for efficacy, but formal evidence is not necessary.
-
-### Brief Abstract: \*
-
+### Brief Abstract:
 
 As data science (DS) continues to grow in popularity among university course offerings, it is becoming crucial to successfully measure students' learning outcomes in introductory courses. To do this requires an assessment designed to which could additionally be used to evaluate pedagogical techniques or curriculum interventions in data science curriculum 
 
@@ -30,22 +19,8 @@ To develop a blueprint for the assessment, a multi-institutional team of statist
 This poster includes the blueprint developed, as well as example items, and results from the faculty and student think aloud interviews. We also present next steps for the project including plans for larger scale piloting and further analyses.
 
 
-### Goals: \*
-
-150 words remaining.
-
-Briefly describe what you hope participants will take away from your poster or beyond submission. If appropriate, comment on how the topic connects to the theme of "Communicating with/about Data"
+### Goals
 
 By sharing the work, we hope that participants will become familiar with an assessment they may use for designing intro data science curriculum or researching classroom innovations. We also hope that this instrument can serve as an inspiration or a starting point to be tailored by future researchers more specifically to their courses or to another discipline (eg. by adding more programming concepts instead of data visualization to better serve a computing-focused introductory data science class, etc.)
 
-### Permissions: \*
 
-Do you have the appropriate permissions to share the data included with your poster (e.g., IRB, intellectual property)?
-
-:ballot_box_with_check: **Yes**
-
-No
-
-Pending
-
-Not Applicable
