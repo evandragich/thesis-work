@@ -187,25 +187,31 @@ div.csl-indent {
 <p>somethign good would be good to have content: use 15 passages and assign them to rough buckets</p>
 <section id="phase-0-initial-cleaning-and-feedback" class="level3">
 <h3 class="anchored" data-anchor-id="phase-0-initial-cleaning-and-feedback">Phase 0: Initial Cleaning and Feedback</h3>
-<p>In January 2022, I initially inherited a repo with several documents: many were background information on what topics would be included, with one containing all currently-written questions. These questions were not yet organized into specific groups of stem and items, many sections were commented out or overwritten, and it was clearly something that had been written piecewise by a group of people. My first true task was to run through the current questions myself, answer them how I would, and provide feedback on clarity, wording, and reflect on the topic covered.</p>
+<p>In January 2022, I inherited a repo with several documents: many were background information on what topics would be included, with one containing all currently-written questions. These questions were not yet organized into specific groups of stem and items, many sections were commented out or overwritten, and it was clearly something that had been written piecewise by a group of people. My first true task was to run through the current questions myself, answer them how I would, and provide feedback on clarity, wording, and reflect on the topic covered.</p>
 <p>From this initial feedback, I created three pull requests attempting to solve some of these issues. These first fixes were minorly substantial edits: changing “most” to “the majority of” to make a question less ambiguous, adding a “fill-in-the-blank” slot to make even more clear what the question is asking, and background information on confidence intervals to an item that referenced them. This was my first exposure to what I would call “advanced” GitHub usage, or more than just typical cloning, pushing, and pulling from ordinary group projects. I used the very helpful <code>pr_*()</code> series of functions from the <code>usethis</code> package, which allowed me to easily create the pull requests for review.</p>
 <p>While the team discussed my pull request proposals, I worked in parallel to clean up any “obvious” fixes to all items. These “no-brainer” edits were mainly typos, distorted or obscured plots and items that don’t actually pose a question. It was also time to clean up the current document by converting it to a Quarto book, which would allow for easy webpage-like navigation. This marked my first exposure to Quarto, and I quickly grew to love its improvements to the RMarkdown workflow, like ease of rendering to different formats and intuitive structure of the index and YAML files. This was also when I received my first moment of creative liberty with the project, as I was tasked with dividing the ungrouped set of questions into discrete passages consisting of a stem and one or more corresponding items. Each of these passages–26 at the time–was given a title to identify it in the Quarto book sidebar.</p>
-<p>At this point, the team came to a verdict on my initial pull request proposals: they approved and merged the slight text modification to “the majority” and the “fill-in-the-blank” title, but rejected the confidence interval language, asserting that the stem already provided sufficient motivation.</p>
+<p>At this point, the team came to a verdict on my initial pull request proposals: they approved and merged the slight text modification to “the majority” and the “fill-in-the-blank” title, but rejected the confidence interval language, asserting that the stem already provided sufficient motivation. The final step before presenting the assessment externally was to improve reproducibility, as many figures were not being rendered with each update, but rather embedded as images. In a throwback to my former <a href="https://vizdata.org">STA 313</a> days, I used the current images as guides to recreate a map of the US colored by region, movie-themed data tables, and pseudocode chunks. I had some slight HTML and CSS exposure in previous classes, but this new challenge of matching an existing format allowed me to expand my knowledge about web layout and styles.</p>
+<p>By April 2022, concluding my first semester working on the project, we had a polished, reproducible, website-hosted prototype of the assessment ready to present externally and gather feedback.</p>
 </section>
 <section id="phase-1-faculty-interviews" class="level3">
 <h3 class="anchored" data-anchor-id="phase-1-faculty-interviews">Phase 1: Faculty Interviews</h3>
-<p>ran 3 interviews with faculty CS coverage, potential focus on different topics</p>
+<p>The remainder of the time spent working on the assessment–April 2022 to February 2023–was spent gathering feedback via interviews, iteratively updating items, and removing weaker questions based on group discussions. We conducted a series of three think-aloud informational interviews with various faculty nationwide who teach or have taught introductory data science courses. Participants were recruited from a shortlist of Dr.&nbsp;Çetinkaya-Rundel’s data science assessment contacts, and were specifically chosen to represent a breadth of data science curricula. The three interviewees chosen were, in order of interview: - Dr.&nbsp;Nicholas Horton (Professor of Statistics and Data Science at Amherst College) - Dr.&nbsp;Amelia McNamara (Assistant Professor of Computer and Information Science at the University of St.&nbsp;Thomas) - Dr.&nbsp;Kristin Stephens-Martinez (Assistant Professor of the Practice of Computer Science at Duke University)</p>
+<p>Each interview was scheduled for two hours long and consisted of three sections: open-ended introductory and concluding discussions, sandwiching an item-by-item run through of the assessment. In the initial discussion, we asked participants what they believed should be</p>
 <section id="statsds-perspective" class="level5">
 <h5 class="anchored" data-anchor-id="statsds-perspective">Stats/DS Perspective</h5>
 <p>highlight a few things: one thing that hadn’t really thought about that Kristin pointed out, something we hadnt thoguht about that Amelia/Nick pointed out. one paragraph each, nothing crazy but just explaining what its like to get feedback</p>
+<p>https://docs.google.com/document/d/10_dGpgr2Dsj8BoWzvcvpUzwbtg842fl_hfOQgxMqvbs/edit</p>
+<p>https://docs.google.com/document/d/1s_0Z8WxQMO4qXblOnTjy4Wh7Ygq6kyD2OQGb0rfT9_U/edit</p>
 </section>
 <section id="cs-perspective" class="level5">
 <h5 class="anchored" data-anchor-id="cs-perspective">CS Perspective</h5>
 <p>highlight a few things: one thing that hadn’t really thought about that Kristin pointed out, something we hadnt thoguht about that Amelia/Nick pointed out. one paragraph each, nothing crazy but just explaining what its like to get feedback</p>
+<p>https://docs.google.com/document/d/1edz9Erh2aB_RA9WsHPEqxm_dvOMvNkqj1BjmL73b-3A/edit</p>
 </section>
 <section id="regrouping-to-synthesize-feedback" class="level5">
 <h5 class="anchored" data-anchor-id="regrouping-to-synthesize-feedback">Regrouping to synthesize feedback</h5>
-<p>summarising feedback from live sessions, working with the rest of the group to incorporate not buying lede in ethics questions, how to write questions that arent too obvious and get at specific things,</p>
+<p>summarising feedback from live sessions, working with the rest of the group to incorporate not buying lede in ethics questions, how to write questions that arent too obvious and get at specific things, language agnosticism (data entry in particular).</p>
+<p>todo: keep going through google docs, im <em>sure</em> there are a bunch of big themes like the language agnosticism one that can be illustrated with particular items like that</p>
 </section>
 </section>
 <section id="phase-2-student-interviews" class="level3">
@@ -214,11 +220,17 @@ div.csl-indent {
 <p>think about spacing out ethics quetsions to not prime–combatted question order suggestion (from AZ) early on</p>
 <section id="regrouping-to-synthesize-feedbackfinal-pilot-assessment" class="level5">
 <h5 class="anchored" data-anchor-id="regrouping-to-synthesize-feedbackfinal-pilot-assessment">Regrouping to synthesize feedback/final pilot assessment</h5>
-<p>summarising feedback from live sessions, working with the rest of the group to incorporate somethign good would be good to have content: use 15 passages and assign them to rough buckets</p>
+<p>summarising feedback from live sessions, working with the rest of the group to incorporate</p>
+</section>
+<section id="final-assessment-themes" class="level5">
+<h5 class="anchored" data-anchor-id="final-assessment-themes">Final assessment themes</h5>
+<p>somethign good would be good to have content: use 15 passages and assign them to rough buckets</p>
+<p>https://drive.google.com/drive/u/0/folders/1r_o_vhb0GakgQz9UpvUcnQRxKVVtriFf</p>
 </section>
 </section>
 <section id="phase-3-large-scale-student-pilot" class="level3">
 <h3 class="anchored" data-anchor-id="phase-3-large-scale-student-pilot">Phase 3: Large-scale Student Pilot</h3>
+<p>future direction: students in 199 this spring would complete the assessment (either in full or a randomized subset of items) as an extra credit component of class. moving beyond individual item tweaking and refinement, this phase of the project will allow for real-world observations of pacing and length, feasibility for intro data science students</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
