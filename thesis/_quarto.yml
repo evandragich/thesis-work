@@ -3,19 +3,20 @@ project:
 book:
   title: "Exploring Data Science Education: From Tutorials to Assessment"
   subtitle: "Duke Statistical Science | Graduation with Distinction"
-  date: "Spring 2023"
-author: |
-  | Evan Dragich
-  | supervised by Dr. Mine Çetinkaya-Rundel, PhD.
-chapters:
-  - index.qmd
-  - 01-thesis-intro.qmd
-  - 02-background.qmd
-  - 03-development.qmd
-  - 04-instrument.qmd
-  - 05-package.qmd
-  - 06-discussion.qmd
-  - 99-bibliography.qmd
+  date: last-modified
+  date-format: long
+  author: 
+    - Evan Dragich
+    - supervised by Dr. Mine Çetinkaya-Rundel, PhD.
+  chapters:
+    - index.qmd
+    - 01-thesis-intro.qmd
+    - 02-background.qmd
+    - 03-development.qmd
+    - 04-instrument.qmd
+    - 05-package.qmd
+    - 06-discussion.qmd
+    - 99-bibliography.qmd
 
 execute:
   echo: false

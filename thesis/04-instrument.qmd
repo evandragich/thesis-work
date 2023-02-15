@@ -1,4 +1,4 @@
-# Current Assessment Prototype
+# Current Assessment Prototype {.unnumbered}
 
 ## Quarto
 
