@@ -1,0 +1,49 @@
+# Assessment Development
+
+started with all questions in one document, joined with some discussions on items coverage and stuff put stuff in easy format to browse
+
+highlight a few things: one thing that hadn't really thought about that Kristin pointed out, something we hadnt thoguht about that Amelia/Nick pointed out. one paragraph each, nothing crazy but just explaining what its like to get feedback
+
+with students with exposure: goal is to see if these topics are in your wheelhouse and if wording makes sense as a student
+
+big themes: balancing size and pacing,
+
+somethign good would be good to have content: use 15 passages and assign them to rough buckets
+
+### Phase 0: Initial Cleaning and Feedback
+
+In January 2022, I initially inherited a repo with several documents: many were background information on what topics would be included, with one containing all currently-written questions. These questions were not yet organized into specific groups of stem and items, many sections were commented out or overwritten, and it was clearly something that had been written piecewise by a group of people. My first true task was to run through the current questions myself, answer them how I would, and provide feedback on clarity, wording, and reflect on the topic covered.
+
+From this initial feedback, I created three pull requests attempting to solve some of these issues. These first fixes were minorly substantial edits: changing "most" to "the majority of" to make a question less ambiguous, adding a "fill-in-the-blank" slot to make even more clear what the question is asking, and background information on confidence intervals to an item that referenced them. This was my first exposure to what I would call "advanced" GitHub usage, or more than just typical cloning, pushing, and pulling from ordinary group projects. I used the very helpful `pr_*()` series of functions from the `usethis` package, which allowed me to easily create the pull requests for review.
+
+While the team discussed my pull request proposals, I worked in parallel to clean up any "obvious" fixes to all items. These "no-brainer" edits were mainly typos, distorted or obscured plots and items that don't actually pose a question. It was also time to clean up the current document by converting it to a Quarto book, which would allow for easy webpage-like navigation. This marked my first exposure to Quarto, and I quickly grew to love its improvements to the RMarkdown workflow, like ease of rendering to different formats and intuitive structure of the index and YAML files. This was also when I received my first moment of creative liberty with the project, as I was tasked with dividing the ungrouped set of questions into discrete passages consisting of a stem and one or more corresponding items. Each of these passages--26 at the time--was given a title to identify it in the Quarto book sidebar.
+
+At this point, the team came to a verdict on my initial pull request proposals: they approved and merged the slight text modification to "the majority" and the "fill-in-the-blank" title, but rejected the confidence interval language, asserting that the stem already provided sufficient motivation.
+
+### Phase 1: Faculty Interviews
+
+ran 3 interviews with faculty CS coverage, potential focus on different topics
+
+##### Stats/DS Perspective
+
+highlight a few things: one thing that hadn't really thought about that Kristin pointed out, something we hadnt thoguht about that Amelia/Nick pointed out. one paragraph each, nothing crazy but just explaining what its like to get feedback
+
+##### CS Perspective
+
+highlight a few things: one thing that hadn't really thought about that Kristin pointed out, something we hadnt thoguht about that Amelia/Nick pointed out. one paragraph each, nothing crazy but just explaining what its like to get feedback
+
+##### Regrouping to synthesize feedback
+
+summarising feedback from live sessions, working with the rest of the group to incorporate not buying lede in ethics questions, how to write questions that arent too obvious and get at specific things,
+
+### Phase 2: Student Interviews
+
+with students with exposure: goal is to see if these topics are in your wheelhouse and if wording makes sense as a student balancing size and pacing
+
+think about spacing out ethics quetsions to not prime--combatted question order suggestion (from AZ) early on
+
+##### Regrouping to synthesize feedback/final pilot assessment
+
+summarising feedback from live sessions, working with the rest of the group to incorporate somethign good would be good to have content: use 15 passages and assign them to rough buckets
+
+### Phase 3: Large-scale Student Pilot

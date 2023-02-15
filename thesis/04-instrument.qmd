@@ -1,8 +1,4 @@
----
-title: "05-package"
-format: html
-editor: visual
----
+# Current Assessment Prototype
 
 ## Quarto
 

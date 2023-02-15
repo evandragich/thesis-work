@@ -1,15 +1,3 @@
----
-title: "02-background"
-format: html
-editor: visual
-format:
-  pdf:
-    number-sections: false
-bibliography: thesis.bib
-nocite: |
-  @*
----
-
 # Assessment Background
 
 ## Background

@@ -1,9 +1,0 @@
----
-title: "06-discussion"
-format: html
-editor: visual
----
-
-also about future directions with 199 stuff
-
-talk about how much quarto, html, css, yaml, qualtrics, github actions, CRAN etc ive learned
