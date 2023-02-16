@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: docs
 book:
   title: "Exploring Data Science Education: From Tutorials to Assessment"
   subtitle: "Duke Statistical Science | Graduation with Distinction"
