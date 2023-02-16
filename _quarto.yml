@@ -14,10 +14,12 @@ book:
     - 01-thesis-intro.qmd
     - 02-background.qmd
     - 03-development.qmd
-    - 04-instrument.qmd
     - 05-package.qmd
     - 06-discussion.qmd
-    - 99-bibliography.qmd
+    - 10-bibliography.qmd
+    - 90-instrument.qmd
+    - 91-graveyard.qmd
+    - 92-package-examples.qmd
 
 execute:
   echo: false

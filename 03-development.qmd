@@ -54,10 +54,7 @@ how to write questions that arent too obvious and get at specific things. this e
 
 with students with exposure: goal is to see if these topics are in your wheelhouse and if wording makes sense as a student balancing size and pacing. we've hammered out a lot of the larger-scale scope type issues, now time to start drilling down into the weeds and seeing if they land how we think they do. if not, or way too easy/hard/confusing, take it out!
 
-•	Are the pacing and length appropriate?
-•	Based on what you remember learning in intro data science, what topics are missing from the current assessment?
-•	Based on what you remember learning in intro data science, what is in the current assessment, but doesn’t belong?
-
+• Are the pacing and length appropriate? • Based on what you remember learning in intro data science, what topics are missing from the current assessment? • Based on what you remember learning in intro data science, what is in the current assessment, but doesn't belong?
 
 -   Student A (2nd year Masters of Statistical Science student)
 -   Student B (4th year undergraduate Statistical Science minor)
