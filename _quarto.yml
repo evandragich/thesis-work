@@ -38,5 +38,8 @@ format:
     css: styles.css
   pdf:
     documentclass: scrreprt
+    toc: true
+    toc-depth: 0
+    number-depth: 0
 
 

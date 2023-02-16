@@ -190,57 +190,115 @@ div.csl-indent {
 
 </header>
 
-<section id="phase-0-initial-cleaning-and-feedback" class="level3">
-<h3 class="anchored" data-anchor-id="phase-0-initial-cleaning-and-feedback">Phase 0: Initial Cleaning and Feedback</h3>
+<section id="phase-0-initial-cleaning-and-feedback" class="level2">
+<h2 class="anchored" data-anchor-id="phase-0-initial-cleaning-and-feedback">Phase 0: Initial Cleaning and Feedback</h2>
 <p>In January 2022, I inherited a repo with several documents: many were background information on what topics would be included, with one containing all currently-written questions. These questions were not yet organized into specific groups of stem and items, many sections were commented out or overwritten, and it was clearly something that had been written piecewise by a group of people. My first true task was to run through the current questions myself, answer them how I would, and provide feedback on clarity, wording, and reflect on the topic covered.</p>
 <p>From this initial feedback, I created three pull requests attempting to solve some of these issues. These first fixes were minorly substantial edits: changing “most” to “the majority of” to make a question less ambiguous, adding a “fill-in-the-blank” slot to make even more clear what the question is asking, and background information on confidence intervals to an item that referenced them. This was my first exposure to what I would call “advanced” GitHub usage, or more than just typical cloning, pushing, and pulling from ordinary group projects. I used the very helpful <code>pr_*()</code> series of functions from the <code>usethis</code> package, which allowed me to easily create the pull requests for review.</p>
 <p>While the team discussed my pull request proposals, I worked in parallel to clean up any “obvious” fixes to all items. These “no-brainer” edits were mainly typos, distorted or obscured plots and items that don’t actually pose a question. It was also time to clean up the current document by converting it to a Quarto book, which would allow for easy webpage-like navigation. This marked my first exposure to Quarto, and I quickly grew to love its improvements to the RMarkdown workflow, like ease of rendering to different formats and intuitive structure of the index and YAML files. This was also when I received my first moment of creative liberty with the project, as I was tasked with dividing the ungrouped set of questions into discrete passages consisting of a stem and one or more corresponding items. Each of these passages–26 at the time–was given a title to identify it in the Quarto book sidebar.</p>
 <p>At this point, the team came to a verdict on my initial pull request proposals: they approved and merged the slight text modification to “the majority” and the “fill-in-the-blank” title, but rejected the confidence interval language, asserting that the stem already provided sufficient motivation. The final step before presenting the assessment externally was to improve reproducibility, as many figures were not being rendered with each update, but rather embedded as images. In a throwback to my former <a href="https://vizdata.org">STA 313</a> days, I used the current images as guides to recreate a map of the US colored by region, movie-themed data tables, and pseudocode chunks. I had some slight HTML and CSS exposure in previous classes, but this new challenge of matching an existing format allowed me to expand my knowledge about web layout and styles.</p>
 <p>By April 2022, concluding my first semester working on the project, we had a polished, reproducible, website-hosted prototype of the assessment ready to present externally and gather feedback.</p>
 </section>
-<section id="phase-1-faculty-interviews" class="level3">
-<h3 class="anchored" data-anchor-id="phase-1-faculty-interviews">Phase 1: Faculty Interviews</h3>
+<section id="phase-1-faculty-interviews" class="level2">
+<h2 class="anchored" data-anchor-id="phase-1-faculty-interviews">Phase 1: Faculty Interviews</h2>
 <p>The remainder of the time spent working on the assessment–April 2022 to February 2023–was spent gathering feedback via interviews, iteratively updating items, and removing weaker questions based on group discussions. We conducted a series of three think-aloud informational interviews with various faculty nationwide who teach or have taught introductory data science courses. Participants were recruited from a shortlist of Dr.&nbsp;Çetinkaya-Rundel’s data science assessment contacts, and were specifically chosen to represent a breadth of data science curricula. The three interviewees chosen were, in order of interview:</p>
-<ul>
-<li><p>Dr.&nbsp;Nicholas Horton (Professor of Statistics and Data Science at Amherst College)</p></li>
-<li><p>Dr.&nbsp;Kristin Stephens-Martinez (Assistant Professor of the Practice of Computer Science at Duke University)</p></li>
-<li><p>Dr.&nbsp;Amelia McNamara (Assistant Professor of Computer and Information Science at the University of St.&nbsp;Thomas)</p></li>
-</ul>
+<table class="table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 29%">
+<col style="width: 33%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Department Affiliation</th>
+<th>Institution Type</th>
+<th>Field of Ph.D.&nbsp;Dissertation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Professor X</td>
+<td>Statistics</td>
+<td>Liberal arts college</td>
+<td>Biostatistics</td>
+</tr>
+<tr class="even">
+<td>Professor Y</td>
+<td>Computer science</td>
+<td>R1 research university</td>
+<td>Computer science education</td>
+</tr>
+<tr class="odd">
+<td>Professor Z</td>
+<td>Computer and information science</td>
+<td>Liberal arts school within university</td>
+<td>Statistics</td>
+</tr>
+</tbody>
+</table>
 <p>Each interview was scheduled for two hours long and consisted of three sections: open-ended introductory and concluding discussions, sandwiching an item-by-item run through of the assessment. In the initial discussion, we asked participants two big picture questions: What topics <em>must</em> be in an introductory data science course? And, what topics are <em>nice to have</em> in an introductory data science course? For each item in the assessment run-through, we asked interviewees to narrate out loud their thinking process from start to finish: any initial reactions, their process to arrive at an answer, and what said answer would be. We then asked for additional comments or suggestions, ranging from small- (formatting changes) to large-scale (removing the question entirely). We then concluded with three big-picture questions: What are the strengths of the current assessment? What topics are missing from the current assessment? And, what is in the current assessment, but doesn’t belong?</p>
 <p>While I scheduled and directed the flow of the interviews myself, I was joined by Dr.&nbsp;Çetinkaya-Rundel for all three, Dr.&nbsp;Legacy for the second two, and Dr.&nbsp;Beckman for the third. Silently observing, these team members took notes in real-time while I was conversing with the interviewee as a supplement to the transcript.</p>
-<section id="discipline-specific-perspectives" class="level5">
-<h5 class="anchored" data-anchor-id="discipline-specific-perspectives">Discipline-Specific Perspectives</h5>
+<section id="discipline-specific-perspectives" class="level3">
+<h3 class="anchored" data-anchor-id="discipline-specific-perspectives">Discipline-Specific Perspectives</h3>
 <p>After conducting each of three interviews, we met to discuss the new feedback and, when appropriate, made modifications and deletions to the current assessment. While each interviewee came from distinct backgrounds, there were some salient themes about their perspectives on introductory data science that emerged through patterns in their responses.</p>
-<p>Dr.&nbsp;Horton seemed to have a somewhat similar perspective on “what is data science” as the research team–chiefly, visualization and wrangling. He noted positively when items featured multivariate data, particularly when interpreting visualizations. He also notably brought a wealth of pedagogical experience with real-life data to our consideration: such as that movie budgets and revenue display less compelling of a relationship than one would think, that movie-themed data at all is less relevant to younger generations, and that county data is generally too heterogenous to be useful in most contexts. He also grounded our conceptions of what a pre-test student would know by claiming that residuals are now part of the Common Core in K-12 education. However, he thought residual analysis and other related modeling topics like supervised learning didn’t align with his experience teaching introductory data science. But, as in the case of Realty Tree, he acknowledged that some topics may fall outside the scope of an introductory class, but could be reasoned through and provide motivation to learn more.</p>
-<p>Dr.&nbsp;McNamara held similar opinions on the scope of data science as did Dr.&nbsp;Horton–visualization and wrangling. The main takeaway from her feedback was that we needed to consider carefully the scenarios posed in question stems. Hurricane data, like in Hurricane Andy, she claimed, may provoke discomfort in students from hurricane-prone areas. She noted that the former wording of Austen Gender, in which the verbs on the plot itself were in the past tense while those in the items were in the present, may present a burden to non-native English speakers. The SAT, referenced in Banana Conclusions, may need more explanation for international students who are less familiar with the US admissions process. She also, like Dr.&nbsp;Horton, thought that some of our more technical questions breached the scope of introductory data science, such as residual analysis and the distinction between training and validation sets. She was similarly a fan of Realty Tree. However, while Dr.&nbsp;Horton was in favor of summary statistic questions and mapping them to graphs, Dr.&nbsp;McNamara called out language like “margin of error” as too statistical, and not as data science related.</p>
-<p>As a computer science education representative, we knew Dr.&nbsp;Stephens-Martinez’s interview would offer a unique perspective. This was evident to the start, when her first response to my question of “what is essential” was to ask me whether this course assumed prior coding experience or not. After I clarified that we are assuming no coding experience, she answered that learning coding “in the order that matters for data science”, e.g.&nbsp;functions first, is a primary topic, as is some unerstanding of transforming and cleaning data. But, she qualified, not too much as much cleaning can be done for them in an introductory class. It wasn’t until the “what is nice to have” question that she mentioned data visualization. This CS-focused perspective continued when she pointed out our pseudocode didn’t specify which type of join would be performed, that basic English vocabulary like “filter” and “select” might not be known in their data wrangling context, and generally dissuaded us from using pseudocode on something that would be a pre-test. Another notable pattern was that some of her suggested edits went against data visualization best practices: she suggested we change from a rainbow color scheme to a gradient one for categorical data, and to reorder the y-axis in Austen Gender to be alphabetical rather than allowing for easy comparison. Finally, she led us to remove the logarithmic transformation present in all Movie Budgets questions, explaining that since the transformation itself isn’t a learning outcome, students seeing those words continually repeated may start losing sight of the item’s objective.</p>
+<p>Professor X seemed to have a somewhat similar perspective on “what is data science” as the research team–chiefly, visualization and wrangling. He noted positively when items featured multivariate data, particularly when interpreting visualizations. He also notably brought a wealth of pedagogical experience with real-life data to our consideration: such as that movie budgets and revenue display less compelling of a relationship than one would think, that movie-themed data at all is less relevant to younger generations, and that county data is generally too heterogenous to be useful in most contexts. He also grounded our conceptions of what a pre-test student would know by claiming that residuals are now part of the Common Core in K-12 education. However, he thought residual analysis and other related modeling topics like supervised learning didn’t align with his experience teaching introductory data science. But, as in the case of Realty Tree, he acknowledged that some topics may fall outside the scope of an introductory class, but could be reasoned through and provide motivation to learn more.</p>
+<p>Professor Z held similar opinions on the scope of data science as did Professor X–visualization and wrangling. The main takeaway from her feedback was that we needed to consider carefully the scenarios posed in question stems. Hurricane data, like in Hurricane Andy, she claimed, may provoke discomfort in students from hurricane-prone areas. She noted that the former wording of Austen Gender, in which the verbs on the plot itself were in the past tense while those in the items were in the present, may present a burden to non-native English speakers. The SAT, referenced in Banana Conclusions, may need more explanation for international students who are less familiar with the US admissions process. She also, like Professor X, thought that some of our more technical questions breached the scope of introductory data science, such as residual analysis and the distinction between training and validation sets. She was similarly a fan of Realty Tree. However, while Professor X was in favor of summary statistic questions and mapping them to graphs, Professor Z called out language like “margin of error” as too statistical, and not as data science related.</p>
+<p>As a computer science education representative, we knew Professor Y’s interview would offer a unique perspective. This was evident to the start, when her first response to my question of “what is essential” was to ask me whether this course assumed prior coding experience or not. After I clarified that we are assuming no coding experience, she answered that learning coding “in the order that matters for data science”, e.g.&nbsp;functions first, is a primary topic, as is some unerstanding of transforming and cleaning data. But, she qualified, not too much as much cleaning can be done for them in an introductory class. It wasn’t until the “what is nice to have” question that she mentioned data visualization. This CS-focused perspective continued when she pointed out our pseudocode didn’t specify which type of join would be performed, that basic English vocabulary like “filter” and “select” might not be known in their data wrangling context, and generally dissuaded us from using pseudocode on something that would be a pre-test. Another notable pattern was that some of her suggested edits went against data visualization best practices: she suggested we change from a rainbow color scheme to a gradient one for categorical data, and to reorder the y-axis in Austen Gender to be alphabetical rather than allowing for easy comparison. Finally, she led us to remove the logarithmic transformation present in all Movie Budgets questions, explaining that since the transformation itself isn’t a learning outcome, students seeing those words continually repeated may start losing sight of the item’s objective.</p>
 <p>Amelia: change hurricane context to paths of animals wandering; log-transform cognitive overload; doesn’t think margin of error belongs in a “data science course”; thought conflicting sources was “too inference”, doesn’t like judging r2 from scatterplot; tense change in austen gender; liked regression tree for being “different than what they might have done before” (acknowledges could answer without knowing); park wrangling pseudocode too R-specific, related to that she completely missed the “load in the data wrong” question; SAT contextual knowledge; COVID Map contextual knowledge; highest on data viz and wrangling/cleaning</p>
 <p>Nick: loved the statty stuff (even referenced connecting summary stats to graphical display as building on K-12); loves when questions were multivariate; didn’t like movie dataset; wanted to define r2 and asserts residuals are part of K-12 now, “We don’t do any regression in our data science course; also issues with county data; loved regression tree as pretest motivation; does teach unsupervised learning though; PR as a state; thought banana conclusions was more data acumen/data literacy; repeated Time series in covid map; really liked ethics and visualization</p>
 <p>Kristin: first question was coding background or not–already off to a differnet start. coding in the order that matters for DS (ie. function first), some understanding of cleaning (thinks cleaning can be done for them in an intro class), probability &gt; p-values or t-test, visualizatino only a “nice tohave”, cognitive load of log transform; some tweaks kinda went against data viz best practices (said we should change to gradient colors for categories, another cognitive load to sort Austen Gender); didnt like pseudocode for complete intro class, especially terms like group by, filter, select (and especially for this questioin that doesnt specify join type), planning a solution vs writing code.</p>
 <p>highlight a few things: one thing that hadn’t really thought about that Kristin pointed out, something we hadnt thoguht about that Amelia/Nick pointed out. one paragraph each, nothing crazy but just explaining what its like to get feedback</p>
 <p>https://docs.google.com/document/d/1edz9Erh2aB_RA9WsHPEqxm_dvOMvNkqj1BjmL73b-3A/edit</p>
 </section>
-<section id="regrouping-to-synthesize-feedback" class="level5">
-<h5 class="anchored" data-anchor-id="regrouping-to-synthesize-feedback">Regrouping to synthesize feedback</h5>
+<section id="regrouping-to-synthesize-feedback" class="level3">
+<h3 class="anchored" data-anchor-id="regrouping-to-synthesize-feedback">Regrouping to synthesize feedback</h3>
 <p>how to write questions that arent too obvious and get at specific things. this ended up being a lot of quetions that we cut–amelia and nick (kristin didnt get to it) missed the R-specific data load in question, the options of Data Confidentiality went through more than a handful of iterations, they (Amelia especially) had a lot of “hmm i see what concept youre getting at but this question doesnt really…. okay yeah, this is something that’s hard to write to be autogradable but also actually measure ___”. also was just soooooo hard to cut questions. we had ~50 at this point, and every week would cut ~2 or so. it’s not that people on the research team had diff schools of thought like the faculty did, or that people were protective of what they wrote–we just genuinely saw value in all questions at that point, and decided we would let student interviews guide the necessary culling.</p>
 </section>
 </section>
-<section id="phase-2-student-interviews" class="level3">
-<h3 class="anchored" data-anchor-id="phase-2-student-interviews">Phase 2: Student Interviews</h3>
+<section id="phase-2-student-interviews" class="level2">
+<h2 class="anchored" data-anchor-id="phase-2-student-interviews">Phase 2: Student Interviews</h2>
 <p>with students with exposure: goal is to see if these topics are in your wheelhouse and if wording makes sense as a student balancing size and pacing. we’ve hammered out a lot of the larger-scale scope type issues, now time to start drilling down into the weeds and seeing if they land how we think they do. if not, or way too easy/hard/confusing, take it out!</p>
 <p>• Are the pacing and length appropriate? • Based on what you remember learning in intro data science, what topics are missing from the current assessment? • Based on what you remember learning in intro data science, what is in the current assessment, but doesn’t belong?</p>
-<ul>
-<li>Student A (2nd year Masters of Statistical Science student)</li>
-<li>Student B (4th year undergraduate Statistical Science minor)</li>
-<li>Student C (1st year Masters of Statistical Science student)</li>
-</ul>
+<p>The three students recruited were, in order of interview:</p>
+<table class="table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 30%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Degree Year and Level</th>
+<th>Degree Discipline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Student A</td>
+<td>2nd year Masters</td>
+<td>Statistical Science</td>
+</tr>
+<tr class="even">
+<td>Student B</td>
+<td>4th year Undergraduate</td>
+<td>Economics major, Statistical Science minor</td>
+</tr>
+<tr class="odd">
+<td>Student C</td>
+<td>1st year Masters</td>
+<td>Statistical Science</td>
+</tr>
+</tbody>
+</table>
 <p>highlights were–we originally had items grouped by section, but we had a clear case of Student A being primed by earlier ethics question (Image Recognition) to be aware of in Application Screening. Student B missed Austen Gender bear trap and just generally had a very air of uncertainty throughout. Student C attended undergrad at a python, computing-heavy program so feedback was very similar to that of Kristin’s. Mention or not–Student A seemed to be a non-native English speaker, and nothing clocked them on that (at least i dont think?). Oh other takeaway i guess is that all of the students couldn’t read <code>theme_minimal()</code>, which i think is funny because I “grew up on that” since i never did 199 and did 313 as part of my first semester of R classes.</p>
-<section id="regrouping-to-synthesize-feedbackfinal-pilot-assessment" class="level5">
-<h5 class="anchored" data-anchor-id="regrouping-to-synthesize-feedbackfinal-pilot-assessment">Regrouping to synthesize feedback/final pilot assessment</h5>
+<section id="regrouping-to-synthesize-feedbackfinal-pilot-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="regrouping-to-synthesize-feedbackfinal-pilot-assessment">Regrouping to synthesize feedback/final pilot assessment</h3>
 <p>summarising feedback from live sessions, working with the rest of the group to incorporate feedback. really didnt make many changes at this stage, just axed a large chunk of quetions after being too wishywashy during the fall 2022 gap. oh changed movie budgets 2 from individual items-&gt; single matrix</p>
 </section>
-<section id="final-assessment-themes" class="level5">
-<h5 class="anchored" data-anchor-id="final-assessment-themes">Final assessment themes</h5>
+<section id="final-assessment-themes" class="level3">
+<h3 class="anchored" data-anchor-id="final-assessment-themes">Final assessment themes</h3>
 <p>somethign good would be good to have content: use 15 passages and assign them to rough buckets</p>
 <p>our previous reviews are in <a href="https://drive.google.com/drive/u/0/folders/1r_o_vhb0GakgQz9UpvUcnQRxKVVtriFf">here</a> ( I guess leave item # blank for now?)</p>
 <table class="table">
@@ -401,9 +459,10 @@ div.csl-indent {
 </table>
 </section>
 </section>
-<section id="phase-3-large-scale-student-pilot" class="level3">
-<h3 class="anchored" data-anchor-id="phase-3-large-scale-student-pilot">Phase 3: Large-scale Student Pilot</h3>
-<p>future direction: students in 199 this spring would complete the assessment (either in full or a randomized subset of items) as an extra credit component of class. moving beyond individual item tweaking and refinement, this phase of the project will allow for real-world observations of pacing and length, feasibility for intro data science students. have to convert Quarto book to a qualtrics, very high-maintenance IRB, etc.</p>
+<section id="phase-3-large-scale-student-pilot" class="level2">
+<h2 class="anchored" data-anchor-id="phase-3-large-scale-student-pilot">Phase 3: Large-scale Student Pilot</h2>
+<p>Looking ahead, the next step after individual item tweaking and refinement will be real-world measurements of pacing and length and the feasibility for introductory data science students. Collaborating with the professors of Duke’s Introductory Data Science Course STA199, ___ students across three sections will be invited to take the assessment, on their own time, for a chance to earn extra credit in the course. We will not solicit general feedback like in the previous interviews, instead asking just a single question at the end to get a rough estimate of how long it took to complete, since they will be doing it on their own time. The extra credit points students receive will not reflect their performance on the assessment, but rather will be simply awarded proportionally to how much was completed. To ensure students are actively engaging with the questions, there will be ___ attention checks scattered throughout that must also be passed to earn credit.</p>
+<p>In order to distribute the assessment at large and record students’ responses, the Quarto book has been converted into a Qualtrics survey. Once complete, large-scale analysis will be conducted, both to ensure that all questions were indeed appropriate for introductory level students and to explore potential instrument subscales.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
