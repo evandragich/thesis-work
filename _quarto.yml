@@ -4,6 +4,7 @@ project:
 book:
   title: "Exploring Data Science Education: From Tutorials to Assessment"
   subtitle: "Duke Statistical Science | Graduation with Distinction"
+  favicon: logo.png
   date: last-modified
   date-format: long
   author: 
