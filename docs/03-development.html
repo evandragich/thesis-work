@@ -81,6 +81,7 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -193,7 +194,7 @@ div.csl-indent {
 
 <section id="phase-0-initial-cleaning-and-feedback" class="level2">
 <h2 class="anchored" data-anchor-id="phase-0-initial-cleaning-and-feedback">Phase 0: Initial Cleaning and Feedback</h2>
-<p>In January 2022, I inherited a repo with several documents: many were background information on what topics would be included, with one containing all currently-written questions. These questions were not yet organized into specific groups of stem and items, many sections were commented out or overwritten, and it was clearly something that had been written piecewise by a group of people. My first true task was to run through the current questions myself, answer them how I would, and provide feedback on clarity, wording, and reflect on the topic covered.</p>
+<p>In January 2022, I inherited a repo with several documents: many were background information on what topics would be included, with one containing all currently-written questions. These questions were not yet organized into specific groups of stem and items, many sections were commented out or overwritten, and it was clearly something that had been written piece-wise by a group of people. My first true task was to run through the current questions myself, answer them how I would, and provide feedback on clarity, wording, and reflect on the topic covered.</p>
 <p>From this initial feedback, I created three pull requests attempting to solve some of these issues. These first fixes were minorly substantial edits: changing “most” to “the majority of” to make a question less ambiguous, adding a “fill-in-the-blank” slot to make even more clear what the question is asking, and background information on confidence intervals to an item that referenced them. This was my first exposure to what I would call “advanced” GitHub usage, or more than just typical cloning, pushing, and pulling from ordinary group projects. I used the very helpful <code>pr_*()</code> series of functions from the <code>usethis</code> package, which allowed me to easily create the pull requests for review.</p>
 <p>While the team discussed my pull request proposals, I worked in parallel to clean up any “obvious” fixes to all items. These “no-brainer” edits were mainly typos, distorted or obscured plots and items that don’t actually pose a question. It was also time to clean up the current document by converting it to a Quarto book, which would allow for easy webpage-like navigation. This marked my first exposure to Quarto, and I quickly grew to love its improvements to the RMarkdown workflow, like ease of rendering to different formats and intuitive structure of the index and YAML files. This was also when I received my first moment of creative liberty with the project, as I was tasked with dividing the ungrouped set of questions into discrete passages consisting of a stem and one or more corresponding items. Each of these passages–26 at the time–was given a title to identify it in the Quarto book sidebar.</p>
 <p>At this point, the team came to a verdict on my initial pull request proposals: they approved and merged the slight text modification to “the majority” and the “fill-in-the-blank” title, but rejected the confidence interval language, asserting that the stem already provided sufficient motivation. The final step before presenting the assessment externally was to improve reproducibility, as many figures were not being rendered with each update, but rather embedded as images. In a throwback to my former <a href="https://vizdata.org">STA 313</a> days, I used the current images as guides to recreate a map of the US colored by region, movie-themed data tables, and pseudocode chunks. I had some slight HTML and CSS exposure in previous classes, but this new challenge of matching an existing format allowed me to expand my knowledge about web layout and styles.</p>
@@ -204,10 +205,10 @@ div.csl-indent {
 <p>The remainder of the time spent working on the assessment–April 2022 to February 2023–was spent gathering feedback via interviews, iteratively updating items, and removing weaker questions based on group discussions. We conducted a series of three think-aloud informational interviews with various faculty nationwide who teach or have taught introductory data science courses. Participants were recruited from a shortlist of Dr.&nbsp;Çetinkaya-Rundel’s data science assessment contacts, and were specifically chosen to represent a breadth of data science curricula. The three interviewees chosen were, in order of interview:</p>
 <table class="table">
 <colgroup>
-<col style="width: 11%">
-<col style="width: 29%">
-<col style="width: 33%">
-<col style="width: 25%">
+<col style="width: 21%">
+<col style="width: 26%">
+<col style="width: 30%">
+<col style="width: 21%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -261,9 +262,9 @@ div.csl-indent {
 <p>We first reached out in November 2022 to all TAs at that time for STA 199 or STA 198, its health-themed analog. However, we were unable to recruit any students so close to finals, and ended up reaching out to the same group in January. The interviews were conducted in early February, thus consisting of students who were at least TAs for STA199 in the previous Fall semester. The three students recruited were, in order of interview:</p>
 <table class="table">
 <colgroup>
-<col style="width: 13%">
-<col style="width: 30%">
-<col style="width: 55%">
+<col style="width: 21%">
+<col style="width: 27%">
+<col style="width: 50%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -298,161 +299,134 @@ div.csl-indent {
 </section>
 <section id="final-assessment-themes" class="level3">
 <h3 class="anchored" data-anchor-id="final-assessment-themes">Final assessment themes</h3>
-<p>somethign good would be good to have content: use 15 passages and assign them to rough buckets will do this after 2/21 meeting in whcih we will finalize passage names and order</p>
-<p>our previous reviews are in <a href="https://drive.google.com/drive/u/0/folders/1r_o_vhb0GakgQz9UpvUcnQRxKVVtriFf">here</a> ( I guess leave item # blank for now?)</p>
+<p>The following table summarizes the learning objectives for each item in the most current version of the assessment.</p>
 <table class="table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 78%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Passage</th>
-<th>Item Number</th>
 <th>Learning Objective(s)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Storm Paths</td>
-<td></td>
-<td></td>
+<td>simulated data; interpreting uncertainty</td>
 </tr>
 <tr class="even">
 <td>Movie Budgets 1</td>
-<td></td>
-<td></td>
+<td>comparing summary statistics visually</td>
 </tr>
 <tr class="odd">
 <td>Movie Budgets 2</td>
-<td></td>
-<td></td>
+<td><span class="math inline">\(R^2\)</span>; comparing trends visually</td>
 </tr>
 <tr class="even">
 <td>Application Screening</td>
-<td></td>
-<td></td>
+<td>ethics; proxy variable</td>
 </tr>
 <tr class="odd">
 <td>Banana Conclusions</td>
-<td></td>
-<td></td>
+<td>causation; statistical communication</td>
 </tr>
 <tr class="even">
 <td>COVID Map</td>
-<td></td>
-<td></td>
+<td>interpreting complex visualization; spatial data; time series data</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td></td>
-<td></td>
+<td>interpreting complex visualization; sophisticated scales</td>
 </tr>
 <tr class="even">
 <td>Disease Screening</td>
-<td></td>
-<td></td>
+<td>comparing classification diagnostics visually</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td></td>
-<td></td>
+<td>comparing classification diagnostics visually</td>
 </tr>
 <tr class="even">
 <td></td>
-<td></td>
-<td></td>
+<td>comparing classification diagnostics visually</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td></td>
-<td></td>
+<td>comparing classification diagnostics visually</td>
 </tr>
 <tr class="even">
 <td>Austen Gender</td>
-<td></td>
-<td></td>
+<td>interpreting basic visualization</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td></td>
-<td></td>
+<td>interpreting basic visualization</td>
 </tr>
 <tr class="even">
 <td></td>
-<td></td>
-<td></td>
+<td>interpreting basic visualization; sophisticated scales</td>
 </tr>
 <tr class="odd">
 <td>Recreate Unemployment</td>
-<td></td>
-<td></td>
+<td>data to visualization process</td>
 </tr>
 <tr class="even">
 <td>Realty Tree</td>
-<td></td>
-<td></td>
+<td>modeling; regression tree</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td></td>
-<td></td>
+<td>modeling; regression tree; variable selection</td>
 </tr>
 <tr class="even">
 <td>Website Testing</td>
-<td></td>
-<td></td>
+<td>interpret trends visually; visualize uncertainty; time series data</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td></td>
-<td></td>
+<td>interpret trends visually; visualize uncertainty; time series data; extrapolation</td>
 </tr>
 <tr class="even">
 <td></td>
-<td></td>
-<td></td>
+<td>interpret trends visually; visualize uncertainty; time series data; extrapolation</td>
 </tr>
 <tr class="odd">
 <td>Image Recognition</td>
-<td></td>
-<td></td>
+<td>ethics; representativeness of training data</td>
 </tr>
 <tr class="even">
 <td>Data Confidentiality</td>
-<td></td>
-<td></td>
+<td>ethics; data deidentification</td>
 </tr>
 <tr class="odd">
 <td>Activity Journal</td>
-<td></td>
-<td></td>
+<td>structuring data; storing data</td>
 </tr>
 <tr class="even">
 <td>Movie Wrangling</td>
-<td></td>
-<td></td>
+<td>data cleaning; column-wise operations; string operations</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td></td>
-<td></td>
+<td>data cleaning; column-wise operations; string operations</td>
 </tr>
 <tr class="even">
 <td></td>
-<td></td>
-<td></td>
+<td>data cleaning; extrapolation</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td></td>
-<td></td>
+<td>data wrangling; pseudocode, joins</td>
 </tr>
 <tr class="even">
 <td></td>
-<td></td>
-<td></td>
+<td>data wrangling; pseudocode, joins</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td></td>
-<td></td>
+<td>data wrangling; pseudocode, joins</td>
 </tr>
 </tbody>
 </table>

@@ -2,7 +2,7 @@
 
 ## Phase 0: Initial Cleaning and Feedback
 
-In January 2022, I inherited a repo with several documents: many were background information on what topics would be included, with one containing all currently-written questions. These questions were not yet organized into specific groups of stem and items, many sections were commented out or overwritten, and it was clearly something that had been written piecewise by a group of people. My first true task was to run through the current questions myself, answer them how I would, and provide feedback on clarity, wording, and reflect on the topic covered.
+In January 2022, I inherited a repo with several documents: many were background information on what topics would be included, with one containing all currently-written questions. These questions were not yet organized into specific groups of stem and items, many sections were commented out or overwritten, and it was clearly something that had been written piece-wise by a group of people. My first true task was to run through the current questions myself, answer them how I would, and provide feedback on clarity, wording, and reflect on the topic covered.
 
 From this initial feedback, I created three pull requests attempting to solve some of these issues. These first fixes were minorly substantial edits: changing "most" to "the majority of" to make a question less ambiguous, adding a "fill-in-the-blank" slot to make even more clear what the question is asking, and background information on confidence intervals to an item that referenced them. This was my first exposure to what I would call "advanced" GitHub usage, or more than just typical cloning, pushing, and pulling from ordinary group projects. I used the very helpful `pr_*()` series of functions from the `usethis` package, which allowed me to easily create the pull requests for review.
 
@@ -17,7 +17,7 @@ By April 2022, concluding my first semester working on the project, we had a pol
 The remainder of the time spent working on the assessment--April 2022 to February 2023--was spent gathering feedback via interviews, iteratively updating items, and removing weaker questions based on group discussions. We conducted a series of three think-aloud informational interviews with various faculty nationwide who teach or have taught introductory data science courses. Participants were recruited from a shortlist of Dr. Çetinkaya-Rundel's data science assessment contacts, and were specifically chosen to represent a breadth of data science curricula. The three interviewees chosen were, in order of interview:
 
 | Name        | Department Affiliation           | Institution Type                      | Field of Ph.D. Dissertation |
-|-------------|----------------------------------|---------------------------------------|-----------------------------|
+|----------------|-------------------|----------------------|----------------|
 | Professor X | Statistics                       | Liberal arts college                  | Biostatistics               |
 | Professor Y | Computer science                 | R1 research university                | Computer science education  |
 | Professor Z | Computer and information science | Liberal arts school within university | Statistics                  |
@@ -36,80 +36,73 @@ Professor Z held similar opinions on the scope of data science as did Professor 
 
 As a computer science education representative, we knew Professor Y's interview would offer a unique perspective. This was evident to the start, when her first response to my question of "what is essential" was to ask me whether this course assumed prior coding experience or not. After I clarified that we are assuming no coding experience, she answered that learning coding "in the order that matters for data science", e.g. functions first, is a primary topic, as is some unerstanding of transforming and cleaning data. But, she qualified, not too much as much cleaning can be done for them in an introductory class. It wasn't until the "what is nice to have" question that she mentioned data visualization. This CS-focused perspective continued when she pointed out our pseudocode didn't specify which type of join would be performed, that basic English vocabulary like "filter" and "select" might not be known in their data wrangling context, and generally dissuaded us from using pseudocode on something that would be a pre-test. Another notable pattern was that some of her suggested edits went against data visualization best practices: she suggested we change from a rainbow color scheme to a gradient one for categorical data, and to reorder the y-axis in Austen Gender to be alphabetical rather than allowing for easy comparison. Finally, she led us to remove the logarithmic transformation present in all Movie Budgets questions, explaining that since the transformation itself isn't a learning outcome, students seeing those words continually repeated may start losing sight of the item's objective.
 
-
 ### Regrouping to synthesize feedback
 
-While the team met once bewteen each faculty interview to make any minor changes before the next one, the bulk of the revision took place after all were completed, in the Fall 2022 semester. A common theme from all interviews was that our questions designed to test tricky, nuanced concepts (e.g. reading in data to statistical software) in a multiple choice format weren't landing as we hoped. While we thought we had written a former item, [Data Reading], with enough language agnosticity, it ended up being too R-specific and baffling all faculty. To this item, and several others, Professor Z summed up the crux of our dilemma well, paraphrasing: "hmm.. I see what concept you're getting at, but this question doesn't really get there... Okay, well, this is something that's hard to write to be autogradable but also actually measure. I don't know how I would fix this but I really like the underlying idea."
+While the team met once bewteen each faculty interview to make any minor changes before the next one, the bulk of the revision took place after all were completed, in the Fall 2022 semester. A common theme from all interviews was that our questions designed to test tricky, nuanced concepts (e.g. reading in data to statistical software) in a multiple choice format weren't landing as we hoped. While we thought we had written a former item, \[Data Reading\], with enough language agnosticity, it ended up being too R-specific and baffling all faculty. To this item, and several others, Professor Z summed up the crux of our dilemma well, paraphrasing: "hmm.. I see what concept you're getting at, but this question doesn't really get there... Okay, well, this is something that's hard to write to be autogradable but also actually measure. I don't know how I would fix this but I really like the underlying idea."
 
 Encouraged to keep these concepts on the assessment with modifications, we found it difficult to cut out any of the \~50 pilot questions we had at this point. One notable large-scale fix was combining the concepts tested on three former wrangling passages into a single context, hoping to further reduce students' cognitive load. We knew we needed to cut items down to the \~30 range, but found it very difficult to identify those items that were bringing the least to the current assessment. Interestingly, this involved almost no large disagreements between team members--there were no particularly polarizing items, like we observed during the faculty interviews--rather, we all genuinely couldn't identify any items we wanted to cut.
 
 We did eventually make rounds of sacrificial cuts, choosing to prioritize culling questions that even slightly overlapped and those that were most straightforward. We acknowledged the tradeoff that this may lead to students taking the assessment in a pre-test context unable to confidently answer a majority of the questions. However, we were constrained by the need for an instrument that could reasonably be given in an hour, and cutting out several entire passages was the only way forward. Nevertheless, there were a handful of similar items that we decided to keep for the student interviews, such as two pseudocode chunks (in Movie Wrangling) that varied by a single statement. Here, we were ambivalent on which would be more effective, and hoped to let student feedback dictate whether one "stuck" better.
 
-
 ## Phase 2: Student Interviews
 
-The chief purpose of Phase 2 was to see if the topics covered would be in the wheelhouse of students with DS exposure, as well as continuing to refine wording and pacing. With the big picture questions around "what is data science" previously discussed, a similar series of interviews with Duke Statistical Science students allowed us to start drilling down and seeing if items landed the way we thought they would. 
+The chief purpose of Phase 2 was to see if the topics covered would be in the wheelhouse of students with DS exposure, as well as continuing to refine wording and pacing. With the big picture questions around "what is data science" previously discussed, a similar series of interviews with Duke Statistical Science students allowed us to start drilling down and seeing if items landed the way we thought they would.
 
 To reflect this different type of feedback being solicited, we omitted the initial "big picture" questions while interviewing TAs. Combined with the fact that that the assessment was now about half the original length, these interviews were only one hour long. The final portion of big picture questions was kept, though, with slightly modified prompts: Are the pacing and length appropriate? Based on what you remember learning in intro data science, what topics are missing from the current assessment? Based on what you remember learning in intro data science, what is in the current assessment, but doesn't belong?
 
 We first reached out in November 2022 to all TAs at that time for STA 199 or STA 198, its health-themed analog. However, we were unable to recruit any students so close to finals, and ended up reaching out to the same group in January. The interviews were conducted in early February, thus consisting of students who were at least TAs for STA199 in the previous Fall semester. The three students recruited were, in order of interview:
 
 | Name      | Degree Year and Level  | Program                                    |
-|-----------|------------------------|--------------------------------------------|
+|----------------|--------------------|-------------------------------------|
 | Student A | 2nd year Masters       | Statistical Science                        |
 | Student B | 4th year Undergraduate | Economics major, Statistical Science minor |
 | Student C | 1st year Masters       | Statistical Science                        |
 
-In general, while still engaging well and demonstrating a strong command of DS skills, the students tended to be much less verbose in their feedback. Across all interviews, a former item on [Realty Tree] that asked students to trace a non-trivial regression tree four times stood out as an interruption to the otherwise smooth flow of the assessment. Also, on a more cosmetic note, all students suggested that plots which had used `theme_minimal()` be modified to more clearly show which titles corresponded to which faceted subplots--this stood out to me, as I am someone who also has taken many Duke Statistical Science courses, which are often `theme_minimal()` heavy.
+In general, while still engaging well and demonstrating a strong command of DS skills, the students tended to be much less verbose in their feedback. Across all interviews, a former item on \[Realty Tree\] that asked students to trace a non-trivial regression tree four times stood out as an interruption to the otherwise smooth flow of the assessment. Also, on a more cosmetic note, all students suggested that plots which had used `theme_minimal()` be modified to more clearly show which titles corresponded to which faceted subplots--this stood out to me, as I am someone who also has taken many Duke Statistical Science courses, which are often `theme_minimal()` heavy.
 
-Other issues revealed during interviews was the question order. We originally arranged items near others testing a similar topic to facilitate our iterative editing. However, there was a clear case of cognitive priming in Student A's interview. Having just correctly answered [Image Recognition], he then immediately jumped to examining ethical implications in the following item, [Application Screening], while the faculty members who had answered the questions in a different order required more consideration. As well, Student B was the first interviewee to answer incorrectly to the item I think is the single trickiest (\#3 in [Austen Gender]), and best written in terms of getting students to think critically about what exactly plots represent. This stood out to me, as she was the only undergraduate interviewed; we observed a stratification of data science comfortability even among TAs. Finally, Student C was the quickest interviewee to run through the questions, answering all correctly and citing the logic we were looking for. As the most relative newcomer to the Duke Statistical Science program and having graduated from an undergraduate data science program that used Python, we interpreted his notable ease in getting through all questions in much less than an hour as a good sign that the current length might be ideal for students, who would be less experienced with the material but would also not have to think aloud or give feedback.
-
+Other issues revealed during interviews was the question order. We originally arranged items near others testing a similar topic to facilitate our iterative editing. However, there was a clear case of cognitive priming in Student A's interview. Having just correctly answered \[Image Recognition\], he then immediately jumped to examining ethical implications in the following item, \[Application Screening\], while the faculty members who had answered the questions in a different order required more consideration. As well, Student B was the first interviewee to answer incorrectly to the item I think is the single trickiest (#3 in \[Austen Gender\]), and best written in terms of getting students to think critically about what exactly plots represent. This stood out to me, as she was the only undergraduate interviewed; we observed a stratification of data science comfortability even among TAs. Finally, Student C was the quickest interviewee to run through the questions, answering all correctly and citing the logic we were looking for. As the most relative newcomer to the Duke Statistical Science program and having graduated from an undergraduate data science program that used Python, we interpreted his notable ease in getting through all questions in much less than an hour as a good sign that the current length might be ideal for students, who would be less experienced with the material but would also not have to think aloud or give feedback.
 
 ### Regrouping to synthesize feedback/final pilot assessment
 
-Not many changes were made following the student interviews in Phase B: a sign that we were converging on a viable prototype for distribution. To remedy the priming issue encountered in Student A's interview, we shuffled the question order between the student B and C interviews and landed on a solid layout: distributing topics well throughout and gradually ramping up our intended difficulty to prevent less-knowledgeable students from getting frustrated and giving up early on. As part of this pacing reform, we improved the flow of the assessment by reformatting [Movie Budgets 2] from five nearly-identical items into a single matrix. 
+Not many changes were made following the student interviews in Phase B: a sign that we were converging on a viable prototype for distribution. To remedy the priming issue encountered in Student A's interview, we shuffled the question order between the student B and C interviews and landed on a solid layout: distributing topics well throughout and gradually ramping up our intended difficulty to prevent less-knowledgeable students from getting frustrated and giving up early on. As part of this pacing reform, we improved the flow of the assessment by reformatting \[Movie Budgets 2\] from five nearly-identical items into a single matrix.
 
 ### Final assessment themes
 
-somethign good would be good to have content: use 15 passages and assign them to rough buckets
-will do this after 2/21 meeting in whcih we will finalize passage names and order
+The following table summarizes the learning objectives for each item in the most current version of the assessment.
 
-our previous reviews are in [here](https://drive.google.com/drive/u/0/folders/1r_o_vhb0GakgQz9UpvUcnQRxKVVtriFf) ( I guess leave item \# blank for now?)
-
-| Passage               | Item Number | Learning Objective(s) |
-|-----------------------|-------------|-----------------------|
-| Storm Paths           |             |                       |
-| Movie Budgets 1       |             |                       |
-| Movie Budgets 2       |             |                       |
-| Application Screening |             |                       |
-| Banana Conclusions    |             |                       |
-| COVID Map             |             |                       |
-|                       |             |                       |
-| Disease Screening     |             |                       |
-|                       |             |                       |
-|                       |             |                       |
-|                       |             |                       |
-| Austen Gender         |             |                       |
-|                       |             |                       |
-|                       |             |                       |
-| Recreate Unemployment |             |                       |
-| Realty Tree           |             |                       |
-|                       |             |                       |
-| Website Testing       |             |                       |
-|                       |             |                       |
-|                       |             |                       |
-| Image Recognition     |             |                       |
-| Data Confidentiality  |             |                       |
-| Activity Journal      |             |                       |
-| Movie Wrangling       |             |                       |
-|                       |             |                       |
-|                       |             |                       |
-|                       |             |                       |
-|                       |             |                       |
-|                       |             |                       |
+| Passage               | Learning Objective(s)                                                             |
+|-----------------------|-----------------------------------------------------------------------------------|
+| Storm Paths           | simulated data; interpreting uncertainty                                          |
+| Movie Budgets 1       | comparing summary statistics visually                                             |
+| Movie Budgets 2       | $R^2$; comparing trends visually                                                  |
+| Application Screening | ethics; proxy variable                                                            |
+| Banana Conclusions    | causation; statistical communication                                              |
+| COVID Map             | interpreting complex visualization; spatial data; time series data                |
+|                       | interpreting complex visualization; sophisticated scales                          |
+| Disease Screening     | comparing classification diagnostics visually                                     |
+|                       | comparing classification diagnostics visually                                     |
+|                       | comparing classification diagnostics visually                                     |
+|                       | comparing classification diagnostics visually                                     |
+| Austen Gender         | interpreting basic visualization                                                  |
+|                       | interpreting basic visualization                                                  |
+|                       | interpreting basic visualization; sophisticated scales                            |
+| Recreate Unemployment | data to visualization process                                                     |
+| Realty Tree           | modeling; regression tree                                                         |
+|                       | modeling; regression tree; variable selection                                     |
+| Website Testing       | interpret trends visually; visualize uncertainty; time series data                |
+|                       | interpret trends visually; visualize uncertainty; time series data; extrapolation |
+|                       | interpret trends visually; visualize uncertainty; time series data; extrapolation |
+| Image Recognition     | ethics; representativeness of training data                                       |
+| Data Confidentiality  | ethics; data deidentification                                                     |
+| Activity Journal      | structuring data; storing data                                                    |
+| Movie Wrangling       | data cleaning; column-wise operations; string operations                          |
+|                       | data cleaning; column-wise operations; string operations                          |
+|                       | data cleaning; extrapolation                                                      |
+|                       | data wrangling; pseudocode, joins                                                 |
+|                       | data wrangling; pseudocode, joins                                                 |
+|                       | data wrangling; pseudocode, joins                                                 |
 
 ## Phase 3: Large-scale Student Pilot
-
 
 Looking ahead, the next step after individual item tweaking and refinement will be real-world measurements of pacing and length and the feasibility for introductory data science students. Collaborating with the professors of Duke's Introductory Data Science Course STA199, \_\_\_ students across three sections will be invited to take the assessment, on their own time, for a chance to earn extra credit in the course. We will not solicit general feedback like in the previous interviews, instead asking just a single question at the end to get a rough estimate of how long it took to complete, since they will be doing it on their own time. The extra credit points students receive will not reflect their performance on the assessment, but rather will be simply awarded proportionally to how much was completed. To ensure students are actively engaging with the questions, there will be \_\_\_ attention checks scattered throughout that must also be passed to earn credit.
 
