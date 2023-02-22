@@ -1,22 +1,762 @@
 # Appendix A: Current Assessment Prototype {.unnumbered}
 
-## Quarto
-
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
 ```{r}
-1 + 1
+#| label: common-R
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  cache = TRUE,
+  fig.align = "center", 
+  out.width = "90%",
+  fig.asp = 0.618,
+  fig.width = 8
+)
+
+# load packages
+library(tidyverse)
+library(viridis)
+library(colorblindr)
+library(ggridges)
+library(broom)
+library(kableExtra)
+library(ggmosaic) # devtools::install_github("haleyjeppson/ggmosaic")
+library(patchwork)
+library(sf)
+library(maps)
+library(openintro)
+library(scales)
+library(ggtext)
+library(PNWColors)
+library(gt)
+library(tidycensus)
+library(geofacet)
+library(zoo)
+library(mosaicData)
 ```
 
-You can add options to executable code like this
+## Storm Paths {#sec-storm-paths}
+
+The figure below shows a forecast after simulating 50 potential paths for a large storm. The two points (a) and (b) represent two cities. Which city is more likely to be hit by the storm? Explain.
 
 ```{r}
+knitr::include_graphics("figs/hurricane_andy.png")
+```
+
+    a. City a
+    b. City b
+
+## Movie Budgets 1 {#sec-movie-budgets-1}
+
+A data scientist at IMDb has been given a dataset comprised of the revenues and budgets for 2,349 movies made between 1986 and 2016.
+
+Suppose they want to compare several distributional features of the budgets among four different genres---Horror, Drama, Action, and Animation. To do this, they create the following plots.
+
+```{r fig.asp=1}
+movies <- read_csv("https://raw.githubusercontent.com/danielgrijalva/movie-stats/master/movies.csv")
+
+# Select subset of movies
+genre_list <- c("Action", "Animation", "Drama", "Horror")
+set.seed(12345)
+movies_2 = movies %>%
+  filter(genre %in% genre_list, budget > 0, budget < 300000000) %>%
+  sample_n(n())
+
+# Bar chart
+p1 = movies_2 %>%
+  group_by(genre) %>%
+  summarise(mean_budget = mean(budget)) %>%
+  ggplot(aes(x = genre, y = mean_budget, fill = genre)) +
+  labs(
+    x = "",
+    y = "",
+    title = "Plot A: Mean budget (in U.S. dollars)"
+  ) +
+  geom_col(alpha = 0.8, color = "black") +
+  scale_y_continuous(labels = scales::dollar_format(accuracy = 1, scale = (1 / 1000000), prefix = "$", suffix = "M"), limits = c(0, 100000000)) +
+  scale_fill_manual(
+    values = c("#6e7cb9", "#7bbcd5", "#e89c81", "#d2848d") # PNWColors::pnw_palette(name = "Sailboat", n = 4)
+  ) +
+  coord_flip() +
+  theme_bw() +
+  theme(legend.position = "none")
+
+
+# Ridge plot
+p2 = ggplot(movies_2, aes(x = budget, y = genre, fill = genre)) +
+  geom_density_ridges(alpha = 0.8) +
+  labs(
+    x = "",
+    y = "",
+    title = "Plot B: Budget (in U.S. dollars)"
+  ) +
+  scale_x_continuous(labels = scales::dollar_format(accuracy = 1, scale = (1 / 1000000), prefix = "$", suffix = "M"), limits = c(0, 300000000)) +
+  scale_fill_manual(
+    values = c("#6e7cb9", "#7bbcd5", "#e89c81", "#d2848d") # PNWColors::pnw_palette(name = "Sailboat", n = 4)
+  ) +
+  theme_bw() +
+  theme(legend.position = "none")
+
+
+# Strip plot
+p3 = ggplot(data = movies_2, aes(x = genre, y = budget, fill = genre)) +
+  geom_point(alpha = 0.8, color = "black", pch = 21) +
+  labs(
+    x = "",
+    y = "",
+    title = "Plot C: Budget (in U.S. dollars)"
+  ) +
+  scale_y_continuous(labels = scales::dollar_format(accuracy = 1, scale = (1 / 1000000), prefix = "$", suffix = "M"), limits = c(0, 300000000)) +
+  scale_fill_manual(
+    values = c("#6e7cb9", "#7bbcd5", "#e89c81", "#d2848d") # PNWColors::pnw_palette(name = "Sailboat", n = 4)
+  ) +
+  theme_bw() +
+  theme(legend.position = "none") +
+  coord_flip()
+
+
+p4 = ggplot(data = movies_2, aes(x = genre, y = budget, fill = genre)) +
+  geom_boxplot(alpha = 0.8, color = "black") +
+  labs(
+    x = "",
+    y = "",
+    title = "Plot D: Budget (in U.S. dollars)"
+  ) +
+  scale_y_continuous(labels = scales::dollar_format(accuracy = 1, scale = (1 / 1000000), prefix = "$", suffix = "M"), limits = c(0, 300000000)) +
+  scale_fill_manual(
+    values = c("#6e7cb9", "#7bbcd5", "#e89c81", "#d2848d") # PNWColors::pnw_palette(name = "Sailboat", n = 4)
+  ) +
+  theme_bw() +
+  theme(legend.position = "none") +
+  coord_flip()
+
+
+# Layut plots
+p1 / p2 / p3 / p4
+```
+
+Fill in the following table by placing a checkmark in the cells corresponding to the attributes of the data that can be determined by examining each of the plots.
+
+|        | Plot A | Plot B | Plot C | Plot D |
+|--------|:------:|:------:|:------:|:------:|
+| Mean   | \[ \]  | \[ \]  | \[ \]  | \[ \]  |
+| Median | \[ \]  | \[ \]  | \[ \]  | \[ \]  |
+| IQR    | \[ \]  | \[ \]  | \[ \]  | \[ \]  |
+| Shape  | \[ \]  | \[ \]  | \[ \]  | \[ \]  |
+
+## Movie Budgets 2 {#sec-movie-budgets-2}
+
+For each genre, the data scientist also fitted a regression line to model the relationship between movies' budgets and their revenues. A scatterplot of this relationship, along with the fitted regression line, is shown for each of the four genres below. For which genre would the fitted regression model produce the highest $R^2$ value? Explain.
+
+```{r}
+movies <- read_csv("https://raw.githubusercontent.com/danielgrijalva/movie-stats/master/movies.csv")
+
+# Select subset of movies
+genre_list <- c("Action", "Animation", "Drama", "Horror")
+set.seed(12345)
+movies_2 = movies %>%
+  filter(genre %in% genre_list, budget > 0) %>%
+  sample_n(n())
+```
+
+```{r}
+#| fig.asp = 1
+ggplot(data = movies_2, mapping = aes(x = budget, y = gross, fill = genre)) +
+  geom_point(alpha = 0.5, pch = 21, color = "black") +
+  labs(
+    x = "Budget",
+    y = "Revenue"
+  ) +
+  geom_smooth(method = "lm", se = FALSE) +
+  facet_wrap(~genre, ncol = 1) +
+  scale_fill_manual(
+    values = c("#6e7cb9", "#7bbcd5", "#e89c81", "#d2848d") # PNWColors::pnw_palette(name = "Sailboat", n = 4)
+  ) +
+  scale_x_continuous(labels = scales::dollar_format(accuracy = 0.1, scale = (1 / 1000000000), prefix = "$", suffix = "B")) +
+  scale_y_continuous(labels = scales::dollar_format(scale = (1 / 1000000000), prefix = "$", suffix = "B")) +
+  theme_bw() +
+  theme(legend.position = "none")
+```
+
+## Application Screening {#sec-application-screening}
+
+You are working on a team that is making a deterministic model to quickly screen through applications for a new position at the company. Based on employment laws, your model may not include variables such as age, race, and gender, which could be potentially discriminatory.
+
+Your colleague suggests including a rule that eliminates candidates with more than 20 years of previous work experience, because they may have high salary expectations. Are there ethical implications of using this variable to select candidates? Explain your answer.
+
+## Banana Conclusions {#sec-banana-conclusions}
+
+Data scientists at [FiveThirtyEight](https://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition/) administered a food frequency questionnaire. With 54 complete responses they found that people who ate bananas tended to score higher on the SAT verbal section than the SAT math section ($p=0.0073$). An article reporting the results of this study has the headline, *"Eat more bananas to score higher on the SAT verbal section"*. Is this headline accurate, or could it be misleading? Explain.
+
+## COVID Map {#sec-COVID-map}
+
+The visualization below displays the 14-day rolling average of new COVID-19 cases January 1 - August 31, 2021 in the United States. Each plot represents a state or Washington, D.C., and is labeled using the state's abbreviation (e.g., MA = Massachusetts). The shaded area under each curve represents the increase in new cases since the state's minimum point in 2021. This is a recreation of a similar plot that originally appeared in the New York Times.
+
+```{r}
+#| eval: false
+knitr::include_graphics("figs/covid_map.png")
+```
+
+<!--# # Code for plot from https://livefreeordichotomize.com/2021/04/07/nytimes-map-how-to/ -->
+
+```{r}
+#| label: read-in data
 #| echo: false
-2 * 2
+
+# Need Census API Key
+#pop <- get_acs(geography = "state", variables = "B01003_001", year = 2019)
+cases <- read_csv("https://github.com/nytimes/covid-19-data/raw/master/us-states.csv")
+pop <- read_csv("data/us-population-2019.csv")
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+```{r}
+#| label: data-wrangling
+#| echo: false
+
+# use 14 day average
+d <- cases %>%
+  group_by(state) %>%
+  mutate(case = c(cases[1], diff(cases))) %>%
+  ungroup() %>%
+  filter(!(date == as.Date("2021-03-08") & state == "Missouri")) %>% 
+  left_join(pop, by = c("fips" = "GEOID")) %>%
+  group_by(state) %>%
+  arrange(date) %>%
+  mutate(
+    case_14 = rollmean(case, k = 14, fill = NA),
+    case_per_100 = (case_14 / estimate) * 100000) %>%
+  ungroup() %>%
+  filter(date >= as.Date("2021-01-01"), date < as.Date("2021-09-01"))
+
+states <- tibble(state = state.name,
+                 state_ = state.abb, 
+                 region = state.region) %>%
+   add_row(state = "District of Columbia", state_ = "DC", 
+           region = "South") %>%
+  mutate(if_else(region == "North Central", "Midwest", region))
+
+d <- left_join(d, states, by = "state") %>%
+  filter(!is.na(state_))
+```
+
+```{r}
+#| label: find-min
+#| echo: false
+
+
+# find the minimum for each state
+d <- d %>% 
+  group_by(state) %>%
+  slice_min(case_per_100) %>%
+  slice(1) %>%
+  mutate(min_date = date) %>%
+  select(min_date, state) %>%
+  left_join(d, by = "state") %>%
+  mutate(col = ifelse(date >= min_date, "yes", "no"))
+```
+
+```{r}
+#| label: make-plot
+#| echo: false
+
+ggplot(d, aes(x = date, y = case_per_100)) +
+  geom_line(aes(color = region)) + 
+ # geom_line(color = "navy") + 
+ # geom_area(aes(alpha = col), fill = "navy") +
+  geom_area(aes(alpha = col, fill = region)) +
+  scale_alpha_discrete(range = c(0, 0.7)) +
+  facet_geo(~state_, grid = "us_state_grid2") + 
+  theme_minimal() +
+  scale_fill_OkabeIto(order = c(1, 3, 5, 7)) +
+  scale_color_OkabeIto(order = c(1, 3, 5, 7)) +
+  labs(x = "", 
+       y = "",
+       title = "14-day average of new COVID-19 cases per 100,000 people", 
+       subtitle = "January - August 2021", 
+       fill = "Region") + 
+  guides(alpha = "none", 
+         color = "none") +
+  theme(axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.grid.major.x = element_blank(),
+        legend.position = "bottom", 
+        plot.title = element_text(hjust = 0.5), 
+        plot.subtitle = element_text(hjust = 0.5))
+  
+```
+
+<!-- <br> -->
+
+<!-- The overall US trend during this time period is below. -->
+
+```{r eval = FALSE}
+#| label: overall-us-trend
+#| echo: false
+
+states <- tibble(state = state.name,
+                 state_ = state.abb) %>%
+   add_row(state = "District of Columbia", state_ = "DC")
+
+d_overall <- cases %>%
+  group_by(state) %>%
+  mutate(case = c(cases[1], diff(cases))) %>%
+  ungroup() %>%
+  left_join(pop, by = c("fips" = "GEOID")) %>%
+  left_join(states, by = "state") %>%
+  filter(!is.na(state_))
+
+# get overall us population + add it to the data
+us_pop <- d_overall |>
+  distinct(state, estimate) |>
+  summarise(total = sum(estimate))
+
+# calculate total cases by date 
+d_overall <- d_overall |>
+  group_by(date) |>
+  summarise(total_cases = sum(cases)) |>
+  ungroup()
+
+# calculate new cases by date and add population 
+d_overall <- d_overall |>
+  arrange(date) |>
+   mutate(new_cases = c(d_overall$total_cases[1], diff(d_overall$total_cases))) |>
+  mutate(us_pop = us_pop$total)
+
+
+## calculate rolling 14-day average
+d_overall <- d_overall |> 
+  mutate(
+    case_14 = rollmean(new_cases, k = 14, fill = NA),
+    case_per_100 = (case_14 / us_pop) * 100000) |>
+  filter(date >= as.Date("2021-01-01"), date < as.Date("2021-09-01"))
+
+```
+
+```{r eval = FALSE}
+#| label: find-minimum
+#| echo: false
+
+min_date_us <- d_overall %>% 
+  arrange(case_per_100) %>%
+  slice(1) %>%
+  select(date) %>% pull() 
+
+d_overall <- d_overall %>% 
+  mutate(col = if_else(date >= min_date_us, "yes", "no"))
+```
+
+```{r eval = FALSE}
+#| label: make-overall-plot
+#| echo: false
+
+ggplot(d_overall, aes(x = date, y = case_per_100)) +
+  geom_line(color = "navy") + 
+  geom_area(aes(alpha = col), fill = "navy") +
+  scale_alpha_discrete(range = c(0, 0.7)) +
+  theme_minimal() +
+  labs(x = "", 
+       y = "",
+       title = "United States 14-day rolling average of new COVID-19 cases per 100,000 people", 
+       subtitle = "January - August 2021") + 
+  theme(axis.text.y = element_blank(),
+        axis.ticks = element_blank(),
+      #  panel.grid.minor.x = element_blank(),
+      #  panel.grid.major.x = element_blank(),
+        legend.position = "none", 
+        plot.title = element_text(hjust = 0.5), 
+        plot.subtitle = element_text(hjust = 0.5))
+```
+
+<br>
+
+What do we learn from this plot about COVID-19 cases in the US?
+
+Compare KY (Kentucky) in the South region to CA (California) in the West region. Based on this plot, can we conclude there was a difference in overall number of COVID cases in KY and CA in August 2021? Explain.
+
+## He Said She Said {#sec-he-said-she-said}
+
+For each of the following items, indicate whether the statement is TRUE, FALSE, or whether you would need additional information to determine this. If you can determine the statement is true/false, indicate the evidence that you used to make that determination. If you need additional information to make that determination, indicate what else you would need.
+
+```{r}
+knitr::include_graphics("figs/austen_gender.png")
+```
+
+Men in Austen's novels are more likely to have 'dared', 'expected', and 'ran' than women.
+
+<!-- -->
+
+a.  True
+b.  False
+c.  Need additional information to determine this
+
+<!-- -->
+
+Women in Austen's novels are more likely to have 'remembered', 'felt', and 'cried' than men.
+
+<!-- -->
+
+a.  True
+b.  False
+c.  Need additional information to determine this
+
+<!-- -->
+
+Women in Austen's novels are more likely to have 'remembered' than 'feared'.
+
+<!-- -->
+
+a.  True
+b.  False
+c.  Need additional information to determine this
+
+## Build-a-Plot {#sec-build-a-plot}
+
+The following is an intensity map of the unemployment rate among adults in the counties in the United States (based on data from 2019).
+
+```{r}
+dfips <- maps::county.fips %>%
+  as_tibble() %>%
+  extract(polyname, c("region", "subregion"), "^([^,]+),([^,]+)$")
+map_county <- map_data("county") %>%
+  as_tibble() %>%
+  left_join(dfips) %>%
+  mutate(fips = case_when(
+    subregion == "okaloosa" & region == "florida" ~ 12091L,
+    subregion == "st martin" & region == "louisiana" ~ 22099L,
+    subregion == "currituck" & region == "north carolina" ~ 37053L,
+    # Oglala Lakota Count, see https://en.wikipedia.org/wiki/Oglala_Lakota_County,_South_Dakota
+    subregion == "shannon" & region == "south dakota" ~ 46113L,
+    subregion == "galveston" & region == "texas" ~ 48167L,
+    subregion == "accomack" & region == "virginia" ~ 51001L,
+    subregion == "pierce" & region == "washington" ~ 53053L,
+    subregion == "san juan" & region == "washington" ~ 53055L,
+    TRUE ~ fips
+  ))
+county_for_map <- county_complete %>%
+  select(fips, name, state, poverty_2019, unemployment_rate_2019, homeownership_2010, median_household_income_2017)
+map_county <- map_county %>%
+  left_join(county_for_map, by = "fips")
+
+ggplot(map_county, aes(x = long, y = lat, group = group)) +
+  geom_polygon(aes(fill = unemployment_rate_2019), color = "gray", size = 0.05) +
+  scale_fill_viridis_c(option = "E", labels = label_percent(scale = 1, accuracy = 1)) +
+  labs(x = NULL, y = NULL, fill = "Unemployment\nrate") +
+  theme_minimal(base_size = 14) +
+  theme(
+    axis.title.x = element_blank(),
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    axis.title.y = element_blank(),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    legend.position = "top",
+    legend.direction = "horizontal",
+    legend.key.width = unit(2, "cm")
+  ) +
+  coord_quickmap()
+```
+
+Indicate which of the following data you need to recreate this map? (Select all that apply.)
+
+    -   [ ] County boundaries
+    -   [ ] Unemployment rate in each county
+    -   [ ] Number of adults living in each county
+    -   [ ] Number of unemployed adults living in each county
+    -   [ ] Total population of the county
+
+## Disease Screening {#sec-disease-screening}
+
+COVID screening tests are not 100% accurate. It's possible to have COVID but not test positive or not have COVID but test positive for it. The following three visualizations display the outcomes of a COVID screening test with a sensitivity (true positive rate) of 98.1% and specificity (true negative rate) of 99.6% in a population where 5% of the individuals have COVID.
+
+We are also interested in the false positive (individuals classified as with COVID, who don't actually have it) and false negative (individuals classified as without COVID, but who do actually have it) rates.
+
+```{r}
+#| fig-asp: 0.3
+# https://www.fda.gov/medical-devices/coronavirus-disease-2019-covid-19-emergency-use-authorizations-medical-devices/eua-authorized-serology-test-performance
+# IgG 	Sensitivity (PPA) 	98.1% (51/52) 	(89.9%; 99.7%)
+# IgG 	Specificity (NPA) 	99.6% (2000/2008) 	(99.2%; 99.8%)
+
+sensitivity <- 0.981
+specificity <- 0.996
+n_disease <- 1000
+n_no_disease <- 19000
+n_disease_positive <- n_disease * sensitivity
+n_disease_negative <- n_disease - n_disease_positive
+n_no_disease_negative <- n_no_disease * specificity
+n_no_disease_positive <- n_no_disease - n_no_disease_negative
+
+
+disease_status <- c(rep("Disease", n_disease), rep("No disease", n_no_disease))
+test_outcome <- c(
+  rep("Positive", n_disease_positive), rep("Negative", n_disease_negative),
+  rep("Positive", n_no_disease_positive), rep("Negative", n_no_disease_negative)
+)
+population <- tibble(disease_status = disease_status, test_outcome = test_outcome)
+
+p1 <- ggplot(population, aes(x = disease_status, fill = test_outcome)) +
+  geom_bar() +
+  scale_fill_OkabeIto() +
+  theme_minimal() +
+  labs(x = "Truth", y = "Count", fill = "Test\noutcome")
+
+p2 <- ggplot(population, aes(x = disease_status, fill = test_outcome)) +
+  geom_bar(position = "fill") +
+  scale_fill_OkabeIto() +
+  theme_minimal() +
+  labs(x = "Truth", y = "Proportion", fill = "Test\noutcome")
+
+p3 <- ggplot(data = population) +
+  geom_mosaic(aes(x = product(disease_status), fill = test_outcome),
+    show.legend = FALSE
+  ) +
+  theme_mosaic() +
+  scale_fill_OkabeIto() +
+  labs(x = "Truth", y = "Test outcome")
+
+(p1 + p2 + p3) +
+  plot_layout(guides = "collect") +
+  plot_annotation(tag_levels = "A")
+```
+
+Fill in the following table by placing a checkmark in the cells corresponding to the attributes of the data that can be determined by examining each of the plots.
+
+|                     | Plot A | Plot B | Plot C |
+|---------------------|:------:|:------:|:------:|
+| Sensitivity         | \[ \]  | \[ \]  | \[ \]  |
+| Specificity         | \[ \]  | \[ \]  | \[ \]  |
+| False positive rate | \[ \]  | \[ \]  | \[ \]  |
+| False negative rate | \[ \]  | \[ \]  | \[ \]  |
+
+## Realty Tree {#sec-realty-tree}
+
+A realtor has trained a regression tree to predict the price of a house from features such as number of bedrooms, number of bathrooms, number of fireplaces, and size of the living area.
+
+```{dot}
+digraph Tree {
+    graph [ratio = "auto", ordering = "out"]
+    
+// parent nodes
+node [shape = "ellipse", style = "filled", fillcolor = "khaki1", fontname = "Helvetica"]
+
+
+a1 [label = "Living Area \n p < .001"]
+b1 [label = "Living Area \n p < .001"]
+b2 [label = "Living Area \n p < .001"]
+c1 [label = "Living Area \n p < .001"]
+c2 [label = "Bathrooms \n p < .001"]
+c3 [label = "Bathrooms \n p < .001"]
+c4 [label = "Fireplaces \n p < .001"]
+d1 [label = "Bathrooms \n p < .001"]
+d2 [label = "Living Area \n p < .001"]
+
+// leaf nodes
+node [shape = "rectangle", style = "rounded,filled" fillcolor = "dodgerblue4", fontname = "Helvetica-Bold", fontcolor = "white"]
+
+e1 [label = "n = 224 \n y = $130,444"]
+e2 [label = "n = 336 \n y = $151,424"]
+e3 [label = "n = 238 \n y = $184,248"]
+e4 [label = "n = 229 \n y = $210,950"]
+e5 [label = "n = 47 \n y = $258,345"]
+e6 [label = "n = 45 \n y = $214,802"]
+e7 [label = "n = 102 \n y = $294,349"]
+e8 [label = "n = 209 \n y = $262,972"]
+e9 [label = "n = 82 \n y = $326,267"]
+e10 [label = "n = 15 \n y = $501,876"]
+
+// edges
+edge [style = "bold", fontname = "Helvetica-Bold"]
+
+// order these lines are written does matter to specify L to R placement
+ a1 -> b1 [label = "  &le; 1988 ft.&sup2;     "]
+ a1 -> b2 [label = "  > 1988 ft.&sup2;"]
+ b1 -> c1 [label = "&le; 1483 ft.&sup2;               "]
+ b1 -> c2 [label = "   > 1483 ft.&sup2;"]
+ b2 -> c3 [label = "  &le; 2816 ft.&sup2;"]
+ b2 -> c4 [label = "  > 2816 ft.&sup2;"]
+ c1 -> e1 [label = "     &le; 1080 ft.&sup2;       "]
+ c1 -> d1 [label = "   > 1080 ft.&sup2;      "]
+ c3 -> e8 [label = "  &le; 1.5"] 
+ c3 -> d2 [label = "  > 1.5"]
+ d1 -> e2 [label = " &le; 1.5     "]
+ d1 -> e3 [label = "  > 1.5"]
+ c2 -> e4 [label = " &le; 1.5"]
+ c2 -> e5 [label = "  > 1.5"]
+ d2 -> e6 [label = "   &le; 2576 ft.&sup2;          "]
+ d2 -> e7 [label = "  > 2576 ft.&sup2;"]
+ c4 -> e9 [label = "   &le; 1"]
+ c4 -> e10 [label = "   >1"]
+
+}
+```
+
+What price would the tree predict for a house with 3200 ft.^2^ of living area, 1.5 bathrooms, and 1 fireplace?
+
+-   [ ] \$262,972
+-   [ ] \$326,267
+-   [ ] \$501,876
+-   [ ] Can't be determined from the information given.
+
+What price would the tree predict for a house with 1200 ft.^2^ of living area and 1.5 bathrooms?
+
+-   [ ] \$151,424
+-   [ ] \$184,248
+-   [ ] \$210,950
+-   [ ] Can't be determined from the information given.
+
+## Website Testing {#sec-website-testing}
+
+An e-commerce company is working on their website design and is interested in knowing whether having the website mainly in blue or red would lead to better business outcomes. One outcome they are measuring is the number of returning users to the website. They design two versions of the website one in blue and the other in red. A random half of the visitors see the website in blue and the other half see it in red. The plot shows the number of returning users per day for the two different versions of the website.
+
+```{r}
+knitr::include_graphics("figs/website_red_blue.png")
+```
+
+Indicate whether each of the following conclusions are valid. Explain.
+
+Over time the company is getting more returning users regardless of the version of the website.
+
+    a.  Valid
+    b.  Invalid
+    c.  Cannot determine this from the plot.
+
+On the 31st day, the blue version of the website is expected to have higher number of returning users.
+
+    a.  Valid
+    b.  Invalid
+    c.  Cannot determine this from the plot.
+
+On the 60th day, the blue version of the website is expected to have higher number of returning users.
+
+    a.  Valid
+    b.  Invalid
+    c.  Cannot determine this from the plot.
+
+## Image Recognition {#sec-image-recognition}
+
+A data science student wants to create an image recognition algorithm to identify whether a university professor belongs to a department in the sciences or not. To do this, she collects data by scraping several university photo archives of university faculty. She labels faculty in the photos as "Sciences" or "Not sciences". The images below depict a small representative sample of her data.
+
+**Sciences**
+
+```{r out.width="70%"}
+knitr::include_graphics("figs/image_recognition_b.png")
+```
+
+**Not sciences**
+
+```{r out.width="70%"}
+knitr::include_graphics("figs/image_recognition_a.png")
+```
+
+The data science student plans to use these photos of current university faculty to predict whether they are scientists. What concerns might you have about the predictions from this algorithm? Explain.
+
+## Data Confidentiality {#sec-data-confidentiality}
+
+A newspaper reports on the results of a survey from a small (\<2000 student) university. The university agrees to have the data released to the public so long as the students' identities and academic standing information are kept confidential. Select the safe combinations of variables that are unlikely to identify any individual students. Explain.
+
+<!-- -->
+
+a.  Class year and sports played
+b.  Student ID and dorm ZIP code
+c.  GPA and major
+d.  Birth date and phone number
+e.  None of the above
+
+## Activity Journal {#sec-activity-journal}
+
+Below is data that was recorded in an activity journal.
+
+```{r out.width = "80%"}
+knitr::include_graphics("figs/activity_journal.png")
+```
+
+A data scientist reformats the data into a table so that each variable represented in the data is recorded in a single column. Describe what each of the columns of this table will contain, as well as what each row or observation of the table will represent.
+
+## Movie Wrangling {#sec-movie-wrangling}
+
+The table below provides data about 10 movies released in the United States. It provides data on the movie's title (`title`), the movie's director (`director`), the date the movie was released (`release_date`), the season the movie was released (`season`), the worldwide gross intake in U.S. dollars (`gross`), the cleaned version of the worldwide gross intake in U.S. dollars (`gross_clean`), and whether or not the movie won the Best Picture Oscar (`best_picture`).
+
+```{r}
+movie_table <- read_csv("data/movie-table.csv")
+directors_table <- read_csv("data/directors-table.csv")
+
+kable(movie_table,
+  align = "l",
+  caption = "Movies Table",
+  booktabs = TRUE,
+  ) %>%
+  kable_styling(latex_options = c("striped", "scale_down"),
+                html_font = '"Courier"',
+                font_size = 14) %>%
+  row_spec(0, bold = TRUE)
+```
+
+23. Describe a process that you could use to generate the data in the `season` column using the information in the `release_date` column.
+
+24. Describe a process that you could use to generate the data in the `gross_clean` column using the information in the `gross` column.
+
+25. You have been tasked with adding a new column called `nominated_for_best_picture` which indicates whether or not each movie was nominated for the Best Picture Oscar ("Yes" if it was, "No" if it was not). Is there sufficient information in this dataset to generate this new column? Explain.
+
+The table below provides data about 10 movie directors. It provides data on the director's name (`director`), the number of Oscars the movie's director has been nominated for (`nominations`), and the number of Oscars the director has won (`oscars`).
+
+```{r}
+kable(directors_table,
+  align = "l",
+  caption = "Directors Table",
+  booktabs = TRUE,
+  ) %>%
+  kable_styling(latex_options = c("striped", "HOLD_position"),
+                html_font = '"Courier"',
+                font_size = 14) %>%
+  row_spec(0, bold = TRUE)
+```
+
+Use the data in the Movies Table and in the Directors Table to answer the following questions. For each question, what is the result of carrying out the given pseudocode (ie. code recipe)?
+
+26\.
+
+::: code
+[START_WITH(]{style="color:#1300ff;"}the Movies table[)]{style="color:#1300ff;"} [then]{style="font-style: italic;"}
+
+    [KEEP_ROWS_WHERE(]{style="color:#1300ff;"}the `season` value is `Fall`[)]{style="color:#1300ff;"} [then]{style="font-style: italic;"}
+
+    [COUNT(]{style="color:#1300ff;"}the number of rows[)]{style="color:#1300ff;"}
+:::
+
+27\.
+
+::: code
+[START_WITH(]{style="color:#1300ff;"}the Movies table[)]{style="color:#1300ff;"} [then]{style="font-style: italic;"}
+
+    [KEEP_ROWS_WHERE(]{style="color:#1300ff;"}the `season` value is `Fall`[)]{style="color:#1300ff;"} [then]{style="font-style: italic;"}
+
+    [COUNT(]{style="color:#1300ff;"}the number of rows[)]{style="color:#1300ff;"} [WHERE(]{style="color:#1300ff;"} `best_picture` value is `Yes`[)]{style="color:#1300ff;"}
+:::
+
+<!-- 28\. -->
+
+<!-- ::: code -->
+
+<!-- [START_WITH(]{style="color:#1300ff;"}the Movies table[)]{style="color:#1300ff;"} [then]{style="font-style: italic;"} -->
+
+<!--     [KEEP_ROWS_WHERE(]{style="color:#1300ff;"}the `season` value is `Fall`[)]{style="color:#1300ff;"} [then]{style="font-style: italic;"} -->
+
+<!--     [ADD_COLUMNS_FROM(]{style="color:#1300ff;"}the Director Table[)]{style="color:#1300ff;"} [MATCHING_BY(]{style="color:#1300ff;"}the `director` column[)]{style="color:#1300ff;"} [then]{style="font-style: italic;"} -->
+
+<!--     [COUNT(]{style="color:#1300ff;"}the number of rows[)]{style="color:#1300ff;"} [WHERE(]{style="color:#1300ff;"}`oscars` value is `3`[)]{style="color:#1300ff;"} [AND(]{style="color:#1300ff;"}`best_picture` value is `Yes`[)]{style="color:#1300ff;"} -->
+
+<!-- ::: -->
+
+28\.
+
+::: code
+[START_WITH(]{style="color:#1300ff;"}the Movies table[)]{style="color:#1300ff;"} [then]{style="font-style: italic;"}
+
+    [KEEP_ROWS_WHERE(]{style="color:#1300ff;"}the `season` value is `Fall` [then]{style="font-style: italic;"}
+
+    [ADD_COLUMNS_FROM(]{style="color:#1300ff;"}the Director Table[)]{style="color:#1300ff;"} [MATCHING_BY(]{style="color:#1300ff;"}the `director` column[)]{style="color:#1300ff;"} [then]{style="font-style: italic;"}
+
+    [COUNT(]{style="color:#1300ff;"}the number of rows[)]{style="color:#1300ff;"} [WHERE(]{style="color:#1300ff;"}`oscars` value is `3`[)]{style="color:#1300ff;"} [AND(]{style="color:#1300ff;"}`best_picture` value is `No`[)]{style="color:#1300ff;"}
+:::

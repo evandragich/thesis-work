@@ -1,22 +1,563 @@
 # Appendix B: Item Graveyard {.unnumbered}
 
-## Quarto
-
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
 ```{r}
-1 + 1
+#| label: common-R
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  cache = TRUE,
+  fig.align = "center",
+  out.width = "90%",
+  fig.asp = 0.618,
+  fig.width = 8
+)
+
+# load packages
+library(tidyverse)
+library(viridis)
+library(colorblindr)
+library(ggridges)
+library(broom)
+library(kableExtra)
+library(ggmosaic) # devtools::install_github("haleyjeppson/ggmosaic")
+library(patchwork)
+library(sf)
+library(maps)
+library(openintro)
+library(scales)
+library(ggtext)
+library(PNWColors)
+library(gt)
+library(tidycensus)
+library(geofacet)
+library(zoo)
+library(mosaicData)
 ```
 
-You can add options to executable code like this
+## Bikes and Scooters 1 {#sec-bikes-scooters-1}
+
+As a way to help the environment some cities in the U.S. are adding bike and e-scooter share stations which allow people to rent a bike or e-scooter for commuting or pleasure. The bikes and scooters are often kept at electronic docking stations at multiple locations around the cities. The following graphs were created using data from the Department of Transportation Statistics[^bikes-scooters-1-1] about public use of these shared dock systems in four U.S. cities---Chicago, Minneapolis, Portland, and Topeka.
+
+[^bikes-scooters-1-1]: Data from: https://data.bts.gov/d/7m5x-ubud/visualization
 
 ```{r}
-#| echo: false
-2 * 2
+bike <- read_csv("data/locations.csv")
+bike_scooter <- read_csv("data/bikes-and-escooters.csv")
+
+# Subset data
+bike01 <- bike %>%
+  filter(CITY %in% c("Chicago", "Minneapolis", "Topeka", "Portland")) %>%
+  group_by(CITY, YEAR) %>%
+  summarize(count = n()) %>%
+  ungroup() %>%
+  group_by(CITY) %>%
+  mutate(perc = count / sum(count)) %>%
+  ungroup()
+
+bike02 <- bike %>%
+  filter(CITY %in% c("Chicago", "Minneapolis", "Topeka", "Portland"))
+
+bike05 <- bike %>%
+  filter(CITY == "Topeka") %>%
+  group_by(YEAR) %>%
+  tally()
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+1.  Which of the four cities had the most bike docks in 2020? Explain how you determined this. Or if you cannot answer it from the visualization, explain why not.
+
+```{r}
+ggplot(bike02, aes(x = CITY, fill = as.factor(YEAR))) +
+  geom_bar(color = "black") +
+  theme_minimal() +
+  scale_fill_manual(values = PNWColors::pnw_palette(name = "Sailboat", n = 6)) +
+  labs(x = "City", y = "Number of Bike Docks", fill = "Year") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+```
+
+2.  The bar chart shows the the percentage of docks in each city that were bike docks for each year from 2015--2020.
+
+```{r out.width="90%"}
+# Stacked bar chart
+ggplot(bike01, aes(
+  x = CITY,
+  y = perc,
+  fill = reorder(as.factor(YEAR), desc(as.factor(YEAR)))
+)) +
+  geom_bar(stat = "identity", color = "black") +
+  theme_minimal() +
+  scale_fill_manual(
+    values = PNWColors::pnw_palette(name = "Sailboat", n = 6)
+  ) +
+  labs(x = "City", fill = "Year") +
+  scale_y_continuous(
+    name = "Percentage of Bike Docks",
+    breaks = seq(from = 0, to = 1, by = 0.1),
+    labels = paste0(seq(from = 0, to = 1, by = 0.1) * 100, "%")
+  ) +
+  # scale_fill_OkabeIto() +
+  theme(
+    axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)
+  ) +
+  guides(fill = guide_legend(reverse = TRUE))
+```
+
+The pie chart was created by plotting the percentage of bike docks for each year in one particular city. Unfortunately, the data scientist has forgotten which city this is. Using the information in the bar chart, identify the city. Explain how you determined this or if you cannot answer it from the visualization, explain why not.
+
+```{r out.width="90%"}
+# Piechart
+ggplot(data = bike05, aes(x = "", y = n, fill = as.factor(YEAR))) +
+  geom_bar(stat = "identity", width = 1, color = "black") +
+  coord_polar("y") +
+  labs(title = "Percentage of Bike Docks per Year",
+       subtitle = "In ______________") +
+  theme_void() +
+  scale_fill_OkabeIto() +
+  guides(fill = "none")
+```
+
+3.  Which of the four cities had the biggest increase in the number of bike docks from 2018 to 2020? Explain how you determined this or if you cannot answer it from the visualization, explain why not.
+
+```{r}
+bike04 <- bike %>%
+  filter(CITY %in% c("Chicago", "Minneapolis", "Topeka", "Portland")) %>%
+  group_by(CITY, YEAR) %>%
+  tally()
+
+ggplot(bike04, aes(x = YEAR, color = CITY, y = n)) +
+  geom_line(lwd = 2) +
+  theme_minimal() +
+  # scale_color_OkabeIto() +
+  scale_color_manual(
+    name = "City",
+    values = c("#6e7cb9", "#7bbcd5", "#e89c81", "#d2848d") # PNWColors::pnw_palette(name = "Sailboat", n = 4)
+  ) +
+  scale_y_continuous(
+    name = "Number of Bike Docks",
+    breaks = seq(from = 50, to = 650, by = 50)
+  ) +
+  xlab("Year") +
+  annotate("text", x = 2020, y = 570, label = "Chicago", color = "#6e7cb9", hjust = 1, fontface = 2) +
+  annotate("text", x = 2019, y = 220, label = "Topeka", color = "#d2848d", hjust = 1, fontface = 2) +
+  annotate("text", x = 2020, y = 230, label = "Minneapolis", color = "#7bbcd5", hjust = 1, fontface = 2) +
+  annotate("text", x = 2020, y = 140, label = "Portland", color = "#e89c81", hjust = 1, fontface = 2) +
+  guides(color =  "none")
+```
+
+
+## Bikes and Scooters 2 {#sec-bikes-scooters-2}
+
+The map below shows the number of cities in each region of the United States that have docked bikes, dockless bikes, or e-Scooters in both 2018 and 2020. Use that information to answer each of the following questions. For each question, explain how you determined your answer, or if you cannot answer it from the visualization, explain why not.
+
+```{r}
+# Map data
+states <- st_as_sf(map("state", plot = FALSE, fill = TRUE))
+
+midwest <- st_as_sf(map("state",
+  regions = c(
+    "minnesota", "iowa", "wisconsin", "south dakota", "north dakota",
+    "nebraska", "kansas", "missouri", "illinois", "indiana", "ohio", "michigan"
+  ),
+  plot = FALSE, fill = TRUE, interior = FALSE
+))
+
+southwest <- st_as_sf(map("state",
+  regions = c("arizona", "new mexico", "texas", "oklahoma"),
+  plot = FALSE, fill = TRUE, interior = FALSE
+))
+
+west <- st_as_sf(map("state",
+  regions = c(
+    "washington", "oregon", "california", "nevada", "utah",
+    "idaho", "colorado", "wyoming", "montana"
+  ),
+  plot = FALSE, fill = TRUE, interior = FALSE
+))
+
+southeast <- st_as_sf(map("state",
+  regions = c(
+    "alabama", "arkansas", "delaware", "florida", "georgia", "kentucky", "louisiana",
+    "maryland", "mississippi", "north carolina", "south carolina", "tennessee",
+    "west virginia", "virginia"
+  ),
+  plot = FALSE, fill = TRUE, interior = FALSE
+))
+
+northeast <- st_as_sf(map("state",
+  regions = c(
+    "connecticut", "maine", "massachusetts", "new hampshire", "new jersey",
+    "new york", "pennsylvania", "rhode island", "vermont"
+  ),
+  plot = FALSE, fill = TRUE, interior = FALSE
+))
+```
+
+```{r}
+#labels data
+labels_tbl <- tibble(
+  label = c("West", "Southwest", "Midwest", "Northeast", "Southeast"),
+  x = c(-113, -103, -94, -75, -85),
+  y = c(43, 34, 42, 42, 35),
+  hjust = rep(1, 5),
+  color = c("#d0e2af", "#6e7cb9", "#d2848d", "#7bbcd5", "#e89c81"),
+  fill = rep("white", 5)
+)
+
+# Draw map
+ggplot(data = midwest) +
+  geom_sf(fill = "#d2848d", color = "#fafafa", lwd = 0.25) +
+  geom_sf(data = southwest, fill = "#6e7cb9", color = "#fafafa", lwd = 0.25) +
+  geom_sf(data = west, fill = "#d0e2af", color = "#fafafa", lwd = 0.25) +
+  geom_sf(data = southeast, fill = "#e89c81", color = "#fafafa", lwd = 0.25) +
+  geom_sf(data = northeast, fill = "#7bbcd5", color = "#fafafa", lwd = 0.25) +
+  geom_label(data = labels_tbl, aes(x = x, y = y, label = label, color = color, fill = fill), fontface = "bold") +
+  scale_color_identity() +
+  scale_fill_identity() +
+  labs(title = "Number of cities with docked bikes, dockless bikes, and e-scooters in 2018 and 2020.") +
+  theme(plot.title = element_text(face = "bold", size = 9,), legend.position = "none") +
+  theme_void()
+```
+
+```{r}
+# table data
+label_data <- tibble(
+  region = rep(c("West", "Southwest", "Midwest", "Northeast", "Southeast"), 6),
+  year = c(rep(2018, 15), rep(2020, 15)),
+  vehicle = rep(rep(c("Docked Bikes", "Dockless Bikes", "e-Scooters"), each = 5), times = 2),
+  value = c(17, 11, 27, 17, 29, 14, 7, 5, 18, 13, 7, 5, 8, 5, 9, 13, 8, 16, 10, 14, 7, 6, 6, 3, 11, 3, 4, 6, 1, 11)
+)
+
+# table creation
+label_data %>%
+  pivot_wider(names_from = c(year, vehicle), values_from = value) %>%
+  gt(rowname_col = "region") %>%
+  tab_spanner_delim(delim = "_") %>%
+  tab_style(
+    style = cell_text(color = "#d0e2af", weight = "bold"),
+    locations = cells_stub(rows = "West")
+  ) %>%
+  tab_style(
+    style = cell_text(color = "#6e7cb9", weight = "bold"),
+    locations = cells_stub(rows = "Southwest")
+  ) %>%
+  tab_style(
+    style = cell_text(color = "#d2848d", weight = "bold"),
+    locations = cells_stub(rows = "Midwest")
+  ) %>%
+  tab_style(
+    style = cell_text(color = "#7bbcd5", weight = "bold"),
+    locations = cells_stub(rows = "Northeast")
+  ) %>%
+  tab_style(
+    style = cell_text(color = "#e89c81", weight = "bold"),
+    locations = cells_stub(rows = "Southeast")
+  )
+```
+
+<br>
+
+4.  How many cities in the Southeast had e-Scooters in 2018?
+
+5.  In 2020, the Southwest region has more docked bike stations than dockless bike stations.
+
+6.  The majority of regions decreased the number of e-scooter stations from 2018 to 2020.
+
+7.  Across the majority of regions, the trend is that over time, cities tend to be adopting dockless bikes rather than docked bikes.
+
+8.  Across the majority of regions, the trend is that over time, there are fewer cities that are making docked bikes, dockless bikes, and e-scooters available. Explain how you determined this or if you cannot answer it from the visualization, explain why not.
+
+
+## Bikes and Scooters 3 {#sec-bikes-scooters-3}
+
+9.  An electric bike, also known as an e-bike, is a bicycle with a battery-powered "assist" that comes via pedaling. An online product recommendation service that tests and reviews products has gathered a representative sample of 15 e-bikes from a single manufacturer and measured their ranges (how far they can go on a full battery without recharging). Based on this sample, they calculated an average range of 60 kilometers, plus or minus 10 kilometers. Suppose you're in the market for an e-bike and during your research you come across the following two items:
+
+-   An e-bike with a range of 85 kilometers.
+
+-   A report from a different product recommendation service that has also gathered data from a different, but also representative sample of 15 e-bikes from this same manufacturer, with a mean range of 85 kilometers.
+
+    Which one of these make you doubt the original report more?
+
+
+## Births per Day {#sec-births-per-day}
+
+A data scientist for a large urban hospital examined a sample of data to estimate the mean number of births that took place on Fridays and Saturdays. The plots below show the number of births that took place on either a Friday or Saturday for that sample.
+
+```{r}
+key <- data.frame(
+  wday = c("Fri", "Sat"),
+  Wday = c("Friday", "Saturday")
+)
+
+# select only Fri, Sat
+births15 <- mosaicData::Births2015 %>%
+  filter(wday == "Fri" | wday == "Sat") %>%
+  left_join(key, by = "wday")
+
+ggplot(data = births15, aes(x = births)) +
+  geom_histogram(bins = 20, color = "black", fill = "#E69F00") +
+  labs(
+    x = "Number of Births",
+    y = "Number of Days"
+  ) +
+  theme_minimal() +
+  facet_grid(Wday ~ .)
+```
+
+To estimate the mean number of births that took place on Fridays and Saturdays, the data scientist computed confidence intervals (mean $\pm$ margin of error) for both days. Unfortunately they forgot which mean and margin of error was associated with each day.
+
+9.  Which mean is associated with Friday? Explain.
+    a.  8350
+    b.  11,800
+10. Which margin of error is associated with Friday? Explain.
+    a.  100
+    b.  280
+
+
+## Movie Budgets 3 {#sec-movie-budgets-3}
+
+The data scientist was asked to use the fitted regression model to make a prediction for the revenue for a horror movie using two different potential budgets; a budget of $\$25\mathrm{M}$ and a budget of $\$50\mathrm{M}$ They were also asked to compute a prediction interval for these two predictions to estimate the uncertainty in the prediction. The scatterplot and fitted regression line for Horror movies is displayed below.
+
+```{r}
+movies <- read_csv("https://raw.githubusercontent.com/danielgrijalva/movie-stats/master/movies.csv")
+
+# Select subset of movies
+genre_list <- c("Action", "Animation", "Drama", "Horror")
+set.seed(12345)
+movies_2 = movies %>%
+  filter(genre %in% genre_list, budget > 0) %>%
+  sample_n(n())
+```
+
+```{r}
+movies_2 %>%
+  filter(genre == "Horror") %>%
+ggplot(mapping = aes(x = budget, y = gross)) +
+  geom_point(alpha = 0.5, pch = 21, color = "black", fill = "#d2848d") +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(
+    x = "Budget",
+    y = "Revenue"
+  ) +
+  scale_x_continuous(labels = scales::dollar_format(accuracy = 0.1, scale = (1 / 1000000), prefix = "$", suffix = "M")) +
+  scale_y_continuous(labels = scales::dollar_format(scale = (1 / 10000000), prefix = "$", suffix = "M")) +
+  facet_wrap(~genre) +
+  theme_bw() +
+  theme(legend.position = "none")
+```
+
+8.  Which of the predictions would have a greater predicted revenue associated with it? Explain
+
+    a.  $\mathrm{budget} = \$25\mathrm{M}$
+    b.  $\mathrm{budget} = \$50\mathrm{M}$
+    c.  They are the same.
+    d.  Not enough information to determine this.
+
+## Model Comparison {#sec-model-comparison}
+
+A data scientist has trained four different classification models (null model, Naive Bayes model, *k* Nearest Neighbors (kNN) model, and random forest model) on a set of data. The observed responses and the model predictions for a set of 10 observations from a validation set of data are shown in the table below.
+
+```{r}
+dat <- data.frame(
+  obs = c("No", "No", "No", "No", "Yes", "No", "No", "No", "Yes", "Yes"),
+  nul = rep("No", 10),
+  naive = c("No", "Yes", "No", "No", "No", "Yes", "No", "No", "Yes", "Yes"),
+  knn = c("No", "Yes", "No", "No", "No", "Yes", "No", "No", "Yes", "Yes"),
+  rf = c("No", "No", "No", "No", "No", "No", "No", "No", "Yes", "Yes")
+)
+
+kable(dat,
+  col.names = c("Observed Responses", "Null", "Naive Bayes", "kNN", "Random Forest"),
+  align = "c",
+  #format = "latex",
+  booktabs = TRUE
+) %>%
+  kable_styling(latex_options = c("striped", "HOLD_position")) %>%
+  column_spec(1, bold = TRUE) %>%
+  add_header_above(header = c(" ", "Prediction" = 4), bold = TRUE)
+```
+
+28. Are the predictions from the kNN model more, less, or equally as accurate as the results from the null model? Explain.
+
+
+## Training or Validation {#sec-training-or-validation}
+
+29. The figure shows a plot of prediction error as a function of model complexity for a training and validation sample. Which sample (training or validation) is associated with the *orange, solid* line? Explain.
+
+```{r}
+knitr::include_graphics("figs/training_vs_validation.png")
+```
+
+The following three items were reworked into one context, as the current [Movie Wrangling]
+
+## TV Show Wrangling {#sec-tv-show-wrangling}
+
+The two tables below provide data about several TV shows.
+
+::: columns
+::: {.column width="50%"}
+```{r}
+
+tv_creator <- read_csv("data/tv-creator.csv")
+tv_show <- read_csv("data/tv-show.csv")
+
+
+kable(tv_creator,
+  align = "l",
+  caption = "Creator Table",
+  booktabs = TRUE,
+  ) %>%
+  kable_styling(latex_options = c("striped", "HOLD_position"),
+                html_font = '"Courier"',
+                font_size = 12,
+                full_width = FALSE, 
+                position = "left") %>%
+  row_spec(0, bold = TRUE)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+kable(tv_show,
+  align = "l",
+  caption = "TV Show Table",
+  booktabs = FALSE
+) %>%
+  kable_styling(latex_options = c("striped", "HOLD_position"),
+                html_font = '"Courier"',
+                font_size = 12,
+                full_width = FALSE, 
+                position = "float_left") %>%
+  row_spec(0, bold = TRUE)
+```
+:::
+:::
+
+33. Consider the two following sets of pseudocode (ie. code recipe). Would they produce the same results? Explain.
+
+1\.
+
+::: code
+[start_with(]{style="color:#1300ff;"}the Creator table[)]{style="color:#1300ff;"} [and_then]{style="color:#1300ff;"}
+
+    [add_columns_from(]{style="color:#1300ff;"}the TV Show table [matching_by]{style="color:#1300ff;"} the TV Show column[) and_then]{style="color:#1300ff;"}
+
+    [count_of(]{style="color:#1300ff;"}the number of rows for the CW network[)]{style="color:#1300ff;"}
+:::
+
+2\.
+
+::: code
+[start_with(]{style="color:#1300ff;"}the TV Show table[)]{style="color:#1300ff;"} [and_then]{style="color:#1300ff;"}
+
+    [add_columns_from(]{style="color:#1300ff;"}the Creator table [matching_by]{style="color:#1300ff;"} the TV Show column[) and_then]{style="color:#1300ff;"}
+
+    [count_of(]{style="color:#1300ff;"}the number of rows for the CW network[)]{style="color:#1300ff;"}
+:::
+
+```{=html}
+<style>
+.column { padding-right: 3ex }
+.column + .column { padding-left: 3ex }
+</style>
+```
+34. Consider the two following sets of pseudocode (ie. code recipe). Would they produce the same results? Explain.
+
+1\.
+
+::: code
+[start_with(]{style="color:#1300ff;"}the Creator table[)]{style="color:#1300ff;"} [and_then]{style="color:#1300ff;"}
+
+    [add_columns_from(]{style="color:#1300ff;"}the TV Show table [matching_by]{style="color:#1300ff;"} the TV Show column[) and_then]{style="color:#1300ff;"}
+
+    [count_of(]{style="color:#1300ff;"}the number of rows for the CW network[)]{style="color:#1300ff;"}
+:::
+
+2\.
+
+::: code
+[start_with(]{style="color:#1300ff;"}the TV Show table[)]{style="color:#1300ff;"} [and_then]{style="color:#1300ff;"}
+
+    [add_columns_from(]{style="color:#1300ff;"}the Creator table [matching_by]{style="color:#1300ff;"} the TV Show ID column[) and_then]{style="color:#1300ff;"}
+
+    [count_of(]{style="color:#1300ff;"}the number of rows for the CW network[)]{style="color:#1300ff;"}
+:::
+
+
+## Shopping Wrangling {#sec-shopping-wrangling}
+
+The dataset below contains information on 8 people; we know their names and how many items they purchased online today.
+
+    name      number_of_items   visited_online_retailer
+    Miriam    10
+    Marcel    2
+    Ayesha    0
+    Rebecca   3
+    Lola      0
+    Laurence  1
+    Tomos     9
+    Abdul     0
+
+37. You have been tasked with adding a new column called `visited_online_retailer` which indicates whether or not each person visited the website of an online retailer ("yes" if they did, "no" if they did not). Is there sufficient information in this dataset to generate this new column? Explain.
+
+
+## Park Wrangling {#sec-park-wrangling}
+
+The data set `park_visits` contains the number of annual visitors to 376 national park sites in the United States from 1904--2016. The data were originally collected from the National Park Service. There are 20,920 total records in the data set, since the parks were open for the entire date range. A few rows of `park_visits` data are shown below.
+
+    year  state  park_site                            visitors
+    1904  AR     Hot Springs National Park            101000
+    1904  CA     Kings Canyon National Park           1000
+    1904  OR     Crater Lake National Park            1500
+    1904  SD     Wind Cave National Park              2900
+    ...   ...    ...                                  ...
+    2016  WY     Devils Tower National Monument       496210
+    2016  WY     Fort Laramie National Historic Site  57444
+
+A data scientist would like to find the most popular park in each state in 2016. To do so, they decided to create a new data table named `most_visited_2016` that includes the national park site in each state with the most visitors in 2016. The final table will include 51 rows (one for each state and Washington D.C.) and the columns `year`, `state`, `park_site` and `visitors`. Six of the 51 rows of the table are shown below.
+
+    year  state park_site                                    visitors
+    2016  AK    Klondike Gold Rush National Historical Park  912351
+    2016  AL    Little River Canyon National Preserve        462700
+    2016  AR    Buffalo National River                       1785359
+    2016  AS    National Park of American Samoa              28892
+    2016  WV    Harpers Ferry National Historical Park       335691
+    2016  WY    Yellowstone National Park                    4257177
+
+38. Arrange the steps to get from the original data set `park_visits` to the final table `most_visited_2016`.
+
+<!-- Note: -->
+
+<!-- - Are we giving them the steps (out-of-order) and asking them to arrange them in order? If so should we add additional unused steps? -->
+
+<!-- - Should we just have them describe the process? -->
+
+<!-- - Should we give them pseudocode options like Item 36? -->
+
+Steps:
+
+-   Start with `park_visits`
+-   FILTER(year == 2016): Filter for observations in 2016
+-   GROUP_BY(state) : Group by state / Perform subsequent lines of code within each state.
+-   ARRANGE(DESC((visitors)): Sort the number of visits in descending order
+-   SLICE(1) : Take the first observation.
+-   End with `most_visited_2016`
+
+## Data Cleaning {#sec-data-cleaning}
+
+A researcher randomly selects 10 students in a school and collects data about their age and number of siblings. They enter the data into a spreadsheet and are interested in calculating descriptive statistics. The software that they are using displays the data as shown below.
+
+    row   X1     X10     X3
+    1     2      11      1
+    2     3      12      3
+    ...   ...    ...     ...
+    8     9      12      2
+    9     10     8       0
+
+    10    Total  113     21
+
+43. Would it be safe to assume that the average age of children in the sample is 11.3? Explain.
+
+
+44. If you could change the way that the data are displayed in this software, would you change anything? If yes, then list the thing(s) that you would change.
+
+
