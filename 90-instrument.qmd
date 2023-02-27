@@ -43,8 +43,10 @@ The figure below shows a forecast after simulating 50 potential paths for a larg
 knitr::include_graphics("figs/hurricane_andy.png")
 ```
 
-    a. City a
-    b. City b
+a. City a
+b. City b
+
+{{< pagebreak >}}
 
 ## Movie Budgets 1 {#sec-movie-budgets-1}
 
@@ -144,6 +146,8 @@ Fill in the following table by placing a checkmark in the cells corresponding to
 | IQR    | \[ \]  | \[ \]  | \[ \]  | \[ \]  |
 | Shape  | \[ \]  | \[ \]  | \[ \]  | \[ \]  |
 
+{{< pagebreak >}}
+
 ## Movie Budgets 2 {#sec-movie-budgets-2}
 
 For each genre, the data scientist also fitted a regression line to model the relationship between movies' budgets and their revenues. A scatterplot of this relationship, along with the fitted regression line, is shown for each of the four genres below. For which genre would the fitted regression model produce the highest $R^2$ value? Explain.
@@ -178,15 +182,21 @@ ggplot(data = movies_2, mapping = aes(x = budget, y = gross, fill = genre)) +
   theme(legend.position = "none")
 ```
 
+{{< pagebreak >}}
+
 ## Application Screening {#sec-application-screening}
 
 You are working on a team that is making a deterministic model to quickly screen through applications for a new position at the company. Based on employment laws, your model may not include variables such as age, race, and gender, which could be potentially discriminatory.
 
 Your colleague suggests including a rule that eliminates candidates with more than 20 years of previous work experience, because they may have high salary expectations. Are there ethical implications of using this variable to select candidates? Explain your answer.
 
+{{< pagebreak >}}
+
 ## Banana Conclusions {#sec-banana-conclusions}
 
 Data scientists at [FiveThirtyEight](https://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition/) administered a food frequency questionnaire. With 54 complete responses they found that people who ate bananas tended to score higher on the SAT verbal section than the SAT math section ($p=0.0073$). An article reporting the results of this study has the headline, *"Eat more bananas to score higher on the SAT verbal section"*. Is this headline accurate, or could it be misleading? Explain.
+
+{{< pagebreak >}}
 
 ## COVID Map {#sec-COVID-map}
 
@@ -374,6 +384,8 @@ What do we learn from this plot about COVID-19 cases in the US?
 
 Compare KY (Kentucky) in the South region to CA (California) in the West region. Based on this plot, can we conclude there was a difference in overall number of COVID cases in KY and CA in August 2021? Explain.
 
+{{< pagebreak >}}
+
 ## He Said She Said {#sec-he-said-she-said}
 
 For each of the following items, indicate whether the statement is TRUE, FALSE, or whether you would need additional information to determine this. If you can determine the statement is true/false, indicate the evidence that you used to make that determination. If you need additional information to make that determination, indicate what else you would need.
@@ -409,6 +421,8 @@ Women in Austen's novels are more likely to have 'remembered' than 'feared'.
 a.  True
 b.  False
 c.  Need additional information to determine this
+
+{{< pagebreak >}}
 
 ## Build-a-Plot {#sec-build-a-plot}
 
@@ -461,11 +475,13 @@ ggplot(map_county, aes(x = long, y = lat, group = group)) +
 
 Indicate which of the following data you need to recreate this map? (Select all that apply.)
 
-    -   [ ] County boundaries
-    -   [ ] Unemployment rate in each county
-    -   [ ] Number of adults living in each county
-    -   [ ] Number of unemployed adults living in each county
-    -   [ ] Total population of the county
+[ ] County boundaries
+[ ] Unemployment rate in each county
+[ ] Number of adults living in each county
+[ ] Number of unemployed adults living in each county
+[ ] Total population of the county
+
+{{< pagebreak >}}
 
 ## Disease Screening {#sec-disease-screening}
 
@@ -529,6 +545,8 @@ Fill in the following table by placing a checkmark in the cells corresponding to
 | Specificity         | \[ \]  | \[ \]  | \[ \]  |
 | False positive rate | \[ \]  | \[ \]  | \[ \]  |
 | False negative rate | \[ \]  | \[ \]  | \[ \]  |
+
+{{< pagebreak >}}
 
 ## Realty Tree {#sec-realty-tree}
 
@@ -606,6 +624,8 @@ What price would the tree predict for a house with 1200 ft.^2^ of living area an
 -   [ ] \$210,950
 -   [ ] Can't be determined from the information given.
 
+{{< pagebreak >}}
+
 ## Website Testing {#sec-website-testing}
 
 An e-commerce company is working on their website design and is interested in knowing whether having the website mainly in blue or red would lead to better business outcomes. One outcome they are measuring is the number of returning users to the website. They design two versions of the website one in blue and the other in red. A random half of the visitors see the website in blue and the other half see it in red. The plot shows the number of returning users per day for the two different versions of the website.
@@ -618,21 +638,23 @@ Indicate whether each of the following conclusions are valid. Explain.
 
 Over time the company is getting more returning users regardless of the version of the website.
 
-    a.  Valid
-    b.  Invalid
-    c.  Cannot determine this from the plot.
+a.  Valid
+b.  Invalid
+c.  Cannot determine this from the plot.
 
 On the 31st day, the blue version of the website is expected to have higher number of returning users.
 
-    a.  Valid
-    b.  Invalid
-    c.  Cannot determine this from the plot.
+a.  Valid
+b.  Invalid
+c.  Cannot determine this from the plot.
 
 On the 60th day, the blue version of the website is expected to have higher number of returning users.
 
-    a.  Valid
-    b.  Invalid
-    c.  Cannot determine this from the plot.
+a.  Valid
+b.  Invalid
+c.  Cannot determine this from the plot.
+
+{{< pagebreak >}}
 
 ## Image Recognition {#sec-image-recognition}
 
@@ -652,6 +674,8 @@ knitr::include_graphics("figs/image_recognition_a.png")
 
 The data science student plans to use these photos of current university faculty to predict whether they are scientists. What concerns might you have about the predictions from this algorithm? Explain.
 
+{{< pagebreak >}}
+
 ## Data Confidentiality {#sec-data-confidentiality}
 
 A newspaper reports on the results of a survey from a small (\<2000 student) university. The university agrees to have the data released to the public so long as the students' identities and academic standing information are kept confidential. Select the safe combinations of variables that are unlikely to identify any individual students. Explain.
@@ -664,6 +688,8 @@ c.  GPA and major
 d.  Birth date and phone number
 e.  None of the above
 
+{{< pagebreak >}}
+
 ## Activity Journal {#sec-activity-journal}
 
 Below is data that was recorded in an activity journal.
@@ -673,6 +699,8 @@ knitr::include_graphics("figs/activity_journal.png")
 ```
 
 A data scientist reformats the data into a table so that each variable represented in the data is recorded in a single column. Describe what each of the columns of this table will contain, as well as what each row or observation of the table will represent.
+
+{{< pagebreak >}}
 
 ## Movie Wrangling {#sec-movie-wrangling}
 

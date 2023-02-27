@@ -37,9 +37,9 @@ library(mosaicData)
 
 ## Bikes and Scooters 1 {#sec-bikes-scooters-1}
 
-As a way to help the environment some cities in the U.S. are adding bike and e-scooter share stations which allow people to rent a bike or e-scooter for commuting or pleasure. The bikes and scooters are often kept at electronic docking stations at multiple locations around the cities. The following graphs were created using data from the Department of Transportation Statistics[^bikes-scooters-1-1] about public use of these shared dock systems in four U.S. cities---Chicago, Minneapolis, Portland, and Topeka.
+As a way to help the environment some cities in the U.S. are adding bike and e-scooter share stations which allow people to rent a bike or e-scooter for commuting or pleasure. The bikes and scooters are often kept at electronic docking stations at multiple locations around the cities. The following graphs were created using data from the Department of Transportation Statistics[^91-graveyard-1] about public use of these shared dock systems in four U.S. cities---Chicago, Minneapolis, Portland, and Topeka.
 
-[^bikes-scooters-1-1]: Data from: https://data.bts.gov/d/7m5x-ubud/visualization
+[^91-graveyard-1]: Data from: https://data.bts.gov/d/7m5x-ubud/visualization
 
 ```{r}
 bike <- read_csv("data/locations.csv")
@@ -64,7 +64,7 @@ bike05 <- bike %>%
   tally()
 ```
 
-1.  Which of the four cities had the most bike docks in 2020? Explain how you determined this. Or if you cannot answer it from the visualization, explain why not.
+Which of the four cities had the most bike docks in 2020? Explain how you determined this. Or if you cannot answer it from the visualization, explain why not.
 
 ```{r}
 ggplot(bike02, aes(x = CITY, fill = as.factor(YEAR))) +
@@ -75,7 +75,7 @@ ggplot(bike02, aes(x = CITY, fill = as.factor(YEAR))) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
 ```
 
-2.  The bar chart shows the the percentage of docks in each city that were bike docks for each year from 2015--2020.
+The bar chart shows the the percentage of docks in each city that were bike docks for each year from 2015--2020.
 
 ```{r out.width="90%"}
 # Stacked bar chart
@@ -116,7 +116,7 @@ ggplot(data = bike05, aes(x = "", y = n, fill = as.factor(YEAR))) +
   guides(fill = "none")
 ```
 
-3.  Which of the four cities had the biggest increase in the number of bike docks from 2018 to 2020? Explain how you determined this or if you cannot answer it from the visualization, explain why not.
+Which of the four cities had the biggest increase in the number of bike docks from 2018 to 2020? Explain how you determined this or if you cannot answer it from the visualization, explain why not.
 
 ```{r}
 bike04 <- bike %>%
@@ -144,6 +144,7 @@ ggplot(bike04, aes(x = YEAR, color = CITY, y = n)) +
   guides(color =  "none")
 ```
 
+{{< pagebreak >}}
 
 ## Bikes and Scooters 2 {#sec-bikes-scooters-2}
 
@@ -256,27 +257,29 @@ label_data %>%
 
 <br>
 
-4.  How many cities in the Southeast had e-Scooters in 2018?
+How many cities in the Southeast had e-Scooters in 2018?
 
-5.  In 2020, the Southwest region has more docked bike stations than dockless bike stations.
+In 2020, the Southwest region has more docked bike stations than dockless bike stations.
 
-6.  The majority of regions decreased the number of e-scooter stations from 2018 to 2020.
+The majority of regions decreased the number of e-scooter stations from 2018 to 2020.
 
-7.  Across the majority of regions, the trend is that over time, cities tend to be adopting dockless bikes rather than docked bikes.
+Across the majority of regions, the trend is that over time, cities tend to be adopting dockless bikes rather than docked bikes.
 
-8.  Across the majority of regions, the trend is that over time, there are fewer cities that are making docked bikes, dockless bikes, and e-scooters available. Explain how you determined this or if you cannot answer it from the visualization, explain why not.
+Across the majority of regions, the trend is that over time, there are fewer cities that are making docked bikes, dockless bikes, and e-scooters available. Explain how you determined this or if you cannot answer it from the visualization, explain why not.
 
+{{< pagebreak >}}
 
 ## Bikes and Scooters 3 {#sec-bikes-scooters-3}
 
-9.  An electric bike, also known as an e-bike, is a bicycle with a battery-powered "assist" that comes via pedaling. An online product recommendation service that tests and reviews products has gathered a representative sample of 15 e-bikes from a single manufacturer and measured their ranges (how far they can go on a full battery without recharging). Based on this sample, they calculated an average range of 60 kilometers, plus or minus 10 kilometers. Suppose you're in the market for an e-bike and during your research you come across the following two items:
+An electric bike, also known as an e-bike, is a bicycle with a battery-powered "assist" that comes via pedaling. An online product recommendation service that tests and reviews products has gathered a representative sample of 15 e-bikes from a single manufacturer and measured their ranges (how far they can go on a full battery without recharging). Based on this sample, they calculated an average range of 60 kilometers, plus or minus 10 kilometers. Suppose you're in the market for an e-bike and during your research you come across the following two items:
 
 -   An e-bike with a range of 85 kilometers.
 
 -   A report from a different product recommendation service that has also gathered data from a different, but also representative sample of 15 e-bikes from this same manufacturer, with a mean range of 85 kilometers.
 
-    Which one of these make you doubt the original report more?
+Which one of these make you doubt the original report more?
 
+{{< pagebreak >}}
 
 ## Births per Day {#sec-births-per-day}
 
@@ -305,13 +308,17 @@ ggplot(data = births15, aes(x = births)) +
 
 To estimate the mean number of births that took place on Fridays and Saturdays, the data scientist computed confidence intervals (mean $\pm$ margin of error) for both days. Unfortunately they forgot which mean and margin of error was associated with each day.
 
-9.  Which mean is associated with Friday? Explain.
-    a.  8350
-    b.  11,800
-10. Which margin of error is associated with Friday? Explain.
-    a.  100
-    b.  280
+Which mean is associated with Friday? Explain.
 
+a.  8350
+b.  11,800
+
+Which margin of error is associated with Friday? Explain.
+
+a.  100
+b.  280
+
+{{< pagebreak >}}
 
 ## Movie Budgets 3 {#sec-movie-budgets-3}
 
@@ -345,12 +352,16 @@ ggplot(mapping = aes(x = budget, y = gross)) +
   theme(legend.position = "none")
 ```
 
-8.  Which of the predictions would have a greater predicted revenue associated with it? Explain
+Which of the predictions would have a greater predicted revenue associated with it? Explain
 
-    a.  $\mathrm{budget} = \$25\mathrm{M}$
-    b.  $\mathrm{budget} = \$50\mathrm{M}$
-    c.  They are the same.
-    d.  Not enough information to determine this.
+<!-- -->
+
+a.  $\mathrm{budget} = \$25\mathrm{M}$
+b.  $\mathrm{budget} = \$50\mathrm{M}$
+c.  They are the same.
+d.  Not enough information to determine this.
+
+{{< pagebreak >}}
 
 ## Model Comparison {#sec-model-comparison}
 
@@ -376,18 +387,21 @@ kable(dat,
   add_header_above(header = c(" ", "Prediction" = 4), bold = TRUE)
 ```
 
-28. Are the predictions from the kNN model more, less, or equally as accurate as the results from the null model? Explain.
+Are the predictions from the kNN model more, less, or equally as accurate as the results from the null model? Explain.
 
+{{< pagebreak >}}
 
 ## Training or Validation {#sec-training-or-validation}
 
-29. The figure shows a plot of prediction error as a function of model complexity for a training and validation sample. Which sample (training or validation) is associated with the *orange, solid* line? Explain.
+The figure shows a plot of prediction error as a function of model complexity for a training and validation sample. Which sample (training or validation) is associated with the *orange, solid* line? Explain.
 
 ```{r}
 knitr::include_graphics("figs/training_vs_validation.png")
 ```
 
-The following three items were reworked into one context, as the current [Movie Wrangling]
+The following three items were reworked into one context, as the current \[Movie Wrangling\]
+
+{{< pagebreak >}}
 
 ## TV Show Wrangling {#sec-tv-show-wrangling}
 
@@ -432,7 +446,7 @@ kable(tv_show,
 :::
 :::
 
-33. Consider the two following sets of pseudocode (ie. code recipe). Would they produce the same results? Explain.
+Consider the two following sets of pseudocode (ie. code recipe). Would they produce the same results? Explain.
 
 1\.
 
@@ -460,7 +474,7 @@ kable(tv_show,
 .column + .column { padding-left: 3ex }
 </style>
 ```
-34. Consider the two following sets of pseudocode (ie. code recipe). Would they produce the same results? Explain.
+Consider the two following sets of pseudocode (ie. code recipe). Would they produce the same results? Explain.
 
 1\.
 
@@ -482,48 +496,53 @@ kable(tv_show,
     [count_of(]{style="color:#1300ff;"}the number of rows for the CW network[)]{style="color:#1300ff;"}
 :::
 
+{{< pagebreak >}}
 
 ## Shopping Wrangling {#sec-shopping-wrangling}
 
 The dataset below contains information on 8 people; we know their names and how many items they purchased online today.
 
-    name      number_of_items   visited_online_retailer
-    Miriam    10
-    Marcel    2
-    Ayesha    0
-    Rebecca   3
-    Lola      0
-    Laurence  1
-    Tomos     9
-    Abdul     0
+| name     | number_of_items | visited_online_retailer |
+|----------|-----------------|-------------------------|
+| Miriam   | 10              |                         |
+| Marcel   | 2               |                         |
+| Ayesha   | 0               |                         |
+| Rebecca  | 3               |                         |
+| Lola     | 0               |                         |
+| Laurence | 1               |                         |
+| Tomos    | 9               |                         |
+| Abdul    | 0               |                         |
 
-37. You have been tasked with adding a new column called `visited_online_retailer` which indicates whether or not each person visited the website of an online retailer ("yes" if they did, "no" if they did not). Is there sufficient information in this dataset to generate this new column? Explain.
+You have been tasked with adding a new column called `visited_online_retailer` which indicates whether or not each person visited the website of an online retailer ("yes" if they did, "no" if they did not). Is there sufficient information in this dataset to generate this new column? Explain.
 
+{{< pagebreak >}}
 
 ## Park Wrangling {#sec-park-wrangling}
 
 The data set `park_visits` contains the number of annual visitors to 376 national park sites in the United States from 1904--2016. The data were originally collected from the National Park Service. There are 20,920 total records in the data set, since the parks were open for the entire date range. A few rows of `park_visits` data are shown below.
 
-    year  state  park_site                            visitors
-    1904  AR     Hot Springs National Park            101000
-    1904  CA     Kings Canyon National Park           1000
-    1904  OR     Crater Lake National Park            1500
-    1904  SD     Wind Cave National Park              2900
-    ...   ...    ...                                  ...
-    2016  WY     Devils Tower National Monument       496210
-    2016  WY     Fort Laramie National Historic Site  57444
+| year     | state    | park_site                           | visitors |
+|----------|----------|-------------------------------------|----------|
+| 1904     | AR       | Hot Springs National Park           | 101000   |
+| 1904     | CA       | Kings Canyon National Park          | 1000     |
+| 1904     | OR       | Crater Lake National Park           | 1500     |
+| 1904     | SD       | Wind Cave National Park             | 2900     |
+| $\cdots$ | $\cdots$ | $\cdots$                            | $\cdots$ |
+| 2016     | WY       | Devils Tower National Monument      | 496210   |
+| 2016     | WY       | Fort Laramie National Historic Site | 57444    |
 
 A data scientist would like to find the most popular park in each state in 2016. To do so, they decided to create a new data table named `most_visited_2016` that includes the national park site in each state with the most visitors in 2016. The final table will include 51 rows (one for each state and Washington D.C.) and the columns `year`, `state`, `park_site` and `visitors`. Six of the 51 rows of the table are shown below.
 
-    year  state park_site                                    visitors
-    2016  AK    Klondike Gold Rush National Historical Park  912351
-    2016  AL    Little River Canyon National Preserve        462700
-    2016  AR    Buffalo National River                       1785359
-    2016  AS    National Park of American Samoa              28892
-    2016  WV    Harpers Ferry National Historical Park       335691
-    2016  WY    Yellowstone National Park                    4257177
+| year | state | park_site                                   | visitors |
+|------|-------|---------------------------------------------|----------|
+| 2016 | AK    | Klondike Gold Rush National Historical Park | 912351   |
+| 2016 | AL    | Little River Canyon National Preserve       | 462700   |
+| 2016 | AR    | Buffalo National River                      | 1785359  |
+| 2016 | AS    | National Park of American Samoa             | 28892    |
+| 2016 | WV    | Harpers Ferry National Historical Park      | 335691   |
+| 2016 | WY    | Yellowstone National Park                   | 4257177  |
 
-38. Arrange the steps to get from the original data set `park_visits` to the final table `most_visited_2016`.
+Arrange the steps to get from the original data set `park_visits` to the final table `most_visited_2016`.
 
 <!-- Note: -->
 
@@ -536,28 +555,30 @@ A data scientist would like to find the most popular park in each state in 2016.
 Steps:
 
 -   Start with `park_visits`
--   FILTER(year == 2016): Filter for observations in 2016
--   GROUP_BY(state) : Group by state / Perform subsequent lines of code within each state.
--   ARRANGE(DESC((visitors)): Sort the number of visits in descending order
+-   FILTER(`year` == 2016): Filter for observations in 2016
+-   GROUP_BY(`state`) : Group by state / Perform subsequent lines of code within each state.
+-   ARRANGE(DESC((`visitors`)): Sort the number of visits in descending order
 -   SLICE(1) : Take the first observation.
 -   End with `most_visited_2016`
+
+{{< pagebreak >}}
 
 ## Data Cleaning {#sec-data-cleaning}
 
 A researcher randomly selects 10 students in a school and collects data about their age and number of siblings. They enter the data into a spreadsheet and are interested in calculating descriptive statistics. The software that they are using displays the data as shown below.
 
-    row   X1     X10     X3
-    1     2      11      1
-    2     3      12      3
-    ...   ...    ...     ...
-    8     9      12      2
-    9     10     8       0
-
-    10    Total  113     21
-
-43. Would it be safe to assume that the average age of children in the sample is 11.3? Explain.
-
-
-44. If you could change the way that the data are displayed in this software, would you change anything? If yes, then list the thing(s) that you would change.
+| **row**  | X1       | X10      | X3       |
+|----------|----------|----------|----------|
+| **1**    | 2        | 11       | 1        |
+| **2**    | 3        | 12       | 3        |
+| $\cdots$ | $\cdots$ | $\cdots$ | $\cdots$ |
+| **8**    | 9        | 12       | 2        |
+| **9**    | 10       | 8        | 0        |
+|          |          |          |          |
+| **10**   | Total    | 113      | 21       |
 
 
+
+Would it be safe to assume that the average age of children in the sample is 11.3? Explain.
+
+If you could change the way that the data are displayed in this software, would you change anything? If yes, then list the thing(s) that you would change.
