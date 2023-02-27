@@ -2,6 +2,8 @@
 
 <a href="https://github.com/evandragich/thesis-work/raw/main/docs/Exploring-Data-Science-Education--From-Tutorials-to-Assessment.pdf">Download PDF here</a>
 
+[Download PDF here](docs/Exploring-Data-Science-Education--From-Tutorials-to-Assessment.pdf)
+
 # Abstract {.unnumbered}
 
 ### Abstract:
