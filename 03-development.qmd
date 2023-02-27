@@ -17,7 +17,7 @@ By April 2022, concluding my first semester working on the project, we had a pol
 The remainder of the time spent working on the assessment--April 2022 to February 2023--was spent gathering feedback via interviews, iteratively updating items, and removing weaker questions based on group discussions. We conducted a series of three think-aloud informational interviews with various faculty nationwide who teach or have taught introductory data science courses. Participants were recruited from a shortlist of Dr. Çetinkaya-Rundel's data science assessment contacts, and were specifically chosen to represent a breadth of data science curricula. The three interviewees chosen were, in order of interview:
 
 | Name        | Department Affiliation           | Institution Type                      | Field of Ph.D. Dissertation |
-|------------------|------------------|--------------------|------------------|
+|-------------|----------------------------------|---------------------------------------|-----------------------------|
 | Professor X | Statistics                       | Liberal arts college                  | Biostatistics               |
 | Professor Y | Computer science                 | R1 research university                | Computer science education  |
 | Professor Z | Computer and information science | Liberal arts school within university | Statistics                  |
@@ -53,7 +53,7 @@ To reflect this different type of feedback being solicited, we omitted the initi
 We first reached out in November 2022 to all TAs at that time for STA 199 or STA 198, its health-themed analog. However, we were unable to recruit any students so close to finals, and ended up reaching out to the same group in January. The interviews were conducted in early February, thus consisting of students who were at least TAs for STA199 in the previous Fall semester. The three students recruited were, in order of interview:
 
 | Name      | Degree Year and Level  | Program                                    |
-|-------------------|-------------------|----------------------------------|
+|-----------|------------------------|--------------------------------------------|
 | Student A | 2nd year Masters       | Statistical Science                        |
 | Student B | 4th year Undergraduate | Economics major, Statistical Science minor |
 | Student C | 1st year Masters       | Statistical Science                        |
@@ -71,7 +71,7 @@ Not many changes were made following the student interviews in Phase B: a sign t
 The following table summarizes the learning objectives for each item in the most current version of the assessment.
 
 | Passage               | Learning Objective(s)                                                             |
-|-------------------|-----------------------------------------------------|
+|-----------------------|-----------------------------------------------------------------------------------|
 | Storm Paths           | simulated data; interpreting uncertainty                                          |
 | Movie Budgets 1       | comparing summary statistics visually                                             |
 | Movie Budgets 2       | $R^2$; comparing trends visually                                                  |

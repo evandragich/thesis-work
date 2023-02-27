@@ -151,7 +151,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./90-instrument.html" class="sidebar-item-text sidebar-link">Appendix A: Current Assessment Prototype</a>
+  <a href="./90-instrument.html" class="sidebar-item-text sidebar-link">Appendix A: Assessment Prototype</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -191,25 +191,19 @@ div.csl-indent {
 
 </header>
 
-<section id="quarto" class="level2">
-<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
-<p>Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <a href="https://quarto.org" class="uri">https://quarto.org</a>.</p>
+<p>overview (half my thesis is finishing <code>dsbox</code> package). background on what the package attempts to do “The goal of dsbox is to supplement the Data Science Course in a Box project. The package contains the datasets that are used in the materials in Data Science Course in a Box as well as the learnr tutorials.” - https://rstudio-education.github.io/dsbox/index.html</p>
+<p>explain the larger Data Science in a Box project, https://datasciencebox.org, basically condensing all the curriculum material here into 10 freestanding, interactive, automatically-graded <code>learnr</code> tutorials</p>
+<section id="phase-1-initial-tidying-work" class="level2">
+<h2 class="anchored" data-anchor-id="phase-1-initial-tidying-work">Phase 1: Initial tidying work</h2>
+<p>–first time ever with pull requests and learnr, ie more than just basics in the RStudio window –as well as roxygen and rds files –change question wording to be more clear, and feedback in places to get graduaally more scaffolded –chnage links in codebooks, notice an exercise wasnt making sense and looked at codebook and saw levels of a variable was coded the wrong way</p>
 </section>
-<section id="running-code" class="level2">
-<h2 class="anchored" data-anchor-id="running-code">Running Code</h2>
-<p>When you click the <strong>Render</strong> button a document will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
-<p>You can add options to executable code like this</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
-</div>
-</div>
-<p>The <code>echo: false</code> option disables the printing of code (only output is displayed).</p>
+<section id="phase-2-creating-a-new-tutorial" class="level2">
+<h2 class="anchored" data-anchor-id="phase-2-creating-a-new-tutorial">Phase 2: Creating a new tutorial</h2>
+<p>–there were nine tutorials when it existed –the only HW assignment from DS in a box that hadnt been converted yet had to do with Dennys and LaQuinta data, and skeleton documents for the data already existed in dsbox –thought critically about how to convert that hw into a tutorial, changed pacing to make it better as a standalone and interactive</p>
+</section>
+<section id="phase-3-cran-submission" class="level2">
+<h2 class="anchored" data-anchor-id="phase-3-cran-submission">Phase 3: CRAN submission</h2>
+<p>–goal was to submit to CRAN, explain CRAN –learned a lot about package checks/github actions –had been away from it for so long, first thing this semester was to update the version numbers of all the github actions checks –also had to update to base pipe, it had been that long –that spurs conversation about DESCRIPTION and NAMESPACE files. did research on how other tutorial packages handled the “Depends” “Suggests” and “Requires” fields. –stuff like spell check, standardizing to American English, decreased sizes of cover photos for each tutorial to fit on CRAN –eventually hitting final road block of <code>learnr</code> not being fully available on CRAN, thus our package that would want to Depend it can’t</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">

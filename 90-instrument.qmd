@@ -1,4 +1,4 @@
-# Appendix A: Current Assessment Prototype {.unnumbered}
+# Appendix A: Assessment Prototype {.unnumbered}
 
 ```{r}
 #| label: common-R

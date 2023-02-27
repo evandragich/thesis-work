@@ -49,18 +49,25 @@
     "text": "Phase 3: Large-scale Student Pilot\nLooking ahead, the next step after individual item tweaking and refinement will be real-world measurements of pacing and length and the feasibility for introductory data science students. Collaborating with the professors of Duke’s Introductory Data Science Course STA199, ___ students across three sections will be invited to take the assessment, on their own time, for a chance to earn extra credit in the course. We will not solicit general feedback like in the previous interviews, instead asking just a single question at the end to get a rough estimate of how long it took to complete, since they will be doing it on their own time. The extra credit points students receive will not reflect their performance on the assessment, but rather will be simply awarded proportionally to how much was completed. To ensure students are actively engaging with the questions, there will be ___ attention checks scattered throughout that must also be passed to earn credit.\nIn order to distribute the assessment at large and record students’ responses, the Quarto book has been converted into a Qualtrics survey. Once complete, large-scale analysis will be conducted, both to ensure that all questions were indeed appropriate for introductory level students and to explore potential instrument subscales.\n\n\n\n\nÇetinkaya-Rundel, Mine, and Victoria Ellison. 2021. “A Fresh Look at Introductory Data Science.” Journal of Statistics and Data Science Education 29 (sup1): S16–26.\n\n\nDelmas, Robert, Joan Garfield, Ann Ooms, and Beth Chance. 2007. “ASSESSING STUDENTS’ CONCEPTUAL UNDERSTANDING AFTER A FIRST COURSE IN STATISTICS.” STATISTICS EDUCATION RESEARCH JOURNAL 6 (2): 28–58.\n\n\nEpstein, Jerome. 2013. “The Calculus Concept Inventory-Measurement of the Effect of Teaching Methodology in Mathematics.” Notices of the American Mathematical Society 60 (8): 1018–27.\n\n\nGodfrey, Kelly E., and Sanja Jagesic. 2016. Validating College Course Placement Decisions Based on CLEP Exam Scores: CLEP Placement Validity Study Results. Statistical Report. College Board.\n\n\nMulford, DouglasRobert. 1996. “An Inventory for Measuring College Students’ Level of Misconceptions in First Semester Chemistry.” Unpublished Master’s Thesis, Purdue University, IN.\n\n\nSolomon, Erin D., Julie M. Bugg, Shaina F. Rowell, Mark A. McDaniel, Regina F. Frey, and Paul S. Mattson. 2021. “Development and Validation of an Introductory Psychology Knowledge Inventory.” Scholarship of Teaching and Learning in Psychology 7: 123–39.\n\n\nSwanstrom, Ryan. n.d. “Data Science Colleges and Universities.” http://datascience.community/colleges.\n\n\nZhang, Zhiyong, and Danyang Zhang. 2021. “What Is Data Science? An Operational Definition Based on Text Mining of Data Science Curricula.” Journal of Behavioral Data Science 1 (1): 1–16."
   },
   {
-    "objectID": "05-package.html#quarto",
-    "href": "05-package.html#quarto",
+    "objectID": "05-package.html#phase-1-initial-tidying-work",
+    "href": "05-package.html#phase-1-initial-tidying-work",
     "title": "Package Development",
-    "section": "Quarto",
-    "text": "Quarto\nQuarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+    "section": "Phase 1: Initial tidying work",
+    "text": "Phase 1: Initial tidying work\n–first time ever with pull requests and learnr, ie more than just basics in the RStudio window –as well as roxygen and rds files –change question wording to be more clear, and feedback in places to get graduaally more scaffolded –chnage links in codebooks, notice an exercise wasnt making sense and looked at codebook and saw levels of a variable was coded the wrong way"
   },
   {
-    "objectID": "05-package.html#running-code",
-    "href": "05-package.html#running-code",
+    "objectID": "05-package.html#phase-2-creating-a-new-tutorial",
+    "href": "05-package.html#phase-2-creating-a-new-tutorial",
     "title": "Package Development",
-    "section": "Running Code",
-    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed).\n\n\n\n\nÇetinkaya-Rundel, Mine, and Victoria Ellison. 2021. “A Fresh Look at Introductory Data Science.” Journal of Statistics and Data Science Education 29 (sup1): S16–26.\n\n\nDelmas, Robert, Joan Garfield, Ann Ooms, and Beth Chance. 2007. “ASSESSING STUDENTS’ CONCEPTUAL UNDERSTANDING AFTER A FIRST COURSE IN STATISTICS.” STATISTICS EDUCATION RESEARCH JOURNAL 6 (2): 28–58.\n\n\nEpstein, Jerome. 2013. “The Calculus Concept Inventory-Measurement of the Effect of Teaching Methodology in Mathematics.” Notices of the American Mathematical Society 60 (8): 1018–27.\n\n\nGodfrey, Kelly E., and Sanja Jagesic. 2016. Validating College Course Placement Decisions Based on CLEP Exam Scores: CLEP Placement Validity Study Results. Statistical Report. College Board.\n\n\nMulford, DouglasRobert. 1996. “An Inventory for Measuring College Students’ Level of Misconceptions in First Semester Chemistry.” Unpublished Master’s Thesis, Purdue University, IN.\n\n\nSolomon, Erin D., Julie M. Bugg, Shaina F. Rowell, Mark A. McDaniel, Regina F. Frey, and Paul S. Mattson. 2021. “Development and Validation of an Introductory Psychology Knowledge Inventory.” Scholarship of Teaching and Learning in Psychology 7: 123–39.\n\n\nSwanstrom, Ryan. n.d. “Data Science Colleges and Universities.” http://datascience.community/colleges.\n\n\nZhang, Zhiyong, and Danyang Zhang. 2021. “What Is Data Science? An Operational Definition Based on Text Mining of Data Science Curricula.” Journal of Behavioral Data Science 1 (1): 1–16."
+    "section": "Phase 2: Creating a new tutorial",
+    "text": "Phase 2: Creating a new tutorial\n–there were nine tutorials when it existed –the only HW assignment from DS in a box that hadnt been converted yet had to do with Dennys and LaQuinta data, and skeleton documents for the data already existed in dsbox –thought critically about how to convert that hw into a tutorial, changed pacing to make it better as a standalone and interactive"
+  },
+  {
+    "objectID": "05-package.html#phase-3-cran-submission",
+    "href": "05-package.html#phase-3-cran-submission",
+    "title": "Package Development",
+    "section": "Phase 3: CRAN submission",
+    "text": "Phase 3: CRAN submission\n–goal was to submit to CRAN, explain CRAN –learned a lot about package checks/github actions –had been away from it for so long, first thing this semester was to update the version numbers of all the github actions checks –also had to update to base pipe, it had been that long –that spurs conversation about DESCRIPTION and NAMESPACE files. did research on how other tutorial packages handled the “Depends” “Suggests” and “Requires” fields. –stuff like spell check, standardizing to American English, decreased sizes of cover photos for each tutorial to fit on CRAN –eventually hitting final road block of learnr not being fully available on CRAN, thus our package that would want to Depend it can’t\n\n\n\n\nÇetinkaya-Rundel, Mine, and Victoria Ellison. 2021. “A Fresh Look at Introductory Data Science.” Journal of Statistics and Data Science Education 29 (sup1): S16–26.\n\n\nDelmas, Robert, Joan Garfield, Ann Ooms, and Beth Chance. 2007. “ASSESSING STUDENTS’ CONCEPTUAL UNDERSTANDING AFTER A FIRST COURSE IN STATISTICS.” STATISTICS EDUCATION RESEARCH JOURNAL 6 (2): 28–58.\n\n\nEpstein, Jerome. 2013. “The Calculus Concept Inventory-Measurement of the Effect of Teaching Methodology in Mathematics.” Notices of the American Mathematical Society 60 (8): 1018–27.\n\n\nGodfrey, Kelly E., and Sanja Jagesic. 2016. Validating College Course Placement Decisions Based on CLEP Exam Scores: CLEP Placement Validity Study Results. Statistical Report. College Board.\n\n\nMulford, DouglasRobert. 1996. “An Inventory for Measuring College Students’ Level of Misconceptions in First Semester Chemistry.” Unpublished Master’s Thesis, Purdue University, IN.\n\n\nSolomon, Erin D., Julie M. Bugg, Shaina F. Rowell, Mark A. McDaniel, Regina F. Frey, and Paul S. Mattson. 2021. “Development and Validation of an Introductory Psychology Knowledge Inventory.” Scholarship of Teaching and Learning in Psychology 7: 123–39.\n\n\nSwanstrom, Ryan. n.d. “Data Science Colleges and Universities.” http://datascience.community/colleges.\n\n\nZhang, Zhiyong, and Danyang Zhang. 2021. “What Is Data Science? An Operational Definition Based on Text Mining of Data Science Curricula.” Journal of Behavioral Data Science 1 (1): 1–16."
   },
   {
     "objectID": "06-discussion.html",
@@ -79,105 +86,105 @@
   {
     "objectID": "90-instrument.html#sec-storm-paths",
     "href": "90-instrument.html#sec-storm-paths",
-    "title": "Appendix A: Current Assessment Prototype",
+    "title": "Appendix A: Assessment Prototype",
     "section": "Storm Paths",
     "text": "Storm Paths\nThe figure below shows a forecast after simulating 50 potential paths for a large storm. The two points (a) and (b) represent two cities. Which city is more likely to be hit by the storm? Explain.\n\n\n\n\n\n\n\n\n\na. City a\nb. City b"
   },
   {
     "objectID": "90-instrument.html#sec-movie-budgets-1",
     "href": "90-instrument.html#sec-movie-budgets-1",
-    "title": "Appendix A: Current Assessment Prototype",
+    "title": "Appendix A: Assessment Prototype",
     "section": "Movie Budgets 1",
     "text": "Movie Budgets 1\nA data scientist at IMDb has been given a dataset comprised of the revenues and budgets for 2,349 movies made between 1986 and 2016.\nSuppose they want to compare several distributional features of the budgets among four different genres—Horror, Drama, Action, and Animation. To do this, they create the following plots.\n\n\n\n\n\n\n\n\n\nFill in the following table by placing a checkmark in the cells corresponding to the attributes of the data that can be determined by examining each of the plots.\n\n\n\n\nPlot A\nPlot B\nPlot C\nPlot D\n\n\n\n\nMean\n[ ]\n[ ]\n[ ]\n[ ]\n\n\nMedian\n[ ]\n[ ]\n[ ]\n[ ]\n\n\nIQR\n[ ]\n[ ]\n[ ]\n[ ]\n\n\nShape\n[ ]\n[ ]\n[ ]\n[ ]"
   },
   {
     "objectID": "90-instrument.html#sec-movie-budgets-2",
     "href": "90-instrument.html#sec-movie-budgets-2",
-    "title": "Appendix A: Current Assessment Prototype",
+    "title": "Appendix A: Assessment Prototype",
     "section": "Movie Budgets 2",
     "text": "Movie Budgets 2\nFor each genre, the data scientist also fitted a regression line to model the relationship between movies’ budgets and their revenues. A scatterplot of this relationship, along with the fitted regression line, is shown for each of the four genres below. For which genre would the fitted regression model produce the highest \\(R^2\\) value? Explain."
   },
   {
     "objectID": "90-instrument.html#sec-application-screening",
     "href": "90-instrument.html#sec-application-screening",
-    "title": "Appendix A: Current Assessment Prototype",
+    "title": "Appendix A: Assessment Prototype",
     "section": "Application Screening",
     "text": "Application Screening\nYou are working on a team that is making a deterministic model to quickly screen through applications for a new position at the company. Based on employment laws, your model may not include variables such as age, race, and gender, which could be potentially discriminatory.\nYour colleague suggests including a rule that eliminates candidates with more than 20 years of previous work experience, because they may have high salary expectations. Are there ethical implications of using this variable to select candidates? Explain your answer."
   },
   {
     "objectID": "90-instrument.html#sec-banana-conclusions",
     "href": "90-instrument.html#sec-banana-conclusions",
-    "title": "Appendix A: Current Assessment Prototype",
+    "title": "Appendix A: Assessment Prototype",
     "section": "Banana Conclusions",
     "text": "Banana Conclusions\nData scientists at FiveThirtyEight administered a food frequency questionnaire. With 54 complete responses they found that people who ate bananas tended to score higher on the SAT verbal section than the SAT math section (\\(p=0.0073\\)). An article reporting the results of this study has the headline, “Eat more bananas to score higher on the SAT verbal section”. Is this headline accurate, or could it be misleading? Explain."
   },
   {
     "objectID": "90-instrument.html#sec-COVID-map",
     "href": "90-instrument.html#sec-COVID-map",
-    "title": "Appendix A: Current Assessment Prototype",
+    "title": "Appendix A: Assessment Prototype",
     "section": "COVID Map",
     "text": "COVID Map\nThe visualization below displays the 14-day rolling average of new COVID-19 cases January 1 - August 31, 2021 in the United States. Each plot represents a state or Washington, D.C., and is labeled using the state’s abbreviation (e.g., MA = Massachusetts). The shaded area under each curve represents the increase in new cases since the state’s minimum point in 2021. This is a recreation of a similar plot that originally appeared in the New York Times.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat do we learn from this plot about COVID-19 cases in the US?\nCompare KY (Kentucky) in the South region to CA (California) in the West region. Based on this plot, can we conclude there was a difference in overall number of COVID cases in KY and CA in August 2021? Explain."
   },
   {
     "objectID": "90-instrument.html#sec-he-said-she-said",
     "href": "90-instrument.html#sec-he-said-she-said",
-    "title": "Appendix A: Current Assessment Prototype",
+    "title": "Appendix A: Assessment Prototype",
     "section": "He Said She Said",
     "text": "He Said She Said\nFor each of the following items, indicate whether the statement is TRUE, FALSE, or whether you would need additional information to determine this. If you can determine the statement is true/false, indicate the evidence that you used to make that determination. If you need additional information to make that determination, indicate what else you would need.\n\n\n\n\n\n\n\n\n\nMen in Austen’s novels are more likely to have ‘dared’, ‘expected’, and ‘ran’ than women.\n\n\nTrue\nFalse\nNeed additional information to determine this\n\n\nWomen in Austen’s novels are more likely to have ‘remembered’, ‘felt’, and ‘cried’ than men.\n\n\nTrue\nFalse\nNeed additional information to determine this\n\n\nWomen in Austen’s novels are more likely to have ‘remembered’ than ‘feared’.\n\n\nTrue\nFalse\nNeed additional information to determine this"
   },
   {
     "objectID": "90-instrument.html#sec-build-a-plot",
     "href": "90-instrument.html#sec-build-a-plot",
-    "title": "Appendix A: Current Assessment Prototype",
+    "title": "Appendix A: Assessment Prototype",
     "section": "Build-a-Plot",
     "text": "Build-a-Plot\nThe following is an intensity map of the unemployment rate among adults in the counties in the United States (based on data from 2019).\n\n\n\n\n\n\n\n\n\nIndicate which of the following data you need to recreate this map? (Select all that apply.)\n-   [ ] County boundaries\n-   [ ] Unemployment rate in each county\n-   [ ] Number of adults living in each county\n-   [ ] Number of unemployed adults living in each county\n-   [ ] Total population of the county"
   },
   {
     "objectID": "90-instrument.html#sec-disease-screening",
     "href": "90-instrument.html#sec-disease-screening",
-    "title": "Appendix A: Current Assessment Prototype",
+    "title": "Appendix A: Assessment Prototype",
     "section": "Disease Screening",
     "text": "Disease Screening\nCOVID screening tests are not 100% accurate. It’s possible to have COVID but not test positive or not have COVID but test positive for it. The following three visualizations display the outcomes of a COVID screening test with a sensitivity (true positive rate) of 98.1% and specificity (true negative rate) of 99.6% in a population where 5% of the individuals have COVID.\nWe are also interested in the false positive (individuals classified as with COVID, who don’t actually have it) and false negative (individuals classified as without COVID, but who do actually have it) rates.\n\n\n\n\n\n\n\n\n\nFill in the following table by placing a checkmark in the cells corresponding to the attributes of the data that can be determined by examining each of the plots.\n\n\n\n\nPlot A\nPlot B\nPlot C\n\n\n\n\nSensitivity\n[ ]\n[ ]\n[ ]\n\n\nSpecificity\n[ ]\n[ ]\n[ ]\n\n\nFalse positive rate\n[ ]\n[ ]\n[ ]\n\n\nFalse negative rate\n[ ]\n[ ]\n[ ]"
   },
   {
     "objectID": "90-instrument.html#sec-realty-tree",
     "href": "90-instrument.html#sec-realty-tree",
-    "title": "Appendix A: Current Assessment Prototype",
+    "title": "Appendix A: Assessment Prototype",
     "section": "Realty Tree",
     "text": "Realty Tree\nA realtor has trained a regression tree to predict the price of a house from features such as number of bedrooms, number of bathrooms, number of fireplaces, and size of the living area.\n\n\n\n\n\n\n\nTree\n\n  \n\na1\n\n Living Area   p < .001   \n\nb1\n\n Living Area   p < .001   \n\na1->b1\n\n    ≤ 1988 ft.²        \n\nb2\n\n Living Area   p < .001   \n\na1->b2\n\n    > 1988 ft.²   \n\nc1\n\n Living Area   p < .001   \n\nb1->c1\n\n  ≤ 1483 ft.²                  \n\nc2\n\n Bathrooms   p < .001   \n\nb1->c2\n\n     > 1483 ft.²   \n\nc3\n\n Bathrooms   p < .001   \n\nb2->c3\n\n    ≤ 2816 ft.²   \n\nc4\n\n Fireplaces   p < .001   \n\nb2->c4\n\n    > 2816 ft.²   \n\nd1\n\n Bathrooms   p < .001   \n\nc1->d1\n\n     > 1080 ft.²         \n\ne1\n\n n = 224   y = $130,444   \n\nc1->e1\n\n       ≤ 1080 ft.²          \n\ne4\n\n n = 229   y = $210,950   \n\nc2->e4\n\n   ≤ 1.5   \n\ne5\n\n n = 47   y = $258,345   \n\nc2->e5\n\n    > 1.5   \n\nd2\n\n Living Area   p < .001   \n\nc3->d2\n\n    > 1.5   \n\ne8\n\n n = 209   y = $262,972   \n\nc3->e8\n\n    ≤ 1.5   \n\ne9\n\n n = 82   y = $326,267   \n\nc4->e9\n\n     ≤ 1   \n\ne10\n\n n = 15   y = $501,876   \n\nc4->e10\n\n     >1   \n\ne2\n\n n = 336   y = $151,424   \n\nd1->e2\n\n   ≤ 1.5        \n\ne3\n\n n = 238   y = $184,248   \n\nd1->e3\n\n    > 1.5   \n\ne6\n\n n = 45   y = $214,802   \n\nd2->e6\n\n     ≤ 2576 ft.²             \n\ne7\n\n n = 102   y = $294,349   \n\nd2->e7\n\n    > 2576 ft.²  \n\n\n\n\n\nWhat price would the tree predict for a house with 3200 ft.2 of living area, 1.5 bathrooms, and 1 fireplace?\n\n$262,972\n$326,267\n$501,876\nCan’t be determined from the information given.\n\nWhat price would the tree predict for a house with 1200 ft.2 of living area and 1.5 bathrooms?\n\n$151,424\n$184,248\n$210,950\nCan’t be determined from the information given."
   },
   {
     "objectID": "90-instrument.html#sec-website-testing",
     "href": "90-instrument.html#sec-website-testing",
-    "title": "Appendix A: Current Assessment Prototype",
+    "title": "Appendix A: Assessment Prototype",
     "section": "Website Testing",
     "text": "Website Testing\nAn e-commerce company is working on their website design and is interested in knowing whether having the website mainly in blue or red would lead to better business outcomes. One outcome they are measuring is the number of returning users to the website. They design two versions of the website one in blue and the other in red. A random half of the visitors see the website in blue and the other half see it in red. The plot shows the number of returning users per day for the two different versions of the website.\n\n\n\n\n\n\n\n\n\nIndicate whether each of the following conclusions are valid. Explain.\nOver time the company is getting more returning users regardless of the version of the website.\na.  Valid\nb.  Invalid\nc.  Cannot determine this from the plot.\nOn the 31st day, the blue version of the website is expected to have higher number of returning users.\na.  Valid\nb.  Invalid\nc.  Cannot determine this from the plot.\nOn the 60th day, the blue version of the website is expected to have higher number of returning users.\na.  Valid\nb.  Invalid\nc.  Cannot determine this from the plot."
   },
   {
     "objectID": "90-instrument.html#sec-image-recognition",
     "href": "90-instrument.html#sec-image-recognition",
-    "title": "Appendix A: Current Assessment Prototype",
+    "title": "Appendix A: Assessment Prototype",
     "section": "Image Recognition",
     "text": "Image Recognition\nA data science student wants to create an image recognition algorithm to identify whether a university professor belongs to a department in the sciences or not. To do this, she collects data by scraping several university photo archives of university faculty. She labels faculty in the photos as “Sciences” or “Not sciences”. The images below depict a small representative sample of her data.\nSciences\n\n\n\n\n\n\n\n\n\nNot sciences\n\n\n\n\n\n\n\n\n\nThe data science student plans to use these photos of current university faculty to predict whether they are scientists. What concerns might you have about the predictions from this algorithm? Explain."
   },
   {
     "objectID": "90-instrument.html#sec-data-confidentiality",
     "href": "90-instrument.html#sec-data-confidentiality",
-    "title": "Appendix A: Current Assessment Prototype",
+    "title": "Appendix A: Assessment Prototype",
     "section": "Data Confidentiality",
     "text": "Data Confidentiality\nA newspaper reports on the results of a survey from a small (<2000 student) university. The university agrees to have the data released to the public so long as the students’ identities and academic standing information are kept confidential. Select the safe combinations of variables that are unlikely to identify any individual students. Explain.\n\n\nClass year and sports played\nStudent ID and dorm ZIP code\nGPA and major\nBirth date and phone number\nNone of the above"
   },
   {
     "objectID": "90-instrument.html#sec-activity-journal",
     "href": "90-instrument.html#sec-activity-journal",
-    "title": "Appendix A: Current Assessment Prototype",
+    "title": "Appendix A: Assessment Prototype",
     "section": "Activity Journal",
     "text": "Activity Journal\nBelow is data that was recorded in an activity journal.\n\n\n\n\n\n\n\n\n\nA data scientist reformats the data into a table so that each variable represented in the data is recorded in a single column. Describe what each of the columns of this table will contain, as well as what each row or observation of the table will represent."
   },
   {
     "objectID": "90-instrument.html#sec-movie-wrangling",
     "href": "90-instrument.html#sec-movie-wrangling",
-    "title": "Appendix A: Current Assessment Prototype",
+    "title": "Appendix A: Assessment Prototype",
     "section": "Movie Wrangling",
     "text": "Movie Wrangling\nThe table below provides data about 10 movies released in the United States. It provides data on the movie’s title (title), the movie’s director (director), the date the movie was released (release_date), the season the movie was released (season), the worldwide gross intake in U.S. dollars (gross), the cleaned version of the worldwide gross intake in U.S. dollars (gross_clean), and whether or not the movie won the Best Picture Oscar (best_picture).\n\n\n\n\nMovies Table\n \n  \n    title \n    director \n    release_date \n    season \n    gross \n    gross_clean \n    best_picture \n  \n \n\n  \n    Almost Famous \n    Cameron Crowe \n    22 September 2000 \n    Fall \n    $47.39M \n    47.39 \n    No \n  \n  \n    CODA \n    Sian Heder \n    13 August 2021 \n    Summer \n    $1.61M \n    1.61 \n    Yes \n  \n  \n    E.T. the Extra-Terrestrial \n    Steven Spielberg \n    11 June 1982 \n    Summer \n    $792.91M \n    792.91 \n    No \n  \n  \n    Luca \n    Enrico Casarosa \n    18 June 2021 \n    Summer \n    $49.75M \n    49.75 \n    No \n  \n  \n    Middle of Nowhere \n    Ava DuVernay \n    1 September 2014 \n    Fall \n    $0.24M \n    0.24 \n    No \n  \n  \n    Moonlight \n    Barry Jenkins \n    18 November 2016 \n    Fall \n    $65.34M \n    65.34 \n    Yes \n  \n  \n    Parasite \n    Bong Joon Ho \n    8 November 2019 \n    Fall \n    $262.69M \n    262.69 \n    Yes \n  \n  \n    Say Anything \n    Cameron Crowe \n    14 April 1989 \n    Spring \n    $21.52M \n    21.52 \n    No \n  \n  \n    Selma \n    Ava DuVernay \n    9 January 2015 \n    Winter \n    $66.79M \n    66.79 \n    No \n  \n  \n    We Bought a Zoo \n    Cameron Crowe \n    23 December 2011 \n    Winter \n    $120.08M \n    120.08 \n    No \n  \n\n\n\n\n\n\nDescribe a process that you could use to generate the data in the season column using the information in the release_date column.\nDescribe a process that you could use to generate the data in the gross_clean column using the information in the gross column.\nYou have been tasked with adding a new column called nominated_for_best_picture which indicates whether or not each movie was nominated for the Best Picture Oscar (“Yes” if it was, “No” if it was not). Is there sufficient information in this dataset to generate this new column? Explain.\n\nThe table below provides data about 10 movie directors. It provides data on the director’s name (director), the number of Oscars the movie’s director has been nominated for (nominations), and the number of Oscars the director has won (oscars).\n\n\n\n\nDirectors Table\n \n  \n    director \n    nominations \n    oscars \n  \n \n\n  \n    Ava DuVernay \n    1 \n    0 \n  \n  \n    Barry Jenkins \n    3 \n    1 \n  \n  \n    Bong Joon Ho \n    3 \n    3 \n  \n  \n    Cameron Crowe \n    3 \n    1 \n  \n  \n    Enrico Casarosa \n    2 \n    0 \n  \n  \n    Loveleen Tandan \n    0 \n    0 \n  \n  \n    Nora Ephron \n    3 \n    0 \n  \n  \n    Penny Marshall \n    0 \n    0 \n  \n  \n    Sian Heder \n    1 \n    1 \n  \n  \n    Steven Spielberg \n    19 \n    3 \n  \n\n\n\n\n\nUse the data in the Movies Table and in the Directors Table to answer the following questions. For each question, what is the result of carrying out the given pseudocode (ie. code recipe)?\n26.\n\nSTART_WITH(the Movies table) then\n    KEEP_ROWS_WHERE(the season value is Fall) then\n    COUNT(the number of rows)\n\n27.\n\nSTART_WITH(the Movies table) then\n    KEEP_ROWS_WHERE(the season value is Fall) then\n    COUNT(the number of rows) WHERE( best_picture value is Yes)\n\n\n\n\n\n\n\n\n\n\n28.\n\nSTART_WITH(the Movies table) then\n    KEEP_ROWS_WHERE(the season value is Fall then\n    ADD_COLUMNS_FROM(the Director Table) MATCHING_BY(the director column) then\n    COUNT(the number of rows) WHERE(oscars value is 3) AND(best_picture value is No)\n\n\n\n\n\nÇetinkaya-Rundel, Mine, and Victoria Ellison. 2021. “A Fresh Look at Introductory Data Science.” Journal of Statistics and Data Science Education 29 (sup1): S16–26.\n\n\nDelmas, Robert, Joan Garfield, Ann Ooms, and Beth Chance. 2007. “ASSESSING STUDENTS’ CONCEPTUAL UNDERSTANDING AFTER A FIRST COURSE IN STATISTICS.” STATISTICS EDUCATION RESEARCH JOURNAL 6 (2): 28–58.\n\n\nEpstein, Jerome. 2013. “The Calculus Concept Inventory-Measurement of the Effect of Teaching Methodology in Mathematics.” Notices of the American Mathematical Society 60 (8): 1018–27.\n\n\nGodfrey, Kelly E., and Sanja Jagesic. 2016. Validating College Course Placement Decisions Based on CLEP Exam Scores: CLEP Placement Validity Study Results. Statistical Report. College Board.\n\n\nMulford, DouglasRobert. 1996. “An Inventory for Measuring College Students’ Level of Misconceptions in First Semester Chemistry.” Unpublished Master’s Thesis, Purdue University, IN.\n\n\nSolomon, Erin D., Julie M. Bugg, Shaina F. Rowell, Mark A. McDaniel, Regina F. Frey, and Paul S. Mattson. 2021. “Development and Validation of an Introductory Psychology Knowledge Inventory.” Scholarship of Teaching and Learning in Psychology 7: 123–39.\n\n\nSwanstrom, Ryan. n.d. “Data Science Colleges and Universities.” http://datascience.community/colleges.\n\n\nZhang, Zhiyong, and Danyang Zhang. 2021. “What Is Data Science? An Operational Definition Based on Text Mining of Data Science Curricula.” Journal of Behavioral Data Science 1 (1): 1–16."
   },
