@@ -43,8 +43,8 @@ The figure below shows a forecast after simulating 50 potential paths for a larg
 knitr::include_graphics("figs/hurricane_andy.png")
 ```
 
-a. City a
-b. City b
+a.  City a
+b.  City b
 
 {{< pagebreak >}}
 
@@ -475,11 +475,15 @@ ggplot(map_county, aes(x = long, y = lat, group = group)) +
 
 Indicate which of the following data you need to recreate this map? (Select all that apply.)
 
-[ ] County boundaries
-[ ] Unemployment rate in each county
-[ ] Number of adults living in each county
-[ ] Number of unemployed adults living in each county
-[ ] Total population of the county
+-   [ ] County boundaries
+
+-   [ ] Unemployment rate in each county
+
+-   [ ] Number of adults living in each county
+
+-   [ ] Number of unemployed adults living in each county
+
+-   [ ] Total population of the county
 
 {{< pagebreak >}}
 

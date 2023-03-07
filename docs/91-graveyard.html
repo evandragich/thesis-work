@@ -810,7 +810,7 @@ div.csl-indent {
 <section id="sec-model-comparison" class="level2">
 <h2 class="anchored" data-anchor-id="sec-model-comparison">Model Comparison</h2>
 <p>A data scientist has trained four different classification models (null model, Naive Bayes model, <em>k</em> Nearest Neighbors (kNN) model, and random forest model) on a set of data. The observed responses and the model predictions for a set of 10 observations from a validation set of data are shown in the table below.</p>
-<div class="cell" data-layout-align="center" data-hash="91-graveyard_cache/html/unnamed-chunk-13_c4c4630b0474bc4d0d1dd82716b5a44f">
+<div class="cell" data-layout-align="center" data-hash="91-graveyard_cache/html/unnamed-chunk-13_13f2bc8f6aadea66a051ec94aade6f39">
 <div class="cell-output-display">
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
@@ -918,18 +918,18 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>The following three items were reworked into one context, as the current [Movie Wrangling]</p>
+<p>The following three items were reworked into one context, as the current [90-assessment.qmd/movie-wrangling]</p>
 <div style="page-break-after: always;"></div>
 </section>
 <section id="sec-tv-show-wrangling" class="level2">
 <h2 class="anchored" data-anchor-id="sec-tv-show-wrangling">TV Show Wrangling</h2>
 <p>The two tables below provide data about several TV shows.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell" data-layout-align="center" data-hash="91-graveyard_cache/html/unnamed-chunk-15_fef75583b41b07455303a10b5fa081d4">
+<!-- ::: columns -->
+<!-- ::: {.column width="50%"} -->
+<div class="cell" data-layout-align="center" data-tbl-subcap="[&quot;Cars&quot;,&quot;Pressure&quot;]" data-hash="91-graveyard_cache/html/unnamed-chunk-15_9d77983265560fe9bb773cde6525b33b">
 <div class="cell-output-display">
 
-<table class="table" style="font-size: 12px; font-family: &quot;Courier&quot;; width: auto !important; ">
+<table class="table" style="font-size: 12px; font-family: &quot;Courier&quot;; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">Creator Table</caption>
  <thead>
   <tr>
@@ -1008,19 +1008,16 @@ div.csl-indent {
 </table>
 
 </div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell" data-layout-align="center" data-hash="91-graveyard_cache/html/unnamed-chunk-16_f50f6beebb66c25b688ea6eba5e3e6ba">
 <div class="cell-output-display">
 
-<table class="table" style="font-size: 12px; font-family: &quot;Courier&quot;; width: auto !important; float: left; margin-right: 10px;">
+<table class="table" style="font-size: 12px; font-family: &quot;Courier&quot;; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">TV Show Table</caption>
  <thead>
   <tr>
    <th style="text-align:left;font-weight: bold;"> TV_Show </th>
    <th style="text-align:left;font-weight: bold;"> TV_Show_ID </th>
    <th style="text-align:left;font-weight: bold;"> Network </th>
-   <th style="text-align:left;font-weight: bold;"> Seasons </th>
+   <th style="text-align:right;font-weight: bold;"> Seasons </th>
   </tr>
  </thead>
 <tbody>
@@ -1028,75 +1025,80 @@ div.csl-indent {
    <td style="text-align:left;"> All-American </td>
    <td style="text-align:left;"> 01 </td>
    <td style="text-align:left;"> CW </td>
-   <td style="text-align:left;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Atlanta </td>
    <td style="text-align:left;"> 02 </td>
    <td style="text-align:left;"> FX </td>
-   <td style="text-align:left;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Bunheads </td>
    <td style="text-align:left;"> 03 </td>
    <td style="text-align:left;"> ABC Family </td>
-   <td style="text-align:left;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Gilmore Girls </td>
    <td style="text-align:left;"> 04 </td>
    <td style="text-align:left;"> WB </td>
-   <td style="text-align:left;"> 7 </td>
+   <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Hellcats </td>
    <td style="text-align:left;"> 05 </td>
    <td style="text-align:left;"> CW </td>
-   <td style="text-align:left;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Modern Family </td>
    <td style="text-align:left;"> 06 </td>
    <td style="text-align:left;"> ABC </td>
-   <td style="text-align:left;"> 11 </td>
+   <td style="text-align:right;"> 11 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Ozark </td>
    <td style="text-align:left;"> 07 </td>
    <td style="text-align:left;"> Netflix </td>
-   <td style="text-align:left;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Prison Break </td>
    <td style="text-align:left;"> 08 </td>
    <td style="text-align:left;"> Fox </td>
-   <td style="text-align:left;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Riverdale </td>
    <td style="text-align:left;"> 09 </td>
    <td style="text-align:left;"> CW </td>
-   <td style="text-align:left;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> The Bold Type </td>
    <td style="text-align:left;"> 10 </td>
    <td style="text-align:left;"> Freeform </td>
-   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Younger </td>
    <td style="text-align:left;"> 11 </td>
    <td style="text-align:left;"> TV Land </td>
-   <td style="text-align:left;"> 7 </td>
+   <td style="text-align:right;"> 7 </td>
   </tr>
 </tbody>
 </table>
 
 </div>
 </div>
+<!-- ::: -->
+<!-- ::: {.column width="50%"} -->
+<div class="cell" data-layout-align="center" data-hash="91-graveyard_cache/html/unnamed-chunk-16_3a3917d3d16c971935d2d5045dc6db9a">
+
 </div>
-</div>
+<!-- ::: -->
+<!-- ::: -->
 <p>Consider the two following sets of pseudocode (ie. code recipe). Would they produce the same results? Explain.</p>
 <p>1.</p>
 <div class="code">
@@ -1376,29 +1378,38 @@ div.csl-indent {
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-mine" class="csl-entry" role="doc-biblioentry">
-Çetinkaya-Rundel, Mine, and Victoria Ellison. 2021. <span>“A Fresh Look at Introductory Data Science.”</span> <em>Journal of Statistics and Data Science Education</em> 29 (sup1): S16–26.
+<div id="ref-çetinkaya-rundel2021" class="csl-entry" role="doc-biblioentry">
+Çetinkaya-Rundel, Mine, and Victoria Ellison. 2021. <span>“A Fresh Look at Introductory Data Science.”</span> <em>Journal of Statistics and Data Science Education</em> 29 (sup1): S16–26. <a href="https://doi.org/10.1080/10691898.2020.1804497">https://doi.org/10.1080/10691898.2020.1804497</a>.
 </div>
-<div id="ref-delmas" class="csl-entry" role="doc-biblioentry">
-Delmas, Robert, Joan Garfield, Ann Ooms, and Beth Chance. 2007. <span>“<span>ASSESSING</span> <span>STUDENTS</span>’ <span>CONCEPTUAL</span> <span>UNDERSTANDING</span> <span>AFTER</span> <span>A</span> <span>FIRST</span> <span>COURSE</span> <span>IN</span> <span>STATISTICS</span>.”</span> <em>STATISTICS EDUCATION RESEARCH JOURNAL</em> 6 (2): 28–58.
+<div id="ref-deveaux2017" class="csl-entry" role="doc-biblioentry">
+De Veaux, Richard D., Mahesh Agarwal, Maia Averett, Benjamin S. Baumer, Andrew Bray, Thomas C. Bressoud, Lance Bryant, et al. 2017. <span>“Curriculum Guidelines for Undergraduate Programs in Data Science.”</span> <em>Annual Review of Statistics and Its Application</em> 4 (1): 15–30. <a href="https://doi.org/10.1146/annurev-statistics-060116-053930">https://doi.org/10.1146/annurev-statistics-060116-053930</a>.
 </div>
-<div id="ref-calcinventory" class="csl-entry" role="doc-biblioentry">
-Epstein, Jerome. 2013. <span>“The Calculus Concept Inventory-Measurement of the Effect of Teaching Methodology in Mathematics.”</span> <em>Notices of the American Mathematical Society</em> 60 (8): 1018–27.
+<div id="ref-delmas2007" class="csl-entry" role="doc-biblioentry">
+Delmas, Robert C., Joan Garfield, Ann Ooms, and Beth L. Chance. 2007. <span>“Assessing Students<span>’</span> Conceptual Understanding After a First Course in Statistics.”</span> <em>Statistics Education Research Journal</em> 6: 28–58.
 </div>
-<div id="ref-clep" class="csl-entry" role="doc-biblioentry">
-Godfrey, Kelly E., and Sanja Jagesic. 2016. <em>Validating <span>College</span> <span>Course</span> <span>Placement</span> <span>Decisions</span> <span>Based</span> on <span>CLEP</span> <span>Exam</span> <span>Scores</span>: <span>CLEP</span> <span>Placement</span> <span>Validity</span> <span>Study</span> <span>Results</span>. <span>Statistical</span> <span>Report</span></em>. College Board.
+<div id="ref-epstein2013" class="csl-entry" role="doc-biblioentry">
+Epstein, Jerome. 2013. <span>“The Calculus Concept Inventory<span></span>Measurement of the Effect of Teaching Methodology in Mathematics.”</span> <em>Notices of the American Mathematical Society</em> 60 (08): 1018. <a href="https://doi.org/10.1090/noti1033">https://doi.org/10.1090/noti1033</a>.
 </div>
-<div id="ref-cheminventory" class="csl-entry" role="doc-biblioentry">
-Mulford, DouglasRobert. 1996. <span>“An Inventory for Measuring College Students’ Level of Misconceptions in First Semester Chemistry.”</span> <em>Unpublished Master’s Thesis, Purdue University, IN</em>.
+<div id="ref-godfrey2016" class="csl-entry" role="doc-biblioentry">
+Godfrey, Kelly E., and Sanja Jagesic. 2016. <span>“Validating College Course Placement Decisions Based on CLEP Exam Scores: CLEP Placement Validity Study Results. Statistical Report.”</span> <a href="https://eric.ed.gov/?id=ED574772">https://eric.ed.gov/?id=ED574772</a>.
 </div>
-<div id="ref-psychinventory" class="csl-entry" role="doc-biblioentry">
-Solomon, Erin D., Julie M. Bugg, Shaina F. Rowell, Mark A. McDaniel, Regina F. Frey, and Paul S. Mattson. 2021. <span>“Development and Validation of an Introductory Psychology Knowledge Inventory.”</span> <em>Scholarship of Teaching and Learning in Psychology</em> 7: 123–39.
+<div id="ref-mulford2002" class="csl-entry" role="doc-biblioentry">
+Mulford, Douglas R., and William R. Robinson. 2002. <span>“An Inventory for Alternate Conceptions Among First-Semester General Chemistry Students.”</span> <em>Journal of Chemical Education</em> 79 (6): 739. <a href="https://doi.org/10.1021/ed079p739">https://doi.org/10.1021/ed079p739</a>.
 </div>
-<div id="ref-prevalence" class="csl-entry" role="doc-biblioentry">
-Swanstrom, Ryan. n.d. <span>“Data <span>Science</span> <span>Colleges</span> and <span>Universities</span>.”</span> <a href="http://datascience.community/colleges">http://datascience.community/colleges</a>.
+<div id="ref-reinhart2022" class="csl-entry" role="doc-biblioentry">
+Reinhart, Alex, Ciaran Evans, Amanda Luby, Josue Orellana, Mikaela Meyer, Jerzy Wieczorek, Peter Elliott, Philipp Burckhardt, and Rebecca Nugent. 2022. <span>“Think-Aloud Interviews: A Tool for Exploring Student Statistical Reasoning.”</span> <em>Journal of Statistics and Data Science Education</em> 30 (2): 100–113. <a href="https://doi.org/10.1080/26939169.2022.2063209">https://doi.org/10.1080/26939169.2022.2063209</a>.
 </div>
-<div id="ref-dsdefinition" class="csl-entry" role="doc-biblioentry">
-Zhang, Zhiyong, and Danyang Zhang. 2021. <span>“What Is <span>Data</span> <span>Science</span>? <span>An</span> <span>Operational</span> <span>Definition</span> Based on <span>Text</span> <span>Mining</span> of <span>Data</span> <span>Science</span> <span>Curricula</span>.”</span> <em>Journal of Behavioral Data Science</em> 1 (1): 1–16.
+<div id="ref-schanzer2022" class="csl-entry" role="doc-biblioentry">
+Schanzer, Emmanuel, Nancy Pfenning, Flannery Denny, Sam Dooman, Joe Gibbs Politz, Benjamin S. Lerner, Kathi Fisler, and Shriram Krishnamurthi. 2022. <span>“SIGCSE 2022: The 53rd ACM Technical Symposium on Computer Science Education.”</span> In, 22–28. Providence RI USA: ACM. <a href="https://doi.org/10.1145/3478431.3499311">https://doi.org/10.1145/3478431.3499311</a>.
+</div>
+<div id="ref-solomon2021" class="csl-entry" role="doc-biblioentry">
+Solomon, Erin D., Julie M. Bugg, Shaina F. Rowell, Mark A. McDaniel, Regina F. Frey, and Paul S. Mattson. 2021. <span>“Development and Validation of an Introductory Psychology Knowledge Inventory.”</span> <em>Scholarship of Teaching and Learning in Psychology</em> 7 (2): 123–39. <a href="https://doi.org/10.1037/stl0000172">https://doi.org/10.1037/stl0000172</a>.
+</div>
+<div id="ref-swanstrom" class="csl-entry" role="doc-biblioentry">
+Swanstrom, Ryan. n.d. <span>“Data Science Colleges and Universities.”</span> <a href="https://ryanswanstrom.com/colleges/">https://ryanswanstrom.com/colleges/</a>.
+</div>
+<div id="ref-zhang2021" class="csl-entry" role="doc-biblioentry">
+Zhang, Zhiyong, and Danyang Zhang. 2021. <span>“What Is Data Science? An Operational Definition Based on Text Mining of Data Science Curricula.”</span> <em>Journal of Behavioral Data Science</em> 1 (1): 1–16. <a href="https://doi.org/10.35566/jbds/v1n1/p1">https://doi.org/10.35566/jbds/v1n1/p1</a>.
 </div>
 </div>
 </section>

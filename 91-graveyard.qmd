@@ -373,7 +373,7 @@ dat <- data.frame(
   nul = rep("No", 10),
   naive = c("No", "Yes", "No", "No", "No", "Yes", "No", "No", "Yes", "Yes"),
   knn = c("No", "Yes", "No", "No", "No", "Yes", "No", "No", "Yes", "Yes"),
-  rf = c("No", "No", "No", "No", "No", "No", "No", "No", "Yes", "Yes")
+  rf = c("No", "No", "No", "No", "No", "No", "No ", "No", "Yes", "Yes")
 )
 
 kable(dat,
@@ -399,7 +399,7 @@ The figure shows a plot of prediction error as a function of model complexity fo
 knitr::include_graphics("figs/training_vs_validation.png")
 ```
 
-The following three items were reworked into one context, as the current \[Movie Wrangling\]
+The following three items were reworked into one context, as the current \[90-assessment.qmd/movie-wrangling\]
 
 {{< pagebreak >}}
 
@@ -407,44 +407,57 @@ The following three items were reworked into one context, as the current \[Movie
 
 The two tables below provide data about several TV shows.
 
-::: columns
-::: {.column width="50%"}
+<!-- ::: columns -->
+
+<!-- ::: {.column width="50%"} -->
+
 ```{r}
+#| tbl-subcap: 
+#|   - "Cars"
+#|   - "Pressure"
 
 tv_creator <- read_csv("data/tv-creator.csv")
 tv_show <- read_csv("data/tv-show.csv")
 
 
 kable(tv_creator,
-  align = "l",
+ # align = "l",
   caption = "Creator Table",
   booktabs = TRUE,
   ) %>%
   kable_styling(latex_options = c("striped", "HOLD_position"),
                 html_font = '"Courier"',
                 font_size = 12,
-                full_width = FALSE, 
-                position = "left") %>%
+                #full_width = FALSE, 
+                #position = "left"
+                ) %>%
   row_spec(0, bold = TRUE)
-```
-:::
 
-::: {.column width="50%"}
-```{r}
 kable(tv_show,
-  align = "l",
+  #align = "l",
   caption = "TV Show Table",
   booktabs = FALSE
 ) %>%
   kable_styling(latex_options = c("striped", "HOLD_position"),
                 html_font = '"Courier"',
                 font_size = 12,
-                full_width = FALSE, 
-                position = "float_left") %>%
+                #full_width = FALSE, 
+                #position = "float_left"
+                ) %>%
   row_spec(0, bold = TRUE)
 ```
-:::
-:::
+
+<!-- ::: -->
+
+<!-- ::: {.column width="50%"} -->
+
+```{r}
+
+```
+
+<!-- ::: -->
+
+<!-- ::: -->
 
 Consider the two following sets of pseudocode (ie. code recipe). Would they produce the same results? Explain.
 
@@ -576,8 +589,6 @@ A researcher randomly selects 10 students in a school and collects data about th
 | **9**    | 10       | 8        | 0        |
 |          |          |          |          |
 | **10**   | Total    | 113      | 21       |
-
-
 
 Would it be safe to assume that the average age of children in the sample is 11.3? Explain.
 
