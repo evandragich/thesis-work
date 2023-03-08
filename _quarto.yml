@@ -32,9 +32,9 @@ nocite: |
 
 format:
   html:
-    theme: yeti
+    theme: sandstone
     toc: true
-    toc-depth: 0
+    toc-depth: 2
     number-depth: 0
     css: styles.css
   pdf:
@@ -42,5 +42,8 @@ format:
     toc: true
     toc-depth: 2
     number-depth: 0
+    include-in-header: 
+      text: |
+        \usepackage{mdframed}
 
 

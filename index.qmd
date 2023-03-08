@@ -2,9 +2,7 @@
 
 <a href="https://github.com/evandragich/thesis-work/raw/main/docs/Exploring-Data-Science-Education--From-Tutorials-to-Assessment.pdf">Download PDF here</a>
 
-# Abstract {.unnumbered}
-
-### Abstract:
+### Abstract {.unnumbered}
 
 As data science (DS) continues to grow in popularity among university course offerings, it is becoming crucial to successfully measure students' learning outcomes in introductory courses. To do this requires an assessment designed to which could additionally be used to evaluate pedagogical techniques or curriculum interventions in data science curriculum
 
@@ -12,6 +10,6 @@ To develop a blueprint for the assessment, a multi-institutional team of statist
 
 This poster includes the blueprint developed, as well as example items, and results from the faculty and student think aloud interviews. We also present next steps for the project including plans for larger scale piloting and further analyses.
 
-### Goals
+### Goals {.unnumbered}
 
 By sharing the work, we hope that participants will become familiar with an assessment they may use for designing intro data science curriculum or researching classroom innovations. We also hope that this instrument can serve as an inspiration or a starting point to be tailored by future researchers more specifically to their courses or to another discipline (eg. by adding more programming concepts instead of data visualization to better serve a computing-focused introductory data science class, etc.)

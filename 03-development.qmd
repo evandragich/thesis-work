@@ -1,6 +1,6 @@
 # Assessment Development {.unnumbered}
 
-## Phase 0: Initial Cleaning and Feedback
+## Phase 0: Initial Cleaning and Feedback {.unnumbered}
 
 In January 2022, I inherited a repo with several documents: many were background information on what topics would be included, with one containing all currently-written questions. These questions were not yet organized into specific groups of stem and items, many sections were commented out or overwritten, and it was clearly something that had been written piece-wise by a group of people. My first true task was to run through the current questions myself, answer them how I would, and provide feedback on clarity, wording, and reflect on the topic covered.
 
@@ -12,7 +12,7 @@ At this point, the team came to a verdict on my initial pull request proposals: 
 
 By April 2022, concluding my first semester working on the project, we had a polished, reproducible, website-hosted prototype of the assessment ready to present externally and gather feedback.
 
-## Phase 1: Faculty Interviews
+## Phase 1: Faculty Interviews {.unnumbered}
 
 The remainder of the time spent working on the assessment--April 2022 to February 2023--was spent gathering feedback via interviews, iteratively updating items, and removing weaker questions based on group discussions. We conducted a series of three think-aloud informational interviews with various faculty nationwide who teach or have taught introductory data science courses. Participants were recruited from a shortlist of Dr. Çetinkaya-Rundel's data science assessment contacts, and were specifically chosen to represent a breadth of data science curricula. The three interviewees chosen were, in order of interview:
 
@@ -44,7 +44,7 @@ Encouraged to keep these concepts on the assessment with modifications, we found
 
 We did eventually make rounds of sacrificial cuts, choosing to prioritize culling questions that even slightly overlapped and those that were most straightforward. We acknowledged the trade-off that this may lead to students taking the assessment in a pre-test context unable to confidently answer a majority of the questions. However, we were constrained by the need for an instrument that could reasonably be given in an hour, and cutting out several entire passages was the only way forward. Nevertheless, there were a handful of similar items that we decided to keep for the student interviews, such as two pseudocode chunks (in [Movie Wrangling](90-instrument.qmd#sec-movie-wrangling)) that varied by a single statement. Here, we were ambivalent on which would be more effective, and hoped to let student feedback dictate whether one "stuck" better.
 
-## Phase 2: Student Interviews
+## Phase 2: Student Interviews {.unnumbered}
 
 The chief purpose of Phase 2 was to see if the topics covered would be in the wheelhouse of students with DS exposure, as well as continuing to refine wording and pacing. With the big picture questions around "what is data science" previously discussed, a similar series of interviews with Duke Statistical Science students allowed us to start drilling down and seeing if items landed the way we thought they would.
 
@@ -99,7 +99,7 @@ The following table summarizes the learning objectives for each item in the most
 |                       | data wrangling; pseudocode, joins                                                           |
 |                       | data wrangling; pseudocode, joins                                                           |
 
-## Phase 3: Large-scale Student Pilot
+## Phase 3: Large-scale Student Pilot {.unnumbered}
 
 Looking ahead, the next step after individual item tweaking and refinement will be real-world measurements of pacing and length and the feasibility for introductory data science students. Collaborating with the professors of Duke's Introductory Data Science Course STA199, \_\_\_ students across three sections will be invited to take the assessment, on their own time, for a chance to earn extra credit in the course. We will not solicit general feedback like in the previous interviews, instead asking just a single question at the end to get a rough estimate of how long it took to complete, since they will be doing it on their own time. The extra credit points students receive will not reflect their performance on the assessment, but rather will be simply awarded proportionally to how much was completed. To ensure students are actively engaging with the questions, there will be \_\_\_ attention checks scattered throughout that must also be passed to earn credit.
 

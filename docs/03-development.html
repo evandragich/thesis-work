@@ -170,7 +170,16 @@ div.csl-indent {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#phase-0-initial-cleaning-and-feedback" id="toc-phase-0-initial-cleaning-and-feedback" class="nav-link active" data-scroll-target="#phase-0-initial-cleaning-and-feedback">Phase 0: Initial Cleaning and Feedback</a></li>
+  <li><a href="#phase-1-faculty-interviews" id="toc-phase-1-faculty-interviews" class="nav-link" data-scroll-target="#phase-1-faculty-interviews">Phase 1: Faculty Interviews</a></li>
+  <li><a href="#phase-2-student-interviews" id="toc-phase-2-student-interviews" class="nav-link" data-scroll-target="#phase-2-student-interviews">Phase 2: Student Interviews</a></li>
+  <li><a href="#phase-3-large-scale-student-pilot" id="toc-phase-3-large-scale-student-pilot" class="nav-link" data-scroll-target="#phase-3-large-scale-student-pilot">Phase 3: Large-scale Student Pilot</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -192,16 +201,16 @@ div.csl-indent {
 
 </header>
 
-<section id="phase-0-initial-cleaning-and-feedback" class="level2">
-<h2 class="anchored" data-anchor-id="phase-0-initial-cleaning-and-feedback">Phase 0: Initial Cleaning and Feedback</h2>
+<section id="phase-0-initial-cleaning-and-feedback" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="phase-0-initial-cleaning-and-feedback">Phase 0: Initial Cleaning and Feedback</h2>
 <p>In January 2022, I inherited a repo with several documents: many were background information on what topics would be included, with one containing all currently-written questions. These questions were not yet organized into specific groups of stem and items, many sections were commented out or overwritten, and it was clearly something that had been written piece-wise by a group of people. My first true task was to run through the current questions myself, answer them how I would, and provide feedback on clarity, wording, and reflect on the topic covered.</p>
 <p>From this initial feedback, I created three pull requests attempting to solve some of these issues. These first fixes were minorly substantial edits: changing “most” to “the majority of” to make a question less ambiguous, adding a “fill-in-the-blank” slot to make even more clear what the question is asking, and background information on confidence intervals to an item that referenced them. This was my first exposure to what I would call “advanced” GitHub usage, or more than just typical cloning, pushing, and pulling from ordinary group projects. I used the very helpful <code>pr_*()</code> series of functions from the <code>usethis</code> package, which allowed me to easily create the pull requests for review.</p>
 <p>While the team discussed my pull request proposals, I worked in parallel to clean up any “obvious” fixes to all items. These “no-brainer” edits were mainly typos, distorted or obscured plots and items that don’t actually pose a question. It was also time to clean up the current document by converting it to a Quarto book, which would allow for easy webpage-like navigation. This marked my first exposure to Quarto, and I quickly grew to love its improvements to the RMarkdown workflow, like ease of rendering to different formats and intuitive structure of the index and YAML files. This was also when I received my first moment of creative liberty with the project, as I was tasked with dividing the ungrouped set of questions into discrete passages consisting of a stem and one or more corresponding items. Each of these passages–26 at the time–was given a title to identify it in the Quarto book sidebar.</p>
 <p>At this point, the team came to a verdict on my initial pull request proposals: they approved and merged the slight text modification to “the majority” and the “fill-in-the-blank” title, but rejected the confidence interval language, asserting that the stem already provided sufficient motivation. The final step before presenting the assessment externally was to improve reproducibility, as many figures were not being rendered with each update, but rather embedded as images. In a throwback to my former <a href="https://vizdata.org">STA 313</a> days, I used the current images as guides to recreate a map of the US colored by region, movie-themed data tables, and pseudocode chunks. I had some slight HTML and CSS exposure in previous classes, but this new challenge of matching an existing format allowed me to expand my knowledge about web layout and styles.</p>
 <p>By April 2022, concluding my first semester working on the project, we had a polished, reproducible, website-hosted prototype of the assessment ready to present externally and gather feedback.</p>
 </section>
-<section id="phase-1-faculty-interviews" class="level2">
-<h2 class="anchored" data-anchor-id="phase-1-faculty-interviews">Phase 1: Faculty Interviews</h2>
+<section id="phase-1-faculty-interviews" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="phase-1-faculty-interviews">Phase 1: Faculty Interviews</h2>
 <p>The remainder of the time spent working on the assessment–April 2022 to February 2023–was spent gathering feedback via interviews, iteratively updating items, and removing weaker questions based on group discussions. We conducted a series of three think-aloud informational interviews with various faculty nationwide who teach or have taught introductory data science courses. Participants were recruited from a shortlist of Dr.&nbsp;Çetinkaya-Rundel’s data science assessment contacts, and were specifically chosen to represent a breadth of data science curricula. The three interviewees chosen were, in order of interview:</p>
 <table class="table">
 <colgroup>
@@ -255,8 +264,8 @@ div.csl-indent {
 <p>We did eventually make rounds of sacrificial cuts, choosing to prioritize culling questions that even slightly overlapped and those that were most straightforward. We acknowledged the trade-off that this may lead to students taking the assessment in a pre-test context unable to confidently answer a majority of the questions. However, we were constrained by the need for an instrument that could reasonably be given in an hour, and cutting out several entire passages was the only way forward. Nevertheless, there were a handful of similar items that we decided to keep for the student interviews, such as two pseudocode chunks (in <a href="./90-instrument.html#sec-movie-wrangling">Movie Wrangling</a>) that varied by a single statement. Here, we were ambivalent on which would be more effective, and hoped to let student feedback dictate whether one “stuck” better.</p>
 </section>
 </section>
-<section id="phase-2-student-interviews" class="level2">
-<h2 class="anchored" data-anchor-id="phase-2-student-interviews">Phase 2: Student Interviews</h2>
+<section id="phase-2-student-interviews" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="phase-2-student-interviews">Phase 2: Student Interviews</h2>
 <p>The chief purpose of Phase 2 was to see if the topics covered would be in the wheelhouse of students with DS exposure, as well as continuing to refine wording and pacing. With the big picture questions around “what is data science” previously discussed, a similar series of interviews with Duke Statistical Science students allowed us to start drilling down and seeing if items landed the way we thought they would.</p>
 <p>To reflect this different type of feedback being solicited, we omitted the initial “big picture” questions while interviewing TAs. Combined with the fact that that the assessment was now about half the original length, these interviews were only one hour long. The final portion of big picture questions was kept, though, with slightly modified prompts: Are the pacing and length appropriate? Based on what you remember learning in intro data science, what topics are missing from the current assessment? Based on what you remember learning in intro data science, what is in the current assessment, but doesn’t belong?</p>
 <p>We first reached out in November 2022 to all TAs at that time for STA 199 or STA 198, its health-themed analog. However, we were unable to recruit any students so close to finals, and ended up reaching out to the same group in January. The interviews were conducted in early February, thus consisting of students who were at least TAs for STA199 in the previous Fall semester. The three students recruited were, in order of interview:</p>
@@ -420,8 +429,8 @@ div.csl-indent {
 </table>
 </section>
 </section>
-<section id="phase-3-large-scale-student-pilot" class="level2">
-<h2 class="anchored" data-anchor-id="phase-3-large-scale-student-pilot">Phase 3: Large-scale Student Pilot</h2>
+<section id="phase-3-large-scale-student-pilot" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="phase-3-large-scale-student-pilot">Phase 3: Large-scale Student Pilot</h2>
 <p>Looking ahead, the next step after individual item tweaking and refinement will be real-world measurements of pacing and length and the feasibility for introductory data science students. Collaborating with the professors of Duke’s Introductory Data Science Course STA199, ___ students across three sections will be invited to take the assessment, on their own time, for a chance to earn extra credit in the course. We will not solicit general feedback like in the previous interviews, instead asking just a single question at the end to get a rough estimate of how long it took to complete, since they will be doing it on their own time. The extra credit points students receive will not reflect their performance on the assessment, but rather will be simply awarded proportionally to how much was completed. To ensure students are actively engaging with the questions, there will be ___ attention checks scattered throughout that must also be passed to earn credit.</p>
 <p>In order to distribute the assessment at large and record students’ responses, the Quarto book has been converted into a Qualtrics survey. Once complete, large-scale analysis will be conducted, both to ensure that all questions were indeed appropriate for introductory level students and to explore potential instrument subscales.</p>
 
