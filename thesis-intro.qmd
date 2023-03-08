@@ -1,0 +1,6 @@
+# Introduction {.unnumbered}
+
+next section to write after development: just like about the motivation for the project
+
+ - slightly more colloqual, less scientific, explanation of the gap its fillling (and to lead into that, what a concept inventory is, general facts about the STEM education world, etc)
+  - info on like how these researchers got together/the initial stages of the project that happened before me? (ie before January 2022)

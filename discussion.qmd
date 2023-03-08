@@ -1,0 +1,9 @@
+# Discussion {.unnumbered}
+
+also about future directions with 199 stuff
+
+talk about how much quarto, html, css, yaml, qualtrics, github actions, CRAN etc ive learned
+
+
+ - so what i learned ended up being weaved into the development and package development sections. 
+ - Here, I guess i would synthesize all that to be like I leanred 323 stuff (pull requests, Shiny and HTML) and, related yet distinct, all the tools needed to "interact with existing work from others" (ie publicizing to CRAN, using packages on CRAN in description, pull requests, actually passing checks and reviewing PRs from random people on github)
