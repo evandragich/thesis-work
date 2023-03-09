@@ -4,7 +4,6 @@ project:
 book:
   title: "Exploring Data Science Education: From Tutorials to Assessment"
   subtitle: "Duke Statistical Science | Graduation with Distinction"
-  favicon: "logo.png"
   date: last-modified
   date-format: long
   author: 
@@ -32,6 +31,10 @@ book:
       - icon: linkedin
         href: https://www.linkedin.com/in/evandragich/
         aria-label: LinkedIn
+    page-footer:
+      left: 
+        - text: "Copyright 2023, Evan Dragich"
+        
   search:
     location: navbar
     type: overlay
@@ -53,6 +56,7 @@ format:
     css: styles.css
     grid:
       sidebar-width: 350px
+    include-in-header: favicon.html
   pdf:
     documentclass: scrreprt
     toc: true
