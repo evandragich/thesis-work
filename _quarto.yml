@@ -4,7 +4,7 @@ project:
 book:
   title: "Exploring Data Science Education: From Tutorials to Assessment"
   subtitle: "Duke Statistical Science | Graduation with Distinction"
-  favicon: ./figs/logo.png
+  favicon: "logo.png"
   date: last-modified
   date-format: long
   author: 
@@ -23,15 +23,15 @@ book:
     - package-examples.qmd
   navbar:
     right:
+      - icon: download
+        href: https://github.com/evandragich/thesis-work/raw/main/docs/Exploring-Data-Science-Education--From-Tutorials-to-Assessment.pdf
+        aria-label: Download PDF
       - icon: github
         href: https://github.com/evandragich/thesis-work
         aria-label: GitHub
       - icon: linkedin
         href: https://www.linkedin.com/in/evandragich/
         aria-label: LinkedIn
-      - icon: download
-        href: https://github.com/evandragich/thesis-work/raw/main/docs/Exploring-Data-Science-Education--From-Tutorials-to-Assessment.pdf
-        aria-label: Download PDF
   search:
     location: navbar
     type: overlay
