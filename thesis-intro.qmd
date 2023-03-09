@@ -4,3 +4,4 @@ next section to write after development: just like about the motivation for the 
 
  - slightly more colloqual, less scientific, explanation of the gap its fillling (and to lead into that, what a concept inventory is, general facts about the STEM education world, etc)
   - info on like how these researchers got together/the initial stages of the project that happened before me? (ie before January 2022)
+  - explain each later section (Background is a traditional literature review to motivate a data science concept inventory assessment, the two Development sections detail my contributions and reflections while developing the assessment and the package respectively, the Discussion synthesizes the previous sections and reflects on the experience while looking ahead to the next steps for the projects, the Appendix includes a prototype of the assessment from the time of writing, the set of ultimately discarded passages and items, and screenshots displaying `dsbox` in use.)

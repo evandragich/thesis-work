@@ -569,7 +569,7 @@ Steps:
 
 -   Start with `park_visits`
 -   FILTER(`year` == 2016): Filter for observations in 2016
--   GROUP_BY(`state`) : Group by state / Perform subsequent lines of code within each state.
+-   GROUP_BY(`state`): Group by state/Perform subsequent lines of code within each state
 -   ARRANGE(DESC((`visitors`)): Sort the number of visits in descending order
 -   SLICE(1) : Take the first observation.
 -   End with `most_visited_2016`

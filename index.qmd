@@ -1,7 +1,4 @@
 
-
-<a href="https://github.com/evandragich/thesis-work/raw/main/docs/Exploring-Data-Science-Education--From-Tutorials-to-Assessment.pdf">Download PDF here</a>
-
 ### Abstract {.unnumbered}
 
 As data science (DS) continues to grow in popularity among university course offerings, it is becoming crucial to successfully measure students' learning outcomes in introductory courses. To do this requires an assessment designed to which could additionally be used to evaluate pedagogical techniques or curriculum interventions in data science curriculum

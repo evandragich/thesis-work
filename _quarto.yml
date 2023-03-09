@@ -4,12 +4,12 @@ project:
 book:
   title: "Exploring Data Science Education: From Tutorials to Assessment"
   subtitle: "Duke Statistical Science | Graduation with Distinction"
-  favicon: figs/logo.png
+  favicon: ./figs/logo.png
   date: last-modified
   date-format: long
   author: 
     - Evan Dragich
-    - supervised by Dr. Mine Çetinkaya-Rundel, PhD.
+    - supervised by Mine Çetinkaya-Rundel, PhD.
   chapters:
     - index.qmd
     - thesis-intro.qmd
@@ -21,6 +21,20 @@ book:
     - instrument.qmd
     - graveyard.qmd
     - package-examples.qmd
+  navbar:
+    right:
+      - icon: github
+        href: https://github.com/evandragich/thesis-work
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://www.linkedin.com/in/evandragich/
+        aria-label: LinkedIn
+      - icon: download
+        href: https://github.com/evandragich/thesis-work/raw/main/docs/Exploring-Data-Science-Education--From-Tutorials-to-Assessment.pdf
+        aria-label: Download PDF
+  search:
+    location: navbar
+    type: overlay
 
 execute:
   echo: false
