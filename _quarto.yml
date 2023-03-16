@@ -56,6 +56,7 @@ format:
     css: styles.css
     grid:
       sidebar-width: 350px
+      body-width: 900px
     include-in-header: favicon.html
   pdf:
     documentclass: scrreprt

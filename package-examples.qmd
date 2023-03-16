@@ -2,27 +2,44 @@
 
 The following screenshots show the user experience with the tutorials from `dsbox` in the RStudio IDE.
 
+::: screenshot-border
 ![Main menu of the application](dsbox-figs/00-main-menu.png){fig-alt="Add alt text here"}
 
+
+:::
+
+::: screenshot-border
 ![Title page of Tutorial 4: Lego Sales](dsbox-figs/01-intro-page.png){fig-alt="The image is a screenshot of a computer application, with black text on a white background and a large image in the center. At the top, the title says \"LEGO Sales.\" The image consists of a Stormtrooper LEGO minifigurine on a white computer keyboard. The text below the image describes the purpose of the study (to review previous concepts on data wrangling) and the goals (practice the analysis skills learned so far, developing questions in the data, and deepening the understanding of visualizations.)"}
+:::
 
-
+::: screenshot-border
 ![A sample question with associated code chunk](dsbox-figs/02-question.png){fig-alt="Add alt text here"}
 
+:::
 
+::: screenshot-border
 ![A sample hint available while working in the code chunk](dsbox-figs/03-hint.png){fig-alt="Add alt text here"}
 
+:::
 
+::: screenshot-border
 ![Sample "success" message upon getting the desired code output](dsbox-figs/04-correct-code.png){fig-alt="Add alt text here"}
+:::
 
-
+::: screenshot-border
 ![Sample "incorrect" message to a radio button question](dsbox-figs/05-incorrect-radio.png){fig-alt="Add alt text here"}
+:::
+
 
 Users have the option to retry a missed question unlimited times.
 
-
+::: screenshot-border
 ![Sample "correct" message to a radio button question](dsbox-figs/06-correct-radio.png){fig-alt="Add alt text here"}
+:::
 
+::: screenshot-border
 ![Completion screen](dsbox-figs/07-wrapup.png){fig-alt="Add alt text here"}
+:::
+
 
 Upon finishing a tutorial, the user is presented with an option to review specific sections, or to return to the main menu and select another tutorial.
