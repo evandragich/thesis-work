@@ -62,14 +62,14 @@ movies <- read_csv("https://raw.githubusercontent.com/danielgrijalva/movie-stats
 # Select subset of movies
 genre_list <- c("Action", "Animation", "Drama", "Horror")
 set.seed(12345)
-movies_2 = movies %>%
-  filter(genre %in% genre_list, budget > 0, budget < 300000000) %>%
+movies_2 = movies |>
+  filter(genre %in% genre_list, budget > 0, budget < 300000000) |>
   sample_n(n())
 
 # Bar chart
-p1 = movies_2 %>%
-  group_by(genre) %>%
-  summarise(mean_budget = mean(budget)) %>%
+p1 = movies_2 |>
+  group_by(genre) |>
+  summarise(mean_budget = mean(budget)) |>
   ggplot(aes(x = genre, y = mean_budget, fill = genre)) +
   labs(
     x = "",
@@ -160,8 +160,8 @@ movies <- read_csv("https://raw.githubusercontent.com/danielgrijalva/movie-stats
 # Select subset of movies
 genre_list <- c("Action", "Animation", "Drama", "Horror")
 set.seed(12345)
-movies_2 = movies %>%
-  filter(genre %in% genre_list, budget > 0) %>%
+movies_2 = movies |>
+  filter(genre %in% genre_list, budget > 0) |>
   sample_n(n())
 ```
 
@@ -226,28 +226,28 @@ pop <- read_csv("data/us-population-2019.csv")
 #| echo: false
 
 # use 14 day average
-d <- cases %>%
-  group_by(state) %>%
-  mutate(case = c(cases[1], diff(cases))) %>%
-  ungroup() %>%
-  filter(!(date == as.Date("2021-03-08") & state == "Missouri")) %>% 
-  left_join(pop, by = c("fips" = "GEOID")) %>%
-  group_by(state) %>%
-  arrange(date) %>%
+d <- cases |>
+  group_by(state) |>
+  mutate(case = c(cases[1], diff(cases))) |>
+  ungroup() |>
+  filter(!(date == as.Date("2021-03-08") & state == "Missouri")) |> 
+  left_join(pop, by = c("fips" = "GEOID")) |>
+  group_by(state) |>
+  arrange(date) |>
   mutate(
     case_14 = rollmean(case, k = 14, fill = NA),
-    case_per_100 = (case_14 / estimate) * 100000) %>%
-  ungroup() %>%
+    case_per_100 = (case_14 / estimate) * 100000) |>
+  ungroup() |>
   filter(date >= as.Date("2021-01-01"), date < as.Date("2021-09-01"))
 
 states <- tibble(state = state.name,
                  state_ = state.abb, 
-                 region = state.region) %>%
+                 region = state.region) |>
    add_row(state = "District of Columbia", state_ = "DC", 
-           region = "South") %>%
+           region = "South") |>
   mutate(if_else(region == "North Central", "Midwest", region))
 
-d <- left_join(d, states, by = "state") %>%
+d <- left_join(d, states, by = "state") |>
   filter(!is.na(state_))
 ```
 
@@ -257,13 +257,13 @@ d <- left_join(d, states, by = "state") %>%
 
 
 # find the minimum for each state
-d <- d %>% 
-  group_by(state) %>%
-  slice_min(case_per_100) %>%
-  slice(1) %>%
-  mutate(min_date = date) %>%
-  select(min_date, state) %>%
-  left_join(d, by = "state") %>%
+d <- d |> 
+  group_by(state) |>
+  slice_min(case_per_100) |>
+  slice(1) |>
+  mutate(min_date = date) |>
+  select(min_date, state) |>
+  left_join(d, by = "state") |>
   mutate(col = ifelse(date >= min_date, "yes", "no"))
 ```
 
@@ -307,15 +307,15 @@ ggplot(d, aes(x = date, y = case_per_100)) +
 #| echo: false
 
 states <- tibble(state = state.name,
-                 state_ = state.abb) %>%
+                 state_ = state.abb) |>
    add_row(state = "District of Columbia", state_ = "DC")
 
-d_overall <- cases %>%
-  group_by(state) %>%
-  mutate(case = c(cases[1], diff(cases))) %>%
-  ungroup() %>%
-  left_join(pop, by = c("fips" = "GEOID")) %>%
-  left_join(states, by = "state") %>%
+d_overall <- cases |>
+  group_by(state) |>
+  mutate(case = c(cases[1], diff(cases))) |>
+  ungroup() |>
+  left_join(pop, by = c("fips" = "GEOID")) |>
+  left_join(states, by = "state") |>
   filter(!is.na(state_))
 
 # get overall us population + add it to the data
@@ -349,12 +349,12 @@ d_overall <- d_overall |>
 #| label: find-minimum
 #| echo: false
 
-min_date_us <- d_overall %>% 
-  arrange(case_per_100) %>%
-  slice(1) %>%
-  select(date) %>% pull() 
+min_date_us <- d_overall |> 
+  arrange(case_per_100) |>
+  slice(1) |>
+  select(date) |> pull() 
 
-d_overall <- d_overall %>% 
+d_overall <- d_overall |> 
   mutate(col = if_else(date >= min_date_us, "yes", "no"))
 ```
 
@@ -431,12 +431,12 @@ c.  Need additional information to determine this
 The following is an intensity map of the unemployment rate among adults in the counties in the United States (based on data from 2019).
 
 ```{r}
-dfips <- maps::county.fips %>%
-  as_tibble() %>%
+dfips <- maps::county.fips |>
+  as_tibble() |>
   extract(polyname, c("region", "subregion"), "^([^,]+),([^,]+)$")
-map_county <- map_data("county") %>%
-  as_tibble() %>%
-  left_join(dfips) %>%
+map_county <- map_data("county") |>
+  as_tibble() |>
+  left_join(dfips) |>
   mutate(fips = case_when(
     subregion == "okaloosa" & region == "florida" ~ 12091L,
     subregion == "st martin" & region == "louisiana" ~ 22099L,
@@ -449,9 +449,9 @@ map_county <- map_data("county") %>%
     subregion == "san juan" & region == "washington" ~ 53055L,
     TRUE ~ fips
   ))
-county_for_map <- county_complete %>%
+county_for_map <- county_complete |>
   select(fips, name, state, poverty_2019, unemployment_rate_2019, homeownership_2010, median_household_income_2017)
-map_county <- map_county %>%
+map_county <- map_county |>
   left_join(county_for_map, by = "fips")
 
 ggplot(map_county, aes(x = long, y = lat, group = group)) +
@@ -720,10 +720,10 @@ kable(movie_table,
   #align = "l",
   caption = "Movies Table",
   booktabs = FALSE,
-  ) %>%
+  ) |>
   kable_styling(latex_options = c("striped", "scale_down"),
                 html_font = '"Courier"',
-                font_size = 12) %>%
+                font_size = 12) |>
   row_spec(0, bold = TRUE)
 ```
 
@@ -740,10 +740,10 @@ kable(directors_table,
   #align = "l",
   caption = "Directors Table",
   booktabs = FALSE,
-  ) %>%
+  ) |>
   kable_styling(latex_options = c("striped", "HOLD_position"),
                 html_font = '"Courier"',
-                font_size = 12) %>%
+                font_size = 12) |>
   row_spec(0, bold = TRUE)
 ```
 
