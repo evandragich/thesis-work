@@ -77,7 +77,7 @@ ggplot(bike02, aes(x = CITY, fill = as.factor(YEAR))) +
 
 The bar chart shows the the percentage of docks in each city that were bike docks for each year from 2015--2020.
 
-```{r out.width="90%"}
+```{r out.width="90%", fig.width=4}
 # Stacked bar chart
 ggplot(bike01, aes(
   x = CITY,
@@ -104,7 +104,7 @@ ggplot(bike01, aes(
 
 The pie chart was created by plotting the percentage of bike docks for each year in one particular city. Unfortunately, the data scientist has forgotten which city this is. Using the information in the bar chart, identify the city. Explain how you determined this or if you cannot answer it from the visualization, explain why not.
 
-```{r out.width="90%"}
+```{r out.width="90%", fig.width=4}
 # Piechart
 ggplot(data = bike05, aes(x = "", y = n, fill = as.factor(YEAR))) +
   geom_bar(stat = "identity", width = 1, color = "black") +
@@ -399,9 +399,10 @@ The figure shows a plot of prediction error as a function of model complexity fo
 knitr::include_graphics("figs/training_vs_validation.png")
 ```
 
-The following three items were reworked into one context, as the current [Movie Wrangling](assessment#sec-movie-wrangling)
-
 {{< pagebreak >}}
+
+The following three items were reworked into one context, as the current [Movie Wrangling](instrument.qmd#sec-movie-wrangling).
+
 
 ## TV Show Wrangling {#sec-tv-show-wrangling}
 
@@ -412,9 +413,6 @@ The two tables below provide data about several TV shows.
 <!-- ::: {.column width="50%"} -->
 
 ```{r}
-#| tbl-subcap: 
-#|   - "Cars"
-#|   - "Pressure"
 
 tv_creator <- read_csv("data/tv-creator.csv")
 tv_show <- read_csv("data/tv-show.csv")
@@ -515,16 +513,35 @@ Consider the two following sets of pseudocode (ie. code recipe). Would they prod
 
 The dataset below contains information on 8 people; we know their names and how many items they purchased online today.
 
-| name     | number_of_items | visited_online_retailer |
-|----------|-----------------|-------------------------|
-| Miriam   | 10              |                         |
-| Marcel   | 2               |                         |
-| Ayesha   | 0               |                         |
-| Rebecca  | 3               |                         |
-| Lola     | 0               |                         |
-| Laurence | 1               |                         |
-| Tomos    | 9               |                         |
-| Abdul    | 0               |                         |
+```{r}
+tibble(name = c("Miriam", "Marcel", "Ayesha", "Rebecca", "Lola", "Laurence", "Tomos", "Abdul"),
+       number_of_items = c(10, 2, 0, 3, 0, 1, 9, 0),
+       visited_online_retailer = rep(NA, 8)) |>
+kable(
+  #align = "l",
+  caption = NULL,
+  booktabs = FALSE
+) %>%
+  kable_styling(latex_options = c("striped", "HOLD_position"),
+                html_font = '"Courier"',
+                font_size = 12,
+                #full_width = FALSE, 
+                #position = "float_left"
+                ) %>%
+  row_spec(0, bold = TRUE) %>%
+  row_spec(0:8,hline_after=TRUE)
+```
+
+<!-- | name     | number_of_items | visited_online_retailer | -->
+<!-- |----------|-----------------|-------------------------| -->
+<!-- | Miriam   | 10              |                         | -->
+<!-- | Marcel   | 2               |                         | -->
+<!-- | Ayesha   | 0               |                         | -->
+<!-- | Rebecca  | 3               |                         | -->
+<!-- | Lola     | 0               |                         | -->
+<!-- | Laurence | 1               |                         | -->
+<!-- | Tomos    | 9               |                         | -->
+<!-- | Abdul    | 0               |                         | -->
 
 You have been tasked with adding a new column called `visited_online_retailer` which indicates whether or not each person visited the website of an online retailer ("yes" if they did, "no" if they did not). Is there sufficient information in this dataset to generate this new column? Explain.
 
@@ -566,7 +583,6 @@ Arrange the steps to get from the original data set `park_visits` to the final t
 <!-- - Should we give them pseudocode options like Item 36? -->
 
 Steps:
-
 -   Start with `park_visits`
 -   FILTER(`year` == 2016): Filter for observations in 2016
 -   GROUP_BY(`state`): Group by state/Perform subsequent lines of code within each state

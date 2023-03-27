@@ -6,7 +6,7 @@ The following screenshots show the user experience with the tutorials from `dsbo
 
 ::: screenshot-inner-border
 
-![Main menu of the application](dsbox-figs/00-main-menu.png){fig-alt="Add alt text here"}
+![Main menu of the application](dsbox-figs/00-main-menu.png){fig-alt="The image is a screenshot of a computer application, the RStudio IDE. It features a series of tutorial titles and short paragraph descriptions in black text on a white background, with each title having by its side a button with the words \"Start tutorial\" and a green play arrow. One of the titles is \"LEGO Sales.\""}
 
 :::
 
@@ -15,9 +15,7 @@ The following screenshots show the user experience with the tutorials from `dsbo
 ::::: screenshot-outer-border
 
 ::: screenshot-inner-border
-
-![Title page of Tutorial 4: Lego Sales](dsbox-figs/01-intro-page.png){fig-alt="The image is a screenshot of a computer application, with black text on a white background and a large image in the center. At the top, the title says \"LEGO Sales.\" The image consists of a Stormtrooper LEGO minifigurine on a white computer keyboard. The text below the image describes the purpose of the study (to review previous concepts on data wrangling) and the goals (practice the analysis skills learned so far, developing questions in the data, and deepening the understanding of visualizations.)"}
-
+![Title page of Tutorial 4: Lego Sales](dsbox-figs/01-intro-page.png){fig-alt="The image is a screenshot of a computer application, the RStudio IDE, with black text on a white background and a large image in the center. At the top, the title says \"LEGO Sales.\" The image consists of a Stormtrooper LEGO minifigurine on a white computer keyboard. The text below the image describes the purpose of the tutorial (to review previous concepts on data wrangling) and the goals (practice the analysis skills learned so far, developing questions in the data, and deepening the understanding of visualizations.)"}
 :::
 
 :::::
@@ -25,9 +23,7 @@ The following screenshots show the user experience with the tutorials from `dsbo
 ::::: screenshot-outer-border
 
 ::: screenshot-inner-border
-
-![A sample question with associated code chunk](dsbox-figs/02-question.png){fig-alt="Add alt text here"}
-
+![A sample question with associated code chunk](dsbox-figs/02-question.png){fig-alt="The image is a screenshot of a computer application, with the exercise title \"Most common names\" at the top. The text below prompts the user to use the subsequent code chunk to find the three most common first names of LEGO purchasers. The code chunk contains buttons to start over, obtain a hint, run the code, and check it against the solution. The code written is lego_sales, pipe operator, new line, and blanks to prompt the user to fill in a function call. Below the code chunk is a radio button question with 5 options."}
 :::
 
 :::::
@@ -35,9 +31,7 @@ The following screenshots show the user experience with the tutorials from `dsbo
 ::::: screenshot-outer-border
 
 ::: screenshot-inner-border
-
-![A sample hint available while working in the code chunk](dsbox-figs/03-hint.png){fig-alt="Add alt text here"}
-
+![A sample hint available while working in the code chunk](dsbox-figs/03-hint.png){fig-alt="The image is a screenshot of a computer application, with the same exercise \"Most common names\" and its associated code chunk and question as before. This time, the hint window appears, which contains the following text: \"look at the previous question for help\" The hint window also has an option to advance to an additonal hint, or to copy the text to clipboard."}
 :::
 
 :::::
@@ -45,9 +39,7 @@ The following screenshots show the user experience with the tutorials from `dsbo
 ::::: screenshot-outer-border
 
 ::: screenshot-inner-border
-
-![Sample "success" message upon getting the desired code output](dsbox-figs/04-correct-code.png){fig-alt="Add alt text here"}
-
+![Sample "success" message upon getting the desired code output](dsbox-figs/04-correct-code.png){fig-alt="The image is a screenshot of a computer application, with the same exercise \"Most common themes\" and its associated code chunk and question as before. This time, the user has correctly filled in the missing function call with \"count left parenthesis theme, sort = TRUE\". The code output displays the first ten rows of a 211 row, two column table, whose columns are theme, each row corresponding to a LEGO set theme, and n, counting how many times that theme appears in the dataset."}
 :::
 
 :::::
@@ -55,9 +47,7 @@ The following screenshots show the user experience with the tutorials from `dsbo
 ::::: screenshot-outer-border
 
 ::: screenshot-inner-border
-
-![Sample "incorrect" message to a radio button question](dsbox-figs/05-incorrect-radio.png){fig-alt="Add alt text here"}
-
+![Sample "incorrect" message to a radio button question](dsbox-figs/05-incorrect-radio.png){width=2in, fig-alt="The image is a screenshot of a computer application, zoomed into the same multiple choice question as before. It reads \"What are the four most commonly purchased themes?\" Five answer options appear with a radio button next to each. The first option's button is selected. Below the five options, a red message displays \"Incorrect\" and the button, formerly green labeled \"Submit\", now is red and says \"Try again\""}
 :::
 
 :::::
@@ -67,22 +57,18 @@ Users have the option to retry a missed question unlimited times.
 ::::: screenshot-outer-border
 
 ::: screenshot-inner-border
-
-![Sample "correct" message to a radio button question](dsbox-figs/06-correct-radio.png){fig-alt="Add alt text here"}
-
+![Sample "correct" message to a radio button question](dsbox-figs/06-correct-radio.png){width=2in, fig-alt="The image is a screenshot of a computer application, zoomed into the same multiple choice question as before. This time, the second answer option was selected and submitted. It displays a small checkmark icon where its radio button was, and the four other options have X icons in that place. The \"Submit\" button is gone, and the message is now green and reads \"Correct\""}
 :::
 
 :::::
 
+
 ::::: screenshot-outer-border
 
 ::: screenshot-inner-border
-
-![Completion screen](dsbox-figs/07-wrapup.png){fig-alt="Add alt text here"}
-
+![Completion screen](dsbox-figs/07-wrapup.png){fig-alt="The image is a screenshot of a computer application, the RStudio IDE, with the same \"LEGO Sales\" tutorial title at the top. The page title is \"Wrap up\" and thanks the user for finishing the tutorial. As on the other pages, there is a button at the bottom labeled \"Previous Topic\""}
 :::
 
-::::: 
-
+:::::
 
 Upon finishing a tutorial, the user is presented with an option to review specific sections, or to return to the main menu and select another tutorial.
