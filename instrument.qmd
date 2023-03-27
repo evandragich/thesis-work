@@ -48,8 +48,6 @@ knitr::include_graphics("figs/hurricane_andy.png")
 a.  City a
 b.  City b
 
-![](figs/hurricane_andy.png)
-
 {{< pagebreak >}}
 
 ## Movie Budgets 1 {#sec-movie-budgets-1}
@@ -58,7 +56,7 @@ A data scientist at IMDb has been given a dataset comprised of the revenues and 
 
 Suppose they want to compare several distributional features of the budgets among four different genres---Horror, Drama, Action, and Animation. To do this, they create the following plots.
 
-```{r fig.asp=1}
+```{r fig.asp=1, out.width = "70%"}
 movies <- read_csv("https://raw.githubusercontent.com/danielgrijalva/movie-stats/master/movies.csv")
 
 # Select subset of movies
@@ -145,10 +143,10 @@ Fill in the following table by placing a checkmark in the cells corresponding to
 
 |        | Plot A | Plot B | Plot C | Plot D |
 |--------|:------:|:------:|:------:|:------:|
-| Mean   | \[ \]  | \[ \]  | \[ \]  | \[ \]  |
-| Median | \[ \]  | \[ \]  | \[ \]  | \[ \]  |
-| IQR    | \[ \]  | \[ \]  | \[ \]  | \[ \]  |
-| Shape  | \[ \]  | \[ \]  | \[ \]  | \[ \]  |
+| Mean   | [ ]  | [ ]  | [ ]  | [ ]  |
+| Median | [ ]  | [ ]  | [ ]  | [ ]  |
+| IQR    | [ ]  | [ ]  | [ ]  | [ ]  |
+| Shape  | [ ]  | [ ]  | [ ]  | [ ]  |
 
 {{< pagebreak >}}
 
@@ -269,7 +267,7 @@ d <- d %>%
   mutate(col = ifelse(date >= min_date, "yes", "no"))
 ```
 
-```{r}
+```{r, out.width="100%"}
 #| label: make-plot
 #| echo: false
 
@@ -394,11 +392,11 @@ Compare KY (Kentucky) in the South region to CA (California) in the West region.
 
 For each of the following items, indicate whether the statement is TRUE, FALSE, or whether you would need additional information to determine this. If you can determine the statement is true/false, indicate the evidence that you used to make that determination. If you need additional information to make that determination, indicate what else you would need.
 
-```{r}
+```{r out.width = "80%"}
 knitr::include_graphics("figs/austen_gender.png")
 ```
 
-Men in Austen's novels are more likely to have 'dared', 'expected', and 'ran' than women.
+ Men in Austen's novels are more likely to have 'dared', 'expected', and 'ran' than women.
 
 <!-- -->
 
@@ -477,7 +475,7 @@ ggplot(map_county, aes(x = long, y = lat, group = group)) +
   coord_quickmap()
 ```
 
-Indicate which of the following data you need to recreate this map? (Select all that apply.)
+ Indicate which of the following data you need to recreate this map? (Select all that apply.)
 
 -   [ ] County boundaries
 
@@ -604,7 +602,7 @@ edge [style = "bold", fontname = "Helvetica-Bold"]
  b2 -> c4 [label = "  > 2816 ft.&sup2;"]
  c1 -> e1 [label = "     &le; 1080 ft.&sup2;       "]
  c1 -> d1 [label = "   > 1080 ft.&sup2;      "]
- c3 -> e8 [label = "  &le; 1.5"] 
+ c3 -> e8 [label = "  &le; 5"] 
  c3 -> d2 [label = "  > 1.5"]
  d1 -> e2 [label = " &le; 1.5     "]
  d1 -> e3 [label = "  > 1.5"]
@@ -618,14 +616,14 @@ edge [style = "bold", fontname = "Helvetica-Bold"]
 }
 ```
 
-What price would the tree predict for a house with 3200 ft.^2^ of living area, 1.5 bathrooms, and 1 fireplace?
+1. What price would the tree predict for a house with 3200 ft.^2^ of living area, 1.5 bathrooms, and 1 fireplace?
 
 -   [ ] \$262,972
 -   [ ] \$326,267
 -   [ ] \$501,876
 -   [ ] Can't be determined from the information given.
 
-What price would the tree predict for a house with 1200 ft.^2^ of living area and 1.5 bathrooms?
+What price would the tree predict for a house with 1200 ft.^2^ of living area and 5 bathrooms?
 
 -   [ ] \$151,424
 -   [ ] \$184,248
@@ -638,13 +636,13 @@ What price would the tree predict for a house with 1200 ft.^2^ of living area an
 
 An e-commerce company is working on their website design and is interested in knowing whether having the website mainly in blue or red would lead to better business outcomes. One outcome they are measuring is the number of returning users to the website. They design two versions of the website one in blue and the other in red. A random half of the visitors see the website in blue and the other half see it in red. The plot shows the number of returning users per day for the two different versions of the website.
 
-```{r}
+```{r out.width = "75%"}
 knitr::include_graphics("figs/website_red_blue.png")
 ```
 
 Indicate whether each of the following conclusions are valid. Explain.
 
-Over time the company is getting more returning users regardless of the version of the website.
+ Over time the company is getting more returning users regardless of the version of the website.
 
 a.  Valid
 b.  Invalid
@@ -719,39 +717,41 @@ movie_table <- read_csv("data/movie-table.csv")
 directors_table <- read_csv("data/directors-table.csv")
 
 kable(movie_table,
-  align = "l",
+  #align = "l",
   caption = "Movies Table",
-  booktabs = TRUE,
+  booktabs = FALSE,
   ) %>%
   kable_styling(latex_options = c("striped", "scale_down"),
                 html_font = '"Courier"',
-                font_size = 14) %>%
+                font_size = 12) %>%
   row_spec(0, bold = TRUE)
 ```
 
-23. Describe a process that you could use to generate the data in the `season` column using the information in the `release_date` column.
+ Describe a process that you could use to generate the data in the `season` column using the information in the `release_date` column.
 
-24. Describe a process that you could use to generate the data in the `gross_clean` column using the information in the `gross` column.
+Describe a process that you could use to generate the data in the `gross_clean` column using the information in the `gross` column.
 
-25. You have been tasked with adding a new column called `nominated_for_best_picture` which indicates whether or not each movie was nominated for the Best Picture Oscar ("Yes" if it was, "No" if it was not). Is there sufficient information in this dataset to generate this new column? Explain.
+You have been tasked with adding a new column called `nominated_for_best_picture` which indicates whether or not each movie was nominated for the Best Picture Oscar ("Yes" if it was, "No" if it was not). Is there sufficient information in this dataset to generate this new column? Explain.
 
 The table below provides data about 10 movie directors. It provides data on the director's name (`director`), the number of Oscars the movie's director has been nominated for (`nominations`), and the number of Oscars the director has won (`oscars`).
 
 ```{r}
 kable(directors_table,
-  align = "l",
+  #align = "l",
   caption = "Directors Table",
-  booktabs = TRUE,
+  booktabs = FALSE,
   ) %>%
   kable_styling(latex_options = c("striped", "HOLD_position"),
                 html_font = '"Courier"',
-                font_size = 14) %>%
+                font_size = 12) %>%
   row_spec(0, bold = TRUE)
 ```
 
 Use the data in the Movies Table and in the Directors Table to answer the following questions. For each question, what is the result of carrying out the given pseudocode (ie. code recipe)?
 
-26\.
+::::: {.content-visible when-format="html"}
+
+1\.
 
 ::: code
 [START_WITH(]{style="color:#1300ff;"}the Movies table[)]{style="color:#1300ff;"} [then]{style="font-style: italic;"}
@@ -761,7 +761,7 @@ Use the data in the Movies Table and in the Directors Table to answer the follow
     [COUNT(]{style="color:#1300ff;"}the number of rows[)]{style="color:#1300ff;"}
 :::
 
-27\.
+2\.
 
 ::: code
 [START_WITH(]{style="color:#1300ff;"}the Movies table[)]{style="color:#1300ff;"} [then]{style="font-style: italic;"}
@@ -785,7 +785,7 @@ Use the data in the Movies Table and in the Directors Table to answer the follow
 
 <!-- ::: -->
 
-28\.
+3\.
 
 ::: code
 [START_WITH(]{style="color:#1300ff;"}the Movies table[)]{style="color:#1300ff;"} [then]{style="font-style: italic;"}
@@ -796,3 +796,29 @@ Use the data in the Movies Table and in the Directors Table to answer the follow
 
     [COUNT(]{style="color:#1300ff;"}the number of rows[)]{style="color:#1300ff;"} [WHERE(]{style="color:#1300ff;"}`oscars` value is `3`[)]{style="color:#1300ff;"} [AND(]{style="color:#1300ff;"}`best_picture` value is `No`[)]{style="color:#1300ff;"}
 :::
+
+:::::
+
+::::: {.content-visible when-format="pdf"}
+
+1\. 
+```
+start_with(the Movies table) then
+  keep_rows_where(the season value is "Fall") then
+  count(the number of rows)
+```
+2\.
+```
+start_with(the Movies table) then
+  keep_rows_where(the season value is "Fall") then
+  count(the number of rows) where (best_picture value is "Yes")
+```
+3\.
+```
+start_with(the Movies table) then
+  keep_rows_where(the season value is "Fall") then
+  add_columns_from(the Director table) matching_by(the director column) then
+  count(the number of rows) where (oscars value is 3) and (best_picture value is "No")
+```
+
+:::::

@@ -77,7 +77,7 @@ ggplot(bike02, aes(x = CITY, fill = as.factor(YEAR))) +
 
 The bar chart shows the the percentage of docks in each city that were bike docks for each year from 2015--2020.
 
-```{r out.width="90%", fig.width=4}
+```{r out.width="70%", fig.width=6}
 # Stacked bar chart
 ggplot(bike01, aes(
   x = CITY,
@@ -104,7 +104,7 @@ ggplot(bike01, aes(
 
 The pie chart was created by plotting the percentage of bike docks for each year in one particular city. Unfortunately, the data scientist has forgotten which city this is. Using the information in the bar chart, identify the city. Explain how you determined this or if you cannot answer it from the visualization, explain why not.
 
-```{r out.width="90%", fig.width=4}
+```{r out.width="50%", fig.width=5}
 # Piechart
 ggplot(data = bike05, aes(x = "", y = n, fill = as.factor(YEAR))) +
   geom_bar(stat = "identity", width = 1, color = "black") +
@@ -116,9 +116,9 @@ ggplot(data = bike05, aes(x = "", y = n, fill = as.factor(YEAR))) +
   guides(fill = "none")
 ```
 
-Which of the four cities had the biggest increase in the number of bike docks from 2018 to 2020? Explain how you determined this or if you cannot answer it from the visualization, explain why not.
+3. Which of the four cities had the biggest increase in the number of bike docks from 2018 to 2020? Explain how you determined this or if you cannot answer it from the following line graph visualization, explain why not.
 
-```{r}
+```{r out.width="70%", fig.width=6}
 bike04 <- bike %>%
   filter(CITY %in% c("Chicago", "Minneapolis", "Topeka", "Portland")) %>%
   group_by(CITY, YEAR) %>%
@@ -457,9 +457,11 @@ kable(tv_show,
 
 <!-- ::: -->
 
-Consider the two following sets of pseudocode (ie. code recipe). Would they produce the same results? Explain.
+1. Consider the two following sets of pseudocode (ie. code recipe). Would they produce the same results? Explain.
 
-1\.
+::::: {.content-visible when-format="html"}
+
+A\.
 
 ::: code
 [start_with(]{style="color:#1300ff;"}the Creator table[)]{style="color:#1300ff;"} [and_then]{style="color:#1300ff;"}
@@ -469,7 +471,7 @@ Consider the two following sets of pseudocode (ie. code recipe). Would they prod
     [count_of(]{style="color:#1300ff;"}the number of rows for the CW network[)]{style="color:#1300ff;"}
 :::
 
-2\.
+B\.
 
 ::: code
 [start_with(]{style="color:#1300ff;"}the TV Show table[)]{style="color:#1300ff;"} [and_then]{style="color:#1300ff;"}
@@ -479,15 +481,39 @@ Consider the two following sets of pseudocode (ie. code recipe). Would they prod
     [count_of(]{style="color:#1300ff;"}the number of rows for the CW network[)]{style="color:#1300ff;"}
 :::
 
-```{=html}
-<style>
-.column { padding-right: 3ex }
-.column + .column { padding-left: 3ex }
-</style>
-```
-Consider the two following sets of pseudocode (ie. code recipe). Would they produce the same results? Explain.
+:::::
 
-1\.
+::::: {.content-visible when-format="pdf"}
+
+A\. 
+
+```
+start_with(the Creator table) and_then
+  add_columns_from(the TV Show table matching_by the TV Show Column) and_then
+  count_of(the number of rows for the CW network)
+```
+
+B\.
+
+```
+start_with(the TV Show table) and_then
+  add_columns_from(the Creator table matching_by the TV Show Column) and_then
+  count_of(the number of rows for the CW network)
+```
+
+:::::
+
+<!-- ```{=html} -->
+<!-- <style> -->
+<!-- .column { padding-right: 3ex } -->
+<!-- .column + .column { padding-left: 3ex } -->
+<!-- </style> -->
+<!-- ``` -->
+2. Consider the two following sets of pseudocode (ie. code recipe). Would they produce the same results? Explain.
+
+::::: {.content-visible when-format="html"}
+
+A\.
 
 ::: code
 [start_with(]{style="color:#1300ff;"}the Creator table[)]{style="color:#1300ff;"} [and_then]{style="color:#1300ff;"}
@@ -497,7 +523,7 @@ Consider the two following sets of pseudocode (ie. code recipe). Would they prod
     [count_of(]{style="color:#1300ff;"}the number of rows for the CW network[)]{style="color:#1300ff;"}
 :::
 
-2\.
+B\.
 
 ::: code
 [start_with(]{style="color:#1300ff;"}the TV Show table[)]{style="color:#1300ff;"} [and_then]{style="color:#1300ff;"}
@@ -506,6 +532,28 @@ Consider the two following sets of pseudocode (ie. code recipe). Would they prod
 
     [count_of(]{style="color:#1300ff;"}the number of rows for the CW network[)]{style="color:#1300ff;"}
 :::
+
+:::::
+
+::::: {.content-visible when-format="pdf"}
+
+A\. 
+
+```
+start_with(the Creator table) and_then
+  add_columns_from(the TV Show table matching_by the TV Show Column) and_then
+  count_of(the number of rows for the CW network)
+```
+
+B\.
+
+```
+start_with(the TV Show table) and_then
+  add_columns_from(the Creator table matching_by the TV Show ID Column) and_then
+  count_of(the number of rows for the CW network)
+```
+
+:::::
 
 {{< pagebreak >}}
 
@@ -516,11 +564,12 @@ The dataset below contains information on 8 people; we know their names and how 
 ```{r}
 tibble(name = c("Miriam", "Marcel", "Ayesha", "Rebecca", "Lola", "Laurence", "Tomos", "Abdul"),
        number_of_items = c(10, 2, 0, 3, 0, 1, 9, 0),
-       visited_online_retailer = rep(NA, 8)) |>
+       visited_online_retailer = rep("", 8)) |>
 kable(
   #align = "l",
   caption = NULL,
-  booktabs = FALSE
+  booktabs = FALSE,
+  linesep = "\\hline"
 ) %>%
   kable_styling(latex_options = c("striped", "HOLD_position"),
                 html_font = '"Courier"',
@@ -528,8 +577,7 @@ kable(
                 #full_width = FALSE, 
                 #position = "float_left"
                 ) %>%
-  row_spec(0, bold = TRUE) %>%
-  row_spec(0:8,hline_after=TRUE)
+  row_spec(0, bold = TRUE)
 ```
 
 <!-- | name     | number_of_items | visited_online_retailer | -->
@@ -556,24 +604,21 @@ The data set `park_visits` contains the number of annual visitors to 376 nationa
 | 1904     | AR       | Hot Springs National Park           | 101000   |
 | 1904     | CA       | Kings Canyon National Park          | 1000     |
 | 1904     | OR       | Crater Lake National Park           | 1500     |
-| 1904     | SD       | Wind Cave National Park             | 2900     |
 | $\cdots$ | $\cdots$ | $\cdots$                            | $\cdots$ |
 | 2016     | WY       | Devils Tower National Monument      | 496210   |
 | 2016     | WY       | Fort Laramie National Historic Site | 57444    |
 
-A data scientist would like to find the most popular park in each state in 2016. To do so, they decided to create a new data table named `most_visited_2016` that includes the national park site in each state with the most visitors in 2016. The final table will include 51 rows (one for each state and Washington D.C.) and the columns `year`, `state`, `park_site` and `visitors`. Six of the 51 rows of the table are shown below.
+A data scientist would like to find the most popular park in each state in 2016. To do so, they decided to create a new data table named `most_visited_2016` that includes the national park site in each state with the most visitors in 2016. The final table will include 51 rows (one for each state and Washington D.C.) and the columns `year`, `state`, `park_site` and `visitors`. Four of the 51 rows of the table are shown below.
 
 | year | state | park_site                                   | visitors |
 |------|-------|---------------------------------------------|----------|
 | 2016 | AK    | Klondike Gold Rush National Historical Park | 912351   |
 | 2016 | AL    | Little River Canyon National Preserve       | 462700   |
 | 2016 | AR    | Buffalo National River                      | 1785359  |
-| 2016 | AS    | National Park of American Samoa             | 28892    |
-| 2016 | WV    | Harpers Ferry National Historical Park      | 335691   |
+| $\cdots$ | $\cdots$ | $\cdots$                            | $\cdots$ |
 | 2016 | WY    | Yellowstone National Park                   | 4257177  |
 
 Arrange the steps to get from the original data set `park_visits` to the final table `most_visited_2016`.
-
 <!-- Note: -->
 
 <!-- - Are we giving them the steps (out-of-order) and asking them to arrange them in order? If so should we add additional unused steps? -->
@@ -581,8 +626,8 @@ Arrange the steps to get from the original data set `park_visits` to the final t
 <!-- - Should we just have them describe the process? -->
 
 <!-- - Should we give them pseudocode options like Item 36? -->
-
 Steps:
+
 -   Start with `park_visits`
 -   FILTER(`year` == 2016): Filter for observations in 2016
 -   GROUP_BY(`state`): Group by state/Perform subsequent lines of code within each state
