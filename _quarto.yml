@@ -4,6 +4,7 @@ project:
 book:
   title: "Exploring Data Science Education: From Tutorials to Assessment"
   subtitle: "Duke Statistical Science | Graduation with Distinction"
+  output-file: "Exploring-Data-Science-Education-From-Tutorials-to-Assessment"
   date: last-modified
   date-format: long
   author: 
@@ -23,7 +24,7 @@ book:
   navbar:
     right:
       - icon: download
-        href: https://github.com/evandragich/thesis-work/raw/main/docs/Exploring-Data-Science-Education--From-Tutorials-to-Assessment.pdf
+        href: https://github.com/evandragich/thesis-work/raw/main/docs/Exploring-Data-Science-Education-From-Tutorials-to-Assessment.pdf
         aria-label: Download PDF
       - icon: github
         href: https://github.com/evandragich/thesis-work
@@ -47,8 +48,6 @@ bibliography: thesis.bib
 nocite: |
   @*
   
-crossref:
-  chapters: false
 
 format:
   html:
@@ -61,12 +60,8 @@ format:
       sidebar-width: 350px
       body-width: 900px
     include-in-header: favicon.html
-    crossref:
-      chapters: false
   pdf:
     documentclass: scrreprt
-    crossref:
-      chapters: false
     toc: true
     toc-depth: 2
     number-depth: 0
