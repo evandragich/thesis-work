@@ -135,11 +135,11 @@ p4 = ggplot(data = movies_2, aes(x = genre, y = budget, fill = genre)) +
   coord_flip()
 
 
-# Layut plots
+# Layout plots
 p1 / p2 / p3 / p4
 ```
 
-Fill in the following table by placing a checkmark in the cells corresponding to the attributes of the data that can be determined by examining each of the plots.
+Fill in the following table by placing a check mark in the cells corresponding to the attributes of the data that can be determined by examining each of the plots.
 
 |        | Plot A | Plot B | Plot C | Plot D |
 |--------|:------:|:------:|:------:|:------:|
@@ -543,7 +543,7 @@ p3 <- ggplot(data = population) +
   plot_annotation(tag_levels = "A")
 ```
 
-Fill in the following table by placing a checkmark in the cells corresponding to the attributes of the data that can be determined by examining each of the plots.
+Fill in the following table by placing a check mark in the cells corresponding to the attributes of the data that can be determined by examining each of the plots.
 
 |                     | Plot A | Plot B | Plot C |
 |---------------------|:------:|:------:|:------:|
