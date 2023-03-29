@@ -356,15 +356,20 @@ supervised by Mine Çetinkaya-Rundel, PhD.
 <li class="fragment">How i found myself working on this thesis</li>
 </ul>
 </section>
-<section id="agendatoc" class="slide level2">
-<h2>Agenda/TOC</h2>
+<section id="agendathesis-toc" class="slide level2">
+<h2>Agenda/Thesis TOC</h2>
 <ul>
-<li class="fragment">explanation of the 2 facets</li>
-<li class="fragment">summary of following slides (and stuff like time for questions, etc.)</li>
+<li class="fragment">explanation of the 2 strands</li>
+<li class="fragment">summary of following slides (and stuff like there will be time for questions, etc.)</li>
 </ul>
 </section>
-<section id="thesis-background" class="slide level2">
-<h2>Thesis Background</h2>
+<section>
+<section id="building-a-data-science-assessment" class="title-slide slide level1 center">
+<h1>Building a Data Science Assessment</h1>
+
+</section>
+<section id="background" class="slide level2">
+<h2>Background</h2>
 <ul>
 <li class="fragment">Colloquially motivate the need for a DS concept inventory
 <ul>
@@ -427,8 +432,8 @@ supervised by Mine Çetinkaya-Rundel, PhD.
           display:block!important;
       }</style></aside>
 </section>
-<section id="next-steps" class="slide level2">
-<h2>Next Steps</h2>
+<section id="assessment-next-steps" class="slide level2">
+<h2>Assessment Next Steps</h2>
 <ul>
 <li class="fragment">199 Pilot</li>
 <li class="fragment">IRB Roadblocks</li>
@@ -437,11 +442,42 @@ supervised by Mine Çetinkaya-Rundel, PhD.
 <li class="fragment">Turn into more robust JS framework like CAOS is</li>
 </ul></li>
 </ul>
+</section></section>
+<section>
+<section id="working-on-the-dsbox-package" class="title-slide slide level1 center">
+<h1>Working on the <code>dsbox</code> package</h1>
+
+</section>
+<section id="dsbox-package" class="slide level2">
+<h2><code>dsbox</code> package</h2>
+<ul>
+<li class="fragment"><p>Reference growing DS interest and scalability of education from the assessment talk earlier; that plus the opensource nature of R lends naturally to making such a standardized curriculum</p></li>
+<li class="fragment"><p>What is Data Science in a Box? Its that ^. Using <code>tidyverse</code> to practice basic data wrangling, visualization, and modeling.</p></li>
+<li class="fragment"><p>That curriculum set was then condensed into a package for self-learners called <code>dsbox</code>, which users can download and follow to become well-acquainted with basic data science in R.</p></li>
+</ul>
+</section>
+<section id="how-does-it-work" class="slide level2">
+<h2>How does it work?</h2>
+<ul>
+<li class="fragment"><p>2 key packages: <code>learnr</code> and <code>gradethis</code>.</p></li>
+<li class="fragment"><p><code>learnr</code> provides a robust framework for turning RMarkdown documents into interactive tutorials, where users can be guided through running and writing code, quiz questions, watching videos, etc, directly in the “Tutorial” pane in RStudio. A key feature is that progress is saved, so you can resume working in RStudio whenever.</p></li>
+<li class="fragment"><p><code>gradethis</code> takes that basic, broad framework, and provides tools for drilling down deeper when grading. Instructors can provide feedback for a variety of common mistakes with sophisticated testing logic.</p></li>
+</ul>
+</section>
+<section id="creating-a-tutorial" class="slide level2">
+<h2>Creating a Tutorial</h2>
+<ul>
+<li class="fragment"><p>9 existing, skeleton for 1 (these corresponded to all HWs from DSinaBox; the package had skeleton .Rd files for the dataset already).</p></li>
+<li class="fragment"><p>Decided I would try to recreate that tutorial, adding in some flair and thoughts based on best practices</p>
+<ul>
+<li class="fragment">scaffolded one of the exercises more to match the “interactive tutorial” modality vs the “take home, class homework assignment”</li>
+</ul></li>
+</ul>
 
 <img src="images/dukeuniversitylogo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://stat.duke.edu" class="uri">https://stat.duke.edu</a></p>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

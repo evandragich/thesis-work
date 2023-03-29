@@ -196,8 +196,23 @@ unexpected thought processes like this.
 
 -   `learnr` provides a robust framework for turning RMarkdown documents
     into interactive tutorials, where users can be guided through
-    running and writing code, watching videos, etc, directly in the
-    "Tutorial" pane in RStudio. A key feature is that progress is saved,
-    so you can resume working in RStudio whenever.
+    running and writing code, quiz questions, watching videos, etc,
+    directly in the "Tutorial" pane in RStudio. A key feature is that
+    progress is saved, so you can resume working in RStudio whenever.
+
+-   `gradethis` takes that basic, broad framework, and provides tools
+    for drilling down deeper when grading. Instructors can provide
+    feedback for a variety of common mistakes with sophisticated testing
+    logic.
 
 ## Creating a Tutorial
+
+-   9 existing, skeleton for 1 (these corresponded to all HWs from
+    DSinaBox; the package had skeleton .Rd files for the dataset
+    already).
+
+-   Decided I would try to recreate that tutorial, adding in some flair
+    and thoughts based on best practices
+
+    -   scaffolded one of the exercises more to match the "interactive
+        tutorial" modality vs the "take home, class homework assignment"
