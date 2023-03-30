@@ -141,12 +141,38 @@ p1 / p2 / p3 / p4
 
 Fill in the following table by placing a check mark in the cells corresponding to the attributes of the data that can be determined by examining each of the plots.
 
-|        | Plot A | Plot B | Plot C | Plot D |
-|--------|:------:|:------:|:------:|:------:|
-| Mean   | [ ]  | [ ]  | [ ]  | [ ]  |
-| Median | [ ]  | [ ]  | [ ]  | [ ]  |
-| IQR    | [ ]  | [ ]  | [ ]  | [ ]  |
-| Shape  | [ ]  | [ ]  | [ ]  | [ ]  |
+::: {.content-visible when-format="pdf"}
+
++--------+------------+-------------+-------------+-------------+
+|        | Plot A     | Plot B      | Plot C      | Plot D      |
++========+============+=============+=============+=============+
+| Mean   | [ ]        | [ ]         | [ ]         | [ ]         |
++--------+------------+-------------+-------------+-------------+
+| Median | [ ]        | [ ]         | [ ]         | [ ]         |
++--------+------------+-------------+-------------+-------------+
+| IQR    | [ ]        | [ ]         | [ ]         | [ ]         |
++--------+------------+-------------+-------------+-------------+
+| Shape  | [ ]        | [ ]         | [ ]         | [ ]         |
++--------+------------+-------------+-------------+-------------+
+
+:::
+
+::: {.content-visible when-format="html"}
+
++--------+------------+-------------+-------------+-------------+
+|        | Plot A     | Plot B      | Plot C      | Plot D      |
++========+============+=============+=============+=============+
+| Mean   | &#9744;    | &#9744;     | &#9744;     | &#9744;     |
++--------+------------+-------------+-------------+-------------+
+| Median | &#9744;    | &#9744;     | &#9744;     | &#9744;     |
++--------+------------+-------------+-------------+-------------+
+| IQR    | &#9744;    | &#9744;     | &#9744;     | &#9744;     |
++--------+------------+-------------+-------------+-------------+
+| Shape  | &#9744;    | &#9744;     | &#9744;     | &#9744;     |
++--------+------------+-------------+-------------+-------------+
+
+:::
+
 
 {{< pagebreak >}}
 
@@ -396,7 +422,7 @@ For each of the following items, indicate whether the statement is TRUE, FALSE, 
 knitr::include_graphics("figs/austen_gender.png")
 ```
 
- Men in Austen's novels are more likely to have 'dared', 'expected', and 'ran' than women.
+Men in Austen's novels are more likely to have 'dared', 'expected', and 'ran' than women.
 
 <!-- -->
 
@@ -475,17 +501,31 @@ ggplot(map_county, aes(x = long, y = lat, group = group)) +
   coord_quickmap()
 ```
 
- Indicate which of the following data you need to recreate this map? (Select all that apply.)
+Indicate which of the following data you need to recreate this map? (Select all that apply.)
 
--   [ ] County boundaries
+::: {.content-visible when-format="html"}
 
--   [ ] Unemployment rate in each county
+&#9744; County boundaries
 
--   [ ] Number of adults living in each county
+&#9744; Unemployment rate in each county
 
--   [ ] Number of unemployed adults living in each county
+&#9744; Number of adults living in each county
 
--   [ ] Total population of the county
+&#9744; Number of unemployed adults living in each county
+
+&#9744; Total population of the county
+
+:::
+
+::: {.content-visible when-format="pdf"}
+
+-    [ ] County boundaries
+-    [ ] Unemployment rate in each county
+-    [ ] Number of adults living in each county
+-    [ ] Number of unemployed adults living in each county
+-    [ ] Total population of the county
+
+:::
 
 {{< pagebreak >}}
 
@@ -545,12 +585,37 @@ p3 <- ggplot(data = population) +
 
 Fill in the following table by placing a check mark in the cells corresponding to the attributes of the data that can be determined by examining each of the plots.
 
-|                     | Plot A | Plot B | Plot C |
-|---------------------|:------:|:------:|:------:|
-| Sensitivity         | \[ \]  | \[ \]  | \[ \]  |
-| Specificity         | \[ \]  | \[ \]  | \[ \]  |
-| False positive rate | \[ \]  | \[ \]  | \[ \]  |
-| False negative rate | \[ \]  | \[ \]  | \[ \]  |
+::: {.content-visible when-format="pdf"}
+
++-----------------------+------------+------------+------------+------------+
+|                       | Plot A     | Plot B     | Plot C     | Plot D     |
++=======================+============+============+============+============+
+| Sensitivity           | [ ]        | [ ]        | [ ]        | [ ]        |
++-----------------------+------------+------------+------------+------------+
+| Specificity           | [ ]        | [ ]        | [ ]        | [ ]        |
++-----------------------+------------+------------+------------+------------+
+| False positive rate   | [ ]        | [ ]        | [ ]        | [ ]        |
++-----------------------+------------+------------+------------+------------+
+| False negative rate   | [ ]        | [ ]        | [ ]        | [ ]        |
++-----------------------+------------+------------+------------+------------+
+
+:::
+
+::: {.content-visible when-format="html"}
+
++-----------------------+------------+------------+------------+------------+
+|                       | Plot A     | Plot B     | Plot C     | Plot D     |
++=======================+============+============+============+============+
+| Sensitivity           | &#9744;    | &#9744;    | &#9744;    | &#9744;    |
++-----------------------+------------+------------+------------+------------+
+| Specificity           | &#9744;    | &#9744;    | &#9744;    | &#9744;    |
++-----------------------+------------+------------+------------+------------+
+| False positive rate   | &#9744;    | &#9744;    | &#9744;    | &#9744;    |
++-----------------------+------------+------------+------------+------------+
+| False negative rate   | &#9744;    | &#9744;    | &#9744;    | &#9744;    |
++-----------------------+------------+------------+------------+------------+
+
+:::
 
 {{< pagebreak >}}
 
@@ -616,19 +681,20 @@ edge [style = "bold", fontname = "Helvetica-Bold"]
 }
 ```
 
-1. What price would the tree predict for a house with 3200 ft.^2^ of living area, 1.5 bathrooms, and 1 fireplace?
+What price would the tree predict for a house with 3200 ft.^2^ of living area, 1.5 bathrooms, and 1 fireplace?
 
--   [ ] \$262,972
--   [ ] \$326,267
--   [ ] \$501,876
--   [ ] Can't be determined from the information given.
+a. \$262,972
+b. \$326,267
+c. \$501,876
+d. Can't be determined from the information given.
+
 
 What price would the tree predict for a house with 1200 ft.^2^ of living area and 5 bathrooms?
 
--   [ ] \$151,424
--   [ ] \$184,248
--   [ ] \$210,950
--   [ ] Can't be determined from the information given.
+a. \$151,424
+b. \$184,248
+c. \$210,950
+d. Can't be determined from the information given.
 
 {{< pagebreak >}}
 
@@ -642,7 +708,7 @@ knitr::include_graphics("figs/website_red_blue.png")
 
 Indicate whether each of the following conclusions are valid. Explain.
 
- Over time the company is getting more returning users regardless of the version of the website.
+Over time the company is getting more returning users regardless of the version of the website.
 
 a.  Valid
 b.  Invalid
@@ -727,7 +793,7 @@ kable(movie_table,
   row_spec(0, bold = TRUE)
 ```
 
- Describe a process that you could use to generate the data in the `season` column using the information in the `release_date` column.
+Describe a process that you could use to generate the data in the `season` column using the information in the `release_date` column.
 
 Describe a process that you could use to generate the data in the `gross_clean` column using the information in the `gross` column.
 
@@ -749,26 +815,30 @@ kable(directors_table,
 
 Use the data in the Movies Table and in the Directors Table to answer the following questions. For each question, what is the result of carrying out the given pseudocode (ie. code recipe)?
 
-::::: {.content-visible when-format="html"}
+::: {.content-visible when-format="html"}
 
 1\.
 
 ::: code
+
 [START_WITH(]{style="color:#1300ff;"}the Movies table[)]{style="color:#1300ff;"} [then]{style="font-style: italic;"}
 
     [KEEP_ROWS_WHERE(]{style="color:#1300ff;"}the `season` value is `Fall`[)]{style="color:#1300ff;"} [then]{style="font-style: italic;"}
 
     [COUNT(]{style="color:#1300ff;"}the number of rows[)]{style="color:#1300ff;"}
+
 :::
 
 2\.
 
 ::: code
+
 [START_WITH(]{style="color:#1300ff;"}the Movies table[)]{style="color:#1300ff;"} [then]{style="font-style: italic;"}
 
     [KEEP_ROWS_WHERE(]{style="color:#1300ff;"}the `season` value is `Fall`[)]{style="color:#1300ff;"} [then]{style="font-style: italic;"}
 
     [COUNT(]{style="color:#1300ff;"}the number of rows[)]{style="color:#1300ff;"} [WHERE(]{style="color:#1300ff;"} `best_picture` value is `Yes`[)]{style="color:#1300ff;"}
+
 :::
 
 <!-- 28\. -->
@@ -788,6 +858,7 @@ Use the data in the Movies Table and in the Directors Table to answer the follow
 3\.
 
 ::: code
+
 [START_WITH(]{style="color:#1300ff;"}the Movies table[)]{style="color:#1300ff;"} [then]{style="font-style: italic;"}
 
     [KEEP_ROWS_WHERE(]{style="color:#1300ff;"}the `season` value is `Fall` [then]{style="font-style: italic;"}
@@ -795,30 +866,35 @@ Use the data in the Movies Table and in the Directors Table to answer the follow
     [ADD_COLUMNS_FROM(]{style="color:#1300ff;"}the Director Table[)]{style="color:#1300ff;"} [MATCHING_BY(]{style="color:#1300ff;"}the `director` column[)]{style="color:#1300ff;"} [then]{style="font-style: italic;"}
 
     [COUNT(]{style="color:#1300ff;"}the number of rows[)]{style="color:#1300ff;"} [WHERE(]{style="color:#1300ff;"}`oscars` value is `3`[)]{style="color:#1300ff;"} [AND(]{style="color:#1300ff;"}`best_picture` value is `No`[)]{style="color:#1300ff;"}
+
 :::
 
-:::::
+:::
 
-::::: {.content-visible when-format="pdf"}
+::: {.content-visible when-format="pdf"}
 
-1\. 
-```
+1\.
+
+```         
 start_with(the Movies table) then
   keep_rows_where(the season value is "Fall") then
   count(the number of rows)
 ```
+
 2\.
-```
+
+```         
 start_with(the Movies table) then
   keep_rows_where(the season value is "Fall") then
   count(the number of rows) where (best_picture value is "Yes")
 ```
+
 3\.
-```
+
+```         
 start_with(the Movies table) then
   keep_rows_where(the season value is "Fall") then
   add_columns_from(the Director table) matching_by(the director column) then
   count(the number of rows) where (oscars value is 3) and (best_picture value is "No")
 ```
-
-:::::
+:::
