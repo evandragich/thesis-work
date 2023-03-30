@@ -13,7 +13,7 @@ format:
     chalkboard: 
       buttons: true
     preview-links: auto
-    logo: images/dukeuniversitylogo.png
+    logo: images/dukelogo.png
     css: presentation.css
     footer: <https://stat.duke.edu>
 ---
@@ -113,9 +113,11 @@ student) college The college agrees to have the data released to the
 public so long as the students' identities and academic standing
 information are kept confidential. Which of the following combinations
 of variables is less likely to unintentionally identify any students?
-Explain*
+Explain.*
 
-*a. Year, major, sports played* *b. Year, major*
+*a. Year, major, sports played*
+
+*b. Year, major*
 
 Well, first of all, is "college" the best word here? While it's roughly
 synonymous with "university" in the US, they can have very different
@@ -131,7 +133,9 @@ information are kept confidential. Which of the following combinations
 of variables is less likely to unintentionally identify any students?
 Explain.*
 
-*a. Year, major, sports played* *b. Year, major*
+*a. Year, major, sports played*
+
+*b. Year, major*
 
 Great! There is no issue with grading this on a large scale, as students
 will simply choose option "a" to be marked correct. But, how valid is
@@ -144,8 +148,15 @@ narrows down who a respondent could be? This question took a lot of
 brainstorming and workshopping, and we ultimately landed on the
 following options:
 
-*a. Class year and sports played* *b. Student ID and dorm zip code* *c.
-GPA and major* *d. Birth date and phone number* *e. None of the above*
+*a. Class year and sports played*
+
+*b. Student ID and dorm zip code*
+
+*c. GPA and major*
+
+*d. Birth date and phone number*
+
+*e. None of the above*
 
 ::: notes
 I really like this current version for a few reasons. First, "none of
@@ -177,7 +188,7 @@ unexpected thought processes like this.
 
 # Working on the `dsbox` package
 
-## `dsbox` package
+## `dsbox` package {.smaller}
 
 -   Reference growing DS interest and scalability of education from the
     assessment talk earlier; that plus the opensource nature of R lends
@@ -190,7 +201,7 @@ unexpected thought processes like this.
     self-learners called `dsbox`, which users can download and follow to
     become well-acquainted with basic data science in R.
 
-## How does it work?
+## How does it work? {.smaller}
 
 -   2 key packages: `learnr` and `gradethis`.
 
@@ -216,3 +227,45 @@ unexpected thought processes like this.
 
     -   scaffolded one of the exercises more to match the "interactive
         tutorial" modality vs the "take home, class homework assignment"
+
+## Releasing to CRAN
+
+-   Explaining what CRAN is
+
+-   Explaining what the DESCRIPTION folder and dependencies are
+
+-   Unfortunately, `gradethis` is still in development and thus not yet
+    released on CRAN itself. In turn, we are unable to upload a package
+    that specifies a package not on CRAN to be one of its dependencies.
+    We have submitted an issue
+
+# Discussion
+
+## Learning Takeaways
+
+-   Learned advanced computing I wouldn't have gotten otherwise in my
+    abbreviated trip through the Stat major
+
+-   Learned how to interact with others' code beyond scope of
+    classroom/research team (making and reviewing public PR requests,
+    compiling and standardizing and revising the assessment and package)
+
+## Reflections
+
+-   Statement that "teaching material is only way to master it" had
+    always been true for my tutoring and TAing experiences; developing
+    and studying to the point of scrutiny a curriculum took my
+    understanding to the next level
+
+-   Newfound appreciation for work that has gone into all the
+    educational curriculum materials today, tools like `ghclass` and
+    `learnr`, all packages that have been released and are maintained
+    and what it takes to do that.
+
+-   Inspired me to continue interacting with the world of open source
+    software even though my job (for the meantime) is to be an Excel
+    monkey for 40 hours a week
+
+## Q&A
+
+-   Display contact information/Linkedin on screen for this?

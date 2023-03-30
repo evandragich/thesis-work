@@ -408,16 +408,22 @@ supervised by Mine Çetinkaya-Rundel, PhD.
 <section id="case-study-data-confidentiality" class="slide level2 smaller">
 <h2>Case Study: Data Confidentiality</h2>
 <p>so, after that whole mess, a general conclusion is that MC might be the only way to go. so how do we write a good MC ethics question? here’s a start</p>
-<p><em>A newspaper reports on the results of a survey from a small (&lt;2000 student) college The college agrees to have the data released to the public so long as the students’ identities and academic standing information are kept confidential. Which of the following combinations of variables is less likely to unintentionally identify any students? Explain</em></p>
-<p><em>a. Year, major, sports played</em> <em>b. Year, major</em></p>
+<p><em>A newspaper reports on the results of a survey from a small (&lt;2000 student) college The college agrees to have the data released to the public so long as the students’ identities and academic standing information are kept confidential. Which of the following combinations of variables is less likely to unintentionally identify any students? Explain.</em></p>
+<p><em>a. Year, major, sports played</em></p>
+<p><em>b. Year, major</em></p>
 <p>Well, first of all, is “college” the best word here? While it’s roughly synonymous with “university” in the US, they can have very different meanings country-to-country. Thus, let’s eliminate any ambiguity right off the bat.</p>
 </section>
 <section id="case-study-data-confidentiality-1" class="slide level2 smaller">
 <h2>Case Study: Data Confidentiality</h2>
 <p><em>A newspaper reports on the results of a survey from a small (&lt;2000 student) university. The university agrees to have the data released to the public so long as the students’ identities and academic standing information are kept confidential. Which of the following combinations of variables is less likely to unintentionally identify any students? Explain.</em></p>
-<p><em>a. Year, major, sports played</em> <em>b. Year, major</em></p>
+<p><em>a. Year, major, sports played</em></p>
+<p><em>b. Year, major</em></p>
 <p>Great! There is no issue with grading this on a large scale, as students will simply choose option “a” to be marked correct. But, how valid is this binary comparison of two nearly-identical options in measuring students’ idea of data privacy (and key variables whose intersections can quickly narrow down populations). Would they choose “a” simply because of the “presence vs absence” heuristic, similar to the selection bias issue addressed earlier, or because they understand how it quickly narrows down who a respondent could be? This question took a lot of brainstorming and workshopping, and we ultimately landed on the following options:</p>
-<p><em>a. Class year and sports played</em> <em>b. Student ID and dorm zip code</em> <em>c. GPA and major</em> <em>d.&nbsp;Birth date and phone number</em> <em>e. None of the above</em></p>
+<p><em>a. Class year and sports played</em></p>
+<p><em>b. Student ID and dorm zip code</em></p>
+<p><em>c.&nbsp;GPA and major</em></p>
+<p><em>d.&nbsp;Birth date and phone number</em></p>
+<p><em>e. None of the above</em></p>
 <aside class="notes">
 <p>I really like this current version for a few reasons. First, “none of the above.” It doesn’t solve everything, but the closest you can get to having an open-ended prompt in a true MC assignment is to have a “none of the above,” and to use it! (roughly proportionally, so ~20-25% of the time). Second, the options are well-distributed and take some time to think through. We refined this between faculty and student interviews, and all three students had a similar response. A nice rhythm as they read through the responses, respectively “hmm, definitely not, ummmm maybe?, yeah definitely not, uh”. Immediately eliminating “b” and “d”, students debated “a” and “c” on a metric we hadn’t even surmised when writing. “Well, in terms of figuring out who people are, class year and sports played would do that. BUT, knowing GPA and major wouldn’t really let you identify anyone, but GPA is more sensitive data than class year/sports played in that it would be more harmful if released, and linked back to the people.” Out of all the think-aloud interviews, this single moment stood out as justifying why we asked students to walk through their reasoning processes, and to “think out loud:” to catch unexpected thought processes like this.</p>
 <style type="text/css">
@@ -448,7 +454,7 @@ supervised by Mine Çetinkaya-Rundel, PhD.
 <h1>Working on the <code>dsbox</code> package</h1>
 
 </section>
-<section id="dsbox-package" class="slide level2">
+<section id="dsbox-package" class="slide level2 smaller">
 <h2><code>dsbox</code> package</h2>
 <ul>
 <li class="fragment"><p>Reference growing DS interest and scalability of education from the assessment talk earlier; that plus the opensource nature of R lends naturally to making such a standardized curriculum</p></li>
@@ -456,7 +462,7 @@ supervised by Mine Çetinkaya-Rundel, PhD.
 <li class="fragment"><p>That curriculum set was then condensed into a package for self-learners called <code>dsbox</code>, which users can download and follow to become well-acquainted with basic data science in R.</p></li>
 </ul>
 </section>
-<section id="how-does-it-work" class="slide level2">
+<section id="how-does-it-work" class="slide level2 smaller">
 <h2>How does it work?</h2>
 <ul>
 <li class="fragment"><p>2 key packages: <code>learnr</code> and <code>gradethis</code>.</p></li>
@@ -473,8 +479,42 @@ supervised by Mine Çetinkaya-Rundel, PhD.
 <li class="fragment">scaffolded one of the exercises more to match the “interactive tutorial” modality vs the “take home, class homework assignment”</li>
 </ul></li>
 </ul>
+</section>
+<section id="releasing-to-cran" class="slide level2">
+<h2>Releasing to CRAN</h2>
+<ul>
+<li class="fragment"><p>Explaining what CRAN is</p></li>
+<li class="fragment"><p>Explaining what the DESCRIPTION folder and dependencies are</p></li>
+<li class="fragment"><p>Unfortunately, <code>gradethis</code> is still in development and thus not yet released on CRAN itself. In turn, we are unable to upload a package that specifies a package not on CRAN to be one of its dependencies. We have submitted an issue</p></li>
+</ul>
+</section></section>
+<section>
+<section id="discussion" class="title-slide slide level1 center">
+<h1>Discussion</h1>
 
-<img src="images/dukeuniversitylogo.png" class="slide-logo r-stretch"><div class="footer footer-default">
+</section>
+<section id="learning-takeaways" class="slide level2">
+<h2>Learning Takeaways</h2>
+<ul>
+<li class="fragment"><p>Learned advanced computing I wouldn’t have gotten otherwise in my abbreviated trip through the Stat major</p></li>
+<li class="fragment"><p>Learned how to interact with others’ code beyond scope of classroom/research team (making and reviewing public PR requests, compiling and standardizing and revising the assessment and package)</p></li>
+</ul>
+</section>
+<section id="reflections" class="slide level2">
+<h2>Reflections</h2>
+<ul>
+<li class="fragment"><p>Statement that “teaching material is only way to master it” had always been true for my tutoring and TAing experiences; developing and studying to the point of scrutiny a curriculum took my understanding to the next level</p></li>
+<li class="fragment"><p>Newfound appreciation for work that has gone into all the educational curriculum materials today, tools like <code>ghclass</code> and <code>learnr</code>, all packages that have been released and are maintained and what it takes to do that.</p></li>
+<li class="fragment"><p>Inspired me to continue interacting with the world of open source software even though my job (for the meantime) is to be an Excel monkey for 40 hours a week</p></li>
+</ul>
+</section>
+<section id="qa" class="slide level2">
+<h2>Q&amp;A</h2>
+<ul>
+<li class="fragment">Display contact information/Linkedin on screen for this?</li>
+</ul>
+
+<img src="images/dukelogo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://stat.duke.edu" class="uri">https://stat.duke.edu</a></p>
 </div>
 </section></section>
