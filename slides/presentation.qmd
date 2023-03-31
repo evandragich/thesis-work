@@ -137,20 +137,21 @@ I really like this current version for a few reasons. First, "none of the above.
 
 ## Case Study: Movie Budgets 1
 
-::: {.panel-tabset}
-
-### Prompt
 
 ::: columns
 ::: {.column width="30%"}
 ::: text-sm2
+::: {.fragment}
 A data scientist at IMDb has been given a dataset comprised of the revenues and budgets for 2,349 movies made between 1986 and 2016.
+
 
 Suppose they want to compare several distributional features of the budgets among four different genres---Horror, Drama, Action, and Animation. To do this, they create the following plots.
 :::
 :::
+:::
 
 ::: {.column width="70%"}
+::: {.fragment}
 ```{r}
 #| label: common-R
 #| echo: false
@@ -171,9 +172,11 @@ library(tidyverse)
 library(ggplot2)
 library(patchwork)
 library(ggridges)
+library(knitr)
+library(kableExtra)
 ```
 
-```{r fig.asp=1, out.width="80%"}
+```{r fig.asp=1.1, out.width="80%"}
 #| echo: false
 #| eval: true
 movies <- read_csv("https://raw.githubusercontent.com/danielgrijalva/movie-stats/master/movies.csv")
@@ -259,8 +262,13 @@ p1 / p2 / p3 / p4
 ```
 :::
 :::
+:::
 
-### Item
+::: notes
+we iterated over a variety of statistics, such as outliers, skewness, mode, variance, and number of observations. We ultimately landed on these because we think it strikes an appropriate balance as a pre- and post-test. However, note that grading matrices like this is slightly more complex than simple multiple choice questions. Should each checkbox be considered one question, weighting this the same as 16 other items? (half the assessment). Or, 1/16th of a point each? so missing half is only half a point off? This is the kind of thing observing large-scale student trends will be helpful for, to see if there are any critical distinctions that separate discrete stratifications of students
+:::
+
+## Case Study: Movie Budgets 1
 
 Fill in the following table by placing a check mark in the cells corresponding to the attributes of the data that can be determined by examining each of the plots.
 
@@ -271,6 +279,59 @@ Fill in the following table by placing a check mark in the cells corresponding t
 | IQR    | ☐      | ☐      | ☐      | ☐      |
 | Shape  | ☐      | ☐      | ☐      | ☐      |
 
+## Case Study: Movie Wrangling
+
+The table below provides data about 10 movies released in the United States. It provides data on the movie's title , the movie's director, the date the movie was released, the season the movie was released, the worldwide gross intake in U.S. dollars, the cleaned version of the worldwide gross intake in U.S. dollars, and whether or not the movie won the Best Picture Oscar.
+
+
+## Case Study: Movie Wrangling
+
+::: text-sm5
+```{r}
+#| eval: true
+#| echo: false
+movie_table <- read_csv("data/movie-table.csv")
+directors_table <- read_csv("data/directors-table.csv")
+
+kable(movie_table,
+  #align = "l",
+  caption = "Movies Table",
+  booktabs = FALSE,
+  ) #|>
+  # kable_styling(latex_options = c("striped", "scale_down"),
+  #               html_font = '"Courier"',
+  #               font_size = 12) |>
+  # row_spec(0, bold = TRUE)
+```
+:::
+
+## Case Study: Movie Wrangling
+
+::: {.columns}
+
+::: {.column width="30%"}
+::: text-sm4
+The table below provides data about 10 movie directors. It provides data on the director's name, the number of Oscars the movie's director has been nominated for, and the number of Oscars the director has won.
+:::
+:::
+
+::: {.column width="70%"}
+::: text-sm3
+```{r}
+#| eval: true
+#| echo: false
+kable(directors_table,
+  #align = "l",
+  caption = "Directors Table",
+  booktabs = FALSE,
+  ) #|>
+  # kable_styling(latex_options = c("striped", "HOLD_position"),
+  #               html_font = '"Courier"',
+  #               font_size = 12) |>
+  # row_spec(0, bold = TRUE)
+```
+:::
+:::
 :::
 
 ## Assessment Next Steps
