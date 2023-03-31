@@ -10,15 +10,14 @@ format:
   revealjs: 
     slide-number: true
     incremental: true
-    chalkboard: 
-      buttons: true
     preview-links: auto
     logo: images/dukelogo.svg.png
     css: presentation.css
-    footer: <https://stat.duke.edu>
+    footer: <https://evandragich.github.io/thesis-work/>
 execute: 
   eval: false
   echo: true
+embed-resources: true
 ---
 
 ## Introduction/ About Me
@@ -290,4 +289,17 @@ grade_this({
 
 ## Q&A
 
--   Display contact information/Linkedin on screen for this?
+::: {.nonincremental}
+
+-   Browse at your own pace at [https://evandragich.github.io/thesis-work/](https://evandragich.github.io/thesis-work/)
+
+-   Email me at [emd48@duke.edu](mailto:emd48@duke.edu)
+
+:::
+
+::: {.footer}
+
+:::
+
+
+
