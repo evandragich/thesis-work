@@ -1,0 +1,4 @@
+- source: presentation.qmd
+  quarto-pub:
+    - id: 5dac204a-1667-44bc-9bca-bddcbe3e0bca
+      url: 'https://evandragich.quarto.pub/thesis-slides'

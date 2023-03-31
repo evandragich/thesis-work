@@ -26,6 +26,9 @@ book:
       - icon: download
         href: https://github.com/evandragich/thesis-work/raw/main/docs/Exploring-Data-Science-Education-From-Tutorials-to-Assessment.pdf
         aria-label: Download PDF
+      - icon: file-slides
+        href: https://evandragich.quarto.pub/thesis-slides/
+        aria-label: View Presentation Slides
       - icon: github
         href: https://github.com/evandragich/thesis-work
         aria-label: GitHub
