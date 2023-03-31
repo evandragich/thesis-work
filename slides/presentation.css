@@ -1,6 +1,5 @@
-.reveal .slide-logo {
-  height: 200px !important;
-  width: 406px!important;
-  max-width: unset !important;
-  max-height: unset !important;
+
+.text-sm {
+  font-size: 1.2rem;
+
 }

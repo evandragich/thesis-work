@@ -373,10 +373,16 @@ supervised by Mine Çetinkaya-Rundel, PhD.
 <ul>
 <li class="fragment">Colloquially motivate the need for a DS concept inventory
 <ul>
-<li class="fragment">CAOS</li>
+<li class="fragment">CAOS, has 418 citations!</li>
 </ul></li>
-<li class="fragment">Data Science as it emerges as a field–what is it, exactly?</li>
-<li class="fragment">How exactly do people: (1) make, (2) pilot, (3) validate new concept inventories or scales?</li>
+<li class="fragment">Data Science as it emerges as a field–what is it, exactly?
+<ul>
+<li class="fragment">colloquially explain Cetinkaya Rundel/Ellison and Zhang/Zhang findings.</li>
+</ul></li>
+<li class="fragment">How exactly do people: (1) make, (2) pilot, (3) validate new concept inventories or scales?
+<ul>
+<li class="fragment">colloquially explain Jorion papers</li>
+</ul></li>
 </ul>
 </section>
 <section id="inital-cleaninggetting-my-feet-wet" class="slide level2">
@@ -392,40 +398,128 @@ supervised by Mine Çetinkaya-Rundel, PhD.
 <li class="fragment">Summarize results from faculty, and themes (mainly that you could clearly tell the CS prof from the two stats ones via what they thought should be included, things pointed out like uncomfortable contexts (storm paths?))</li>
 </ul>
 </section>
+<section id="current-prototype" class="slide level2 smaller">
+<h2>Current Prototype</h2>
+<ul>
+<li class="fragment">15 passages, 26 items</li>
+</ul>
+<div class="text-sm">
+<div class="fragment">
+<table>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Passage</th>
+<th>Learning Objective(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Storm Paths</td>
+<td>modeling; simulation; uncertainty</td>
+</tr>
+<tr class="even">
+<td>Movie Budgets 1</td>
+<td>compare summary statistics visually</td>
+</tr>
+<tr class="odd">
+<td>Movie Budgets 2</td>
+<td>modeling; <span class="math inline">\(R^2\)</span>; compare trends visually</td>
+</tr>
+<tr class="even">
+<td>Application Screening</td>
+<td>ethics; modeling; proxy variable</td>
+</tr>
+<tr class="odd">
+<td>Banana Conclusions</td>
+<td>causation; statistical communication</td>
+</tr>
+<tr class="even">
+<td>COVID Map</td>
+<td>complex visualization; spatial data; time series; sophisticated scales</td>
+</tr>
+<tr class="odd">
+<td>He Said She Said</td>
+<td>basic visualization; sophisticated scales</td>
+</tr>
+<tr class="even">
+<td>Build-a-Plot</td>
+<td>data to visualization process</td>
+</tr>
+<tr class="odd">
+<td>Disease Screening</td>
+<td>compare classification diagnostics visually</td>
+</tr>
+<tr class="even">
+<td>Realty Tree</td>
+<td>modeling; regression tree; variable selection</td>
+</tr>
+<tr class="odd">
+<td>Website Testing</td>
+<td>compare trends visually; uncertainty; modeling; time series; extrapolation</td>
+</tr>
+<tr class="even">
+<td>Image Recognition</td>
+<td>ethics; modeling; representativeness of training data</td>
+</tr>
+<tr class="odd">
+<td>Data Confidentiality</td>
+<td>ethics; data deidentification; statistical communication</td>
+</tr>
+<tr class="even">
+<td>Activity Journal</td>
+<td>structure data; store data</td>
+</tr>
+<tr class="odd">
+<td>Movie Wrangling</td>
+<td>data cleaning; data wrangling; column-wise string operations; pseudocode; joins</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
 <section id="case-study-application-screening" class="slide level2 smaller">
 <h2>Case Study: Application Screening</h2>
 <p>start with AS: a question based on proxy variable.</p>
 <p><em>You are working on a team that is making a deterministic model to quickly screen through applications for a new position at the company. Based on employment laws, your model may not include variables such as age, race, and gender, which could be potentially discriminatory.</em></p>
 <p><em>Your colleague suggests including a rule that eliminates candidates with more than 20 years of previous work experience, because they may have high salary expectations. Why might using this variable be considered unethical? Explain your answer.</em></p>
-<p>Oops, best practices would phrase this in a non-leading way. If a student wasn’t initially going to think this would be unethical, but we told them it might be somehow, their explanation won’t be as valuable as someone who would have answered right away. Okay, let’s rephrase to make them answer whether it is or isnt and</p>
+<p>Oops, best practices would phrase this in a non-leading way. If a student wasn’t initially going to think this would be unethical, but we told them it might be somehow, their explanation won’t be as valuable as someone who would have answered right away. Okay, let’s rephrase to make them answer whether it is or isnt:</p>
 </section>
 <section id="case-study-application-screening-1" class="slide level2 smaller">
 <h2>Case Study: Application Screening</h2>
 <p><em>You are working on a team that is making a deterministic model to quickly screen through applications for a new position at the company. Based on employment laws, your model may not include variables such as age, race, and gender, which could be potentially discriminatory.</em></p>
-<p><em>Your colleague suggests including a rule that eliminates candidates with more than 20 years of previous work experience, because they may have high salary expectations. Are there ethical implications of using this variable to select candidates? Explain your answer.</em></p>
-<p>Well… that doesn’t help much. We still have the classic selection bias clouding results; students would think “well, if there wasn’t an ethical problem, they wouldnt have included this as one of the only ethics questions on the assessment.” Plus, how are we grading this? What are we looking for to confirm that they understand the proxy variable? It might work to set up an autograder that marks “correct” if they mark “yes” to the ethics question AND mention “proxy” in their response. But, this is an introductory-level assessment. Will students be able to concisely describe employment expeirence as a “proxy,” or would explanations be wordier and might include “is correlated with,” “is related to,” “goes hand in hand with.” If we want autogradable, looking like MC is going to be main way to go. Note that, at this stage, Employment Screening and several other similar questions are left in open-ended format.</p>
+<p><em>Your colleague suggests including a rule that eliminates candidates with more than 20 years of previous work experience, because they may have high salary expectations.</em> <strong><em>Are there ethical implications of using this variable to select candidates?</em></strong> <em>Explain your answer.</em></p>
+<p>Well… that doesn’t help much. We still have the classic selection bias clouding results; students would think “well, if there wasn’t an ethical problem, they wouldnt have included this as one of the only ethics questions on the assessment.” Plus, how are we grading this? What are we looking for to confirm that they understand the proxy variable? It might work to set up an autograder that marks “correct” if they mark “yes” to the ethics question AND mention “proxy” in their response. But, this is an introductory-level assessment. Will students be able to concisely describe employment expeirence as a “proxy,” or would explanations be wordier and might include “is correlated with,” “is related to,” “goes hand in hand with,” “predicts.” If we want autogradable, looking like MC is going to be main way to go. Note that, at this stage, Application Screening and several other similar questions are left in open-ended format to collect this type of data from the pilots.</p>
 </section>
 <section id="case-study-data-confidentiality" class="slide level2 smaller">
 <h2>Case Study: Data Confidentiality</h2>
-<p>so, after that whole mess, a general conclusion is that MC might be the only way to go. so how do we write a good MC ethics question? here’s a start</p>
-<p><em>A newspaper reports on the results of a survey from a small (&lt;2000 student) college The college agrees to have the data released to the public so long as the students’ identities and academic standing information are kept confidential. Which of the following combinations of variables is less likely to unintentionally identify any students? Explain.</em></p>
+<p>so, after that whole mess, a general conclusion is that MC might be the only way to go. so how do we write a good MC ethics question? here’s a start, with the focus on identifiable data and statistical communication:</p>
+<p><em>A newspaper reports on the results of a survey from a small (&lt;2000 student) college. The college agrees to have the data released to the public so long as the students’ identities and academic standing information are kept confidential. Which of the following combinations of variables is less likely to unintentionally identify any students? Explain.</em></p>
 <p><em>a. Year, major, sports played</em></p>
 <p><em>b. Year, major</em></p>
 <p>Well, first of all, is “college” the best word here? While it’s roughly synonymous with “university” in the US, they can have very different meanings country-to-country. Thus, let’s eliminate any ambiguity right off the bat.</p>
 </section>
 <section id="case-study-data-confidentiality-1" class="slide level2 smaller">
 <h2>Case Study: Data Confidentiality</h2>
-<p><em>A newspaper reports on the results of a survey from a small (&lt;2000 student) university. The university agrees to have the data released to the public so long as the students’ identities and academic standing information are kept confidential. Which of the following combinations of variables is less likely to unintentionally identify any students? Explain.</em></p>
+<p><em>A newspaper reports on the results of a survey from a small (&lt;2000 student)</em> <strong><em>university.</em></strong> <em>The</em> <strong><em>university</em></strong> <em>agrees to have the data released to the public so long as the students’ identities and academic standing information are kept confidential. Which of the following combinations of variables is less likely to unintentionally identify any students? Explain.</em></p>
 <p><em>a. Year, major, sports played</em></p>
 <p><em>b. Year, major</em></p>
 <p>Great! There is no issue with grading this on a large scale, as students will simply choose option “a” to be marked correct. But, how valid is this binary comparison of two nearly-identical options in measuring students’ idea of data privacy (and key variables whose intersections can quickly narrow down populations). Would they choose “a” simply because of the “presence vs absence” heuristic, similar to the selection bias issue addressed earlier, or because they understand how it quickly narrows down who a respondent could be? This question took a lot of brainstorming and workshopping, and we ultimately landed on the following options:</p>
-<p><em>a. Class year and sports played</em></p>
-<p><em>b. Student ID and dorm zip code</em></p>
-<p><em>c.&nbsp;GPA and major</em></p>
-<p><em>d.&nbsp;Birth date and phone number</em></p>
-<p><em>e. None of the above</em></p>
+</section>
+<section id="case-study-data-confidentiality-2" class="slide level2 smaller">
+<h2>Case Study: Data Confidentiality</h2>
+<p><em>A newspaper reports on the results of a survey from a small (&lt;2000 student) university. The university agrees to have the data released to the public so long as the students’ identities and academic standing information are kept confidential. Which of the following combinations of variables is less likely to unintentionally identify any students? Explain.</em></p>
+<p><strong><em>a. Class year and sports played</em></strong></p>
+<p><strong><em>b. Student ID and dorm zip code</em></strong></p>
+<p><strong><em>c.&nbsp;GPA and major</em></strong></p>
+<p><strong><em>d.&nbsp;Birth date and phone number</em></strong></p>
+<p><strong><em>e. None of the above</em></strong></p>
 <aside class="notes">
-<p>I really like this current version for a few reasons. First, “none of the above.” It doesn’t solve everything, but the closest you can get to having an open-ended prompt in a true MC assignment is to have a “none of the above,” and to use it! (roughly proportionally, so ~20-25% of the time). Second, the options are well-distributed and take some time to think through. We refined this between faculty and student interviews, and all three students had a similar response. A nice rhythm as they read through the responses, respectively “hmm, definitely not, ummmm maybe?, yeah definitely not, uh”. Immediately eliminating “b” and “d”, students debated “a” and “c” on a metric we hadn’t even surmised when writing. “Well, in terms of figuring out who people are, class year and sports played would do that. BUT, knowing GPA and major wouldn’t really let you identify anyone, but GPA is more sensitive data than class year/sports played in that it would be more harmful if released, and linked back to the people.” Out of all the think-aloud interviews, this single moment stood out as justifying why we asked students to walk through their reasoning processes, and to “think out loud:” to catch unexpected thought processes like this.</p>
+<p>I really like this current version for a few reasons. First, “none of the above.” It doesn’t solve everything, but the closest you can get to having an open-ended prompt in a true MC assignment is to have a “none of the above,” and to use it! (roughly proportionally, so ~20-25% of the time). Second, the options are well-distributed and take some time to think through. We refined this in the gap between faculty and student interviews, and all three students had a similar response. A nice rhythm as they read through the responses, respectively “hmm, definitely not, ummmm maybe?, yeah definitely not, uh”. Immediately eliminating “b” and “d”, students debated “a” and “c” on a metric we hadn’t even surmised when writing. “Well, in terms of figuring out who people are, class year and sports played would do that. BUT, knowing GPA and major wouldn’t really let you identify anyone, but GPA is more sensitive data than class year/sports played in that it would be more harmful if released, and linked back to the people.” Out of all the think-aloud interviews, this single moment stood out as justifying why we asked students to walk through their reasoning processes, and to “think out loud:” to catch unexpected thought processes like this.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -480,6 +574,67 @@ supervised by Mine Çetinkaya-Rundel, PhD.
 </ul></li>
 </ul>
 </section>
+<section id="sample-tutorial-home-page" class="slide level2">
+<h2>Sample Tutorial: Home Page</h2>
+<p><img data-src="images/00-main-menu.png" class="absolute" style="left: 300px; bottom: 0px; height: 600px; "></p>
+</section>
+<section id="sample-tutorial-code-chunk-with-hint" class="slide level2">
+<h2>Sample Tutorial: Code chunk with hint</h2>
+<p><img data-src="images/03-hint.png" class="absolute" style="left: 250px; bottom: 0px; height: 600px; "></p>
+</section>
+<section id="sample-tutorial-opening-the-hood" class="slide level2">
+<h2>Sample Tutorial: Opening the hood</h2>
+<div class="absolute" style="left: 300px; bottom: 480px; ">
+<div class="fragment">
+<pre><code>```{r common-themes, exercise = TRUE}
+lego_sales |&gt;
+  ___(___)
+```</code></pre>
+</div>
+</div>
+<div class="absolute" style="left: 300px; bottom: 290px; ">
+<div class="fragment">
+<pre><code>```{r common-themes-hint-1}
+Look at the previous question for help!
+```</code></pre>
+</div>
+</div>
+<div class="absolute" style="left: 300px; bottom: 90px; ">
+<div class="fragment">
+<pre><code>```{r common-themes-solution}
+lego_sales |&gt;
+  count(theme, sort = TRUE)
+```</code></pre>
+</div>
+</div>
+</section>
+<section id="sample-tutorial-opening-the-hood-1" class="slide level2">
+<h2>Sample Tutorial: Opening the hood</h2>
+<div class="absolute" style="left: 100px; bottom: 0px; ">
+<div class="fragment">
+<pre><code>```{r common-themes-check}
+grade_this({
+  if(identical(as.character(.result[1,1]), "Star Wars")) {
+    pass("You have counted themes and sorted the counts correctly.")
+  }
+  if(identical(as.character(.result[1,1]), "Advanced Models ")) {
+    fail("Did you forget to sort the counts in descending order?")
+  }
+  if(identical(as.character(.result[1,1]), "Classic")) {
+    fail("Did you accidentally sort the counts in ascending order?")
+  }</code></pre>
+<pre><code>  if(identical(as.character(.result[1,1]), "Adventure Camp")) {
+    fail("Did you count subthemes instead of themes?")
+  }
+  if(identical(as.numeric(.result[1,2]), 172)) {
+    fail("Did you count subthemes instead of themes?")
+  }
+  fail("Not quite. Take a peek at the hint!")
+})
+```</code></pre>
+</div>
+</div>
+</section>
 <section id="releasing-to-cran" class="slide level2">
 <h2>Releasing to CRAN</h2>
 <ul>
@@ -503,7 +658,7 @@ supervised by Mine Çetinkaya-Rundel, PhD.
 <section id="reflections" class="slide level2">
 <h2>Reflections</h2>
 <ul>
-<li class="fragment"><p>Statement that “teaching material is only way to master it” had always been true for my tutoring and TAing experiences; developing and studying to the point of scrutiny a curriculum took my understanding to the next level</p></li>
+<li class="fragment"><p>Statement that “teaching material is only way to master it” had always been true for my tutoring and TAing experiences; developing and studying a curriculum to the point of scrutiny took my understanding to the next level</p></li>
 <li class="fragment"><p>Newfound appreciation for work that has gone into all the educational curriculum materials today, tools like <code>ghclass</code> and <code>learnr</code>, all packages that have been released and are maintained and what it takes to do that.</p></li>
 <li class="fragment"><p>Inspired me to continue interacting with the world of open source software even though my job (for the meantime) is to be an Excel monkey for 40 hours a week</p></li>
 </ul>
@@ -514,7 +669,7 @@ supervised by Mine Çetinkaya-Rundel, PhD.
 <li class="fragment">Display contact information/Linkedin on screen for this?</li>
 </ul>
 
-<img src="images/dukelogo.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<img src="images/dukelogo.svg.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://stat.duke.edu" class="uri">https://stat.duke.edu</a></p>
 </div>
 </section></section>
@@ -731,6 +886,44 @@ supervised by Mine Çetinkaya-Rundel, PhD.
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

@@ -13,9 +13,12 @@ format:
     chalkboard: 
       buttons: true
     preview-links: auto
-    logo: images/dukelogo.png
+    logo: images/dukelogo.svg.png
     css: presentation.css
     footer: <https://stat.duke.edu>
+execute: 
+  eval: false
+  echo: true
 ---
 
 ## Introduction/ About Me
@@ -53,34 +56,31 @@ format:
 
 -   15 passages, 26 items
 
+::::: {.text-sm}
+
+::: {.fragment}
+
 | Passage               | Learning Objective(s)                                                                       |
 |------------------|------------------------------------------------------|
-| Storm Paths           | modeling; simulated data; interpret uncertainty                                             |
+| Storm Paths           | modeling; simulation; uncertainty                                             |
 | Movie Budgets 1       | compare summary statistics visually                                                         |
 | Movie Budgets 2       | modeling; $R^2$; compare trends visually                                                    |
 | Application Screening | ethics; modeling; proxy variable                                                            |
 | Banana Conclusions    | causation; statistical communication                                                        |
-| COVID Map             | interpret complex visualization; spatial data; time series data                             |
-|                       | interpret complex visualization; sophisticated scales                                       |
-| He Said She Said      | interpret basic visualization                                                               |
-|                       | interpret basic visualization                                                               |
-|                       | interpret basic visualization; sophisticated scales                                         |
+| COVID Map             | complex visualization; spatial data; time series; sophisticated scales       |
+| He Said She Said      | basic visualization; sophisticated scales                                         |
 | Build-a-Plot          | data to visualization process                                                               |
 | Disease Screening     | compare classification diagnostics visually                                                 |
-| Realty Tree           | modeling; regression tree                                                                   |
-|                       | modeling; regression tree; variable selection                                               |
-| Website Testing       | interpret trends visually; visualize uncertainty; modeling; time series data                |
-|                       | interpret trends visually; visualize uncertainty; modeling; time series data; extrapolation |
-|                       | interpret trends visually; visualize uncertainty; modeling; time series data; extrapolation |
+| Realty Tree           | modeling; regression tree; variable selection                                               |
+| Website Testing       | compare trends visually; uncertainty; modeling; time series; extrapolation |
 | Image Recognition     | ethics; modeling; representativeness of training data                                       |
 | Data Confidentiality  | ethics; data deidentification; statistical communication                                    |
 | Activity Journal      | structure data; store data                                                                  |
-| Movie Wrangling       | data cleaning; column-wise operations; string operations                                    |
-|                       | data cleaning; column-wise operations; string operations                                    |
-|                       | data cleaning; extrapolation                                                                |
-|                       | data wrangling; pseudocode; joins                                                           |
-|                       | data wrangling; pseudocode; joins                                                           |
-|                       | data wrangling; pseudocode; joins                                                           |
+| Movie Wrangling       | data cleaning; data wrangling; column-wise string operations; pseudocode; joins             |
+
+:::
+
+:::::
 
 ## Case Study: Application Screening {.smaller}
 
@@ -90,13 +90,13 @@ start with AS: a question based on proxy variable.
 
 *Your colleague suggests including a rule that eliminates candidates with more than 20 years of previous work experience, because they may have high salary expectations. Why might using this variable be considered unethical? Explain your answer.*
 
-Oops, best practices would phrase this in a non-leading way. If a student wasn't initially going to think this would be unethical, but we told them it might be somehow, their explanation won't be as valuable as someone who would have answered right away. Okay, let's rephrase to make them answer whether it is or isnt and
+Oops, best practices would phrase this in a non-leading way. If a student wasn't initially going to think this would be unethical, but we told them it might be somehow, their explanation won't be as valuable as someone who would have answered right away. Okay, let's rephrase to make them answer whether it is or isnt:
 
 ## Case Study: Application Screening {.smaller}
 
 *You are working on a team that is making a deterministic model to quickly screen through applications for a new position at the company. Based on employment laws, your model may not include variables such as age, race, and gender, which could be potentially discriminatory.*
 
-*Your colleague suggests including a rule that eliminates candidates with more than 20 years of previous work experience, because they may have high salary expectations. Are there ethical implications of using this variable to select candidates? Explain your answer.*
+*Your colleague suggests including a rule that eliminates candidates with more than 20 years of previous work experience, because they may have high salary expectations.* ***Are there ethical implications of using this variable to select candidates?*** *Explain your answer.*
 
 Well... that doesn't help much. We still have the classic selection bias clouding results; students would think "well, if there wasn't an ethical problem, they wouldnt have included this as one of the only ethics questions on the assessment." Plus, how are we grading this? What are we looking for to confirm that they understand the proxy variable? It might work to set up an autograder that marks "correct" if they mark "yes" to the ethics question AND mention "proxy" in their response. But, this is an introductory-level assessment. Will students be able to concisely describe employment expeirence as a "proxy," or would explanations be wordier and might include "is correlated with," "is related to," "goes hand in hand with," "predicts." If we want autogradable, looking like MC is going to be main way to go. Note that, at this stage, Application Screening and several other similar questions are left in open-ended format to collect this type of data from the pilots.
 
@@ -104,7 +104,7 @@ Well... that doesn't help much. We still have the classic selection bias cloudin
 
 so, after that whole mess, a general conclusion is that MC might be the only way to go. so how do we write a good MC ethics question? here's a start, with the focus on identifiable data and statistical communication:
 
-*A newspaper reports on the results of a survey from a small (\<2000 student) college.The college agrees to have the data released to the public so long as the students' identities and academic standing information are kept confidential. Which of the following combinations of variables is less likely to unintentionally identify any students? Explain.*
+*A newspaper reports on the results of a survey from a small (\<2000 student) college. The college agrees to have the data released to the public so long as the students' identities and academic standing information are kept confidential. Which of the following combinations of variables is less likely to unintentionally identify any students? Explain.*
 
 *a. Year, major, sports played*
 
@@ -114,7 +114,7 @@ Well, first of all, is "college" the best word here? While it's roughly synonymo
 
 ## Case Study: Data Confidentiality {.smaller}
 
-*A newspaper reports on the results of a survey from a small (\<2000 student) university. The university agrees to have the data released to the public so long as the students' identities and academic standing information are kept confidential. Which of the following combinations of variables is less likely to unintentionally identify any students? Explain.*
+*A newspaper reports on the results of a survey from a small (\<2000 student)* ***university.*** *The* ***university*** *agrees to have the data released to the public so long as the students' identities and academic standing information are kept confidential. Which of the following combinations of variables is less likely to unintentionally identify any students? Explain.*
 
 *a. Year, major, sports played*
 
@@ -122,18 +122,22 @@ Well, first of all, is "college" the best word here? While it's roughly synonymo
 
 Great! There is no issue with grading this on a large scale, as students will simply choose option "a" to be marked correct. But, how valid is this binary comparison of two nearly-identical options in measuring students' idea of data privacy (and key variables whose intersections can quickly narrow down populations). Would they choose "a" simply because of the "presence vs absence" heuristic, similar to the selection bias issue addressed earlier, or because they understand how it quickly narrows down who a respondent could be? This question took a lot of brainstorming and workshopping, and we ultimately landed on the following options:
 
-*a. Class year and sports played*
+## Case Study: Data Confidentiality {.smaller}
 
-*b. Student ID and dorm zip code*
+*A newspaper reports on the results of a survey from a small (\<2000 student) university. The university agrees to have the data released to the public so long as the students' identities and academic standing information are kept confidential. Which of the following combinations of variables is less likely to unintentionally identify any students? Explain.*
 
-*c. GPA and major*
+***a. Class year and sports played***
 
-*d. Birth date and phone number*
+***b. Student ID and dorm zip code***
 
-*e. None of the above*
+***c. GPA and major***
+
+***d. Birth date and phone number***
+
+***e. None of the above***
 
 ::: notes
-I really like this current version for a few reasons. First, "none of the above." It doesn't solve everything, but the closest you can get to having an open-ended prompt in a true MC assignment is to have a "none of the above," and to use it! (roughly proportionally, so \~20-25% of the time). Second, the options are well-distributed and take some time to think through. We refined this between faculty and student interviews, and all three students had a similar response. A nice rhythm as they read through the responses, respectively "hmm, definitely not, ummmm maybe?, yeah definitely not, uh". Immediately eliminating "b" and "d", students debated "a" and "c" on a metric we hadn't even surmised when writing. "Well, in terms of figuring out who people are, class year and sports played would do that. BUT, knowing GPA and major wouldn't really let you identify anyone, but GPA is more sensitive data than class year/sports played in that it would be more harmful if released, and linked back to the people." Out of all the think-aloud interviews, this single moment stood out as justifying why we asked students to walk through their reasoning processes, and to "think out loud:" to catch unexpected thought processes like this.
+I really like this current version for a few reasons. First, "none of the above." It doesn't solve everything, but the closest you can get to having an open-ended prompt in a true MC assignment is to have a "none of the above," and to use it! (roughly proportionally, so \~20-25% of the time). Second, the options are well-distributed and take some time to think through. We refined this in the gap between faculty and student interviews, and all three students had a similar response. A nice rhythm as they read through the responses, respectively "hmm, definitely not, ummmm maybe?, yeah definitely not, uh". Immediately eliminating "b" and "d", students debated "a" and "c" on a metric we hadn't even surmised when writing. "Well, in terms of figuring out who people are, class year and sports played would do that. BUT, knowing GPA and major wouldn't really let you identify anyone, but GPA is more sensitive data than class year/sports played in that it would be more harmful if released, and linked back to the people." Out of all the think-aloud interviews, this single moment stood out as justifying why we asked students to walk through their reasoning processes, and to "think out loud:" to catch unexpected thought processes like this.
 :::
 
 ## Assessment Next Steps
@@ -171,15 +175,94 @@ I really like this current version for a few reasons. First, "none of the above.
 
 ## Sample Tutorial: Home Page
 
-![](images/00-main-menu.png)
+![](images/00-main-menu.png){.absolute bottom=0 left=300 height="600"}
 
 ## Sample Tutorial: Code chunk with hint
 
-![](images/03-hint.png)
+![](images/03-hint.png){.absolute bottom=0 left=250 height="600"}
 
-## Sample Tutorial: Screenshot of code
+## Sample Tutorial: Opening the hood
 
--   take a screenshot of something that shows some good `gradethis` logic, possibly that exact code chunk from before
+:::: {.absolute bottom=480 left=300}
+
+::: {.fragment}
+
+````
+```{r common-themes, exercise = TRUE}`r ''`
+lego_sales |>
+  ___(___)
+```
+````
+
+:::
+
+::::
+
+:::: {.absolute bottom=290 left=300}
+
+::: {.fragment}
+
+````
+```{r common-themes-hint-1}`r ''`
+Look at the previous question for help!
+```
+````
+
+:::
+
+::::
+
+:::: {.absolute bottom=90 left=300}
+
+::: {.fragment}
+
+````
+```{r common-themes-solution}`r ''`
+lego_sales |>
+  count(theme, sort = TRUE)
+```
+````
+
+:::
+
+::::
+
+
+## Sample Tutorial: Opening the hood
+
+:::: {.absolute bottom=0 left=100}
+
+::: {.fragment}
+
+````
+```{r common-themes-check}`r ''`
+grade_this({
+  if(identical(as.character(.result[1,1]), "Star Wars")) {
+    pass("You have counted themes and sorted the counts correctly.")
+  }
+  if(identical(as.character(.result[1,1]), "Advanced Models ")) {
+    fail("Did you forget to sort the counts in descending order?")
+  }
+  if(identical(as.character(.result[1,1]), "Classic")) {
+    fail("Did you accidentally sort the counts in ascending order?")
+  }
+````
+````
+  if(identical(as.character(.result[1,1]), "Adventure Camp")) {
+    fail("Did you count subthemes instead of themes?")
+  }
+  if(identical(as.numeric(.result[1,2]), 172)) {
+    fail("Did you count subthemes instead of themes?")
+  }
+  fail("Not quite. Take a peek at the hint!")
+})
+```
+````
+
+:::
+
+::::
+
 
 ## Releasing to CRAN
 
