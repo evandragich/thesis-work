@@ -55,31 +55,27 @@ embed-resources: true
 
 -   15 passages, 26 items
 
-::::: {.text-sm}
-
-::: {.fragment}
-
-| Passage               | Learning Objective(s)                                                                       |
-|------------------|------------------------------------------------------|
-| Storm Paths           | modeling; simulation; uncertainty                                             |
-| Movie Budgets 1       | compare summary statistics visually                                                         |
-| Movie Budgets 2       | modeling; $R^2$; compare trends visually                                                    |
-| Application Screening | ethics; modeling; proxy variable                                                            |
-| Banana Conclusions    | causation; statistical communication                                                        |
-| COVID Map             | complex visualization; spatial data; time series; sophisticated scales       |
-| He Said She Said      | basic visualization; sophisticated scales                                         |
-| Build-a-Plot          | data to visualization process                                                               |
-| Disease Screening     | compare classification diagnostics visually                                                 |
-| Realty Tree           | modeling; regression tree; variable selection                                               |
-| Website Testing       | compare trends visually; uncertainty; modeling; time series; extrapolation |
-| Image Recognition     | ethics; modeling; representativeness of training data                                       |
-| Data Confidentiality  | ethics; data deidentification; statistical communication                                    |
-| Activity Journal      | structure data; store data                                                                  |
-| Movie Wrangling       | data cleaning; data wrangling; column-wise string operations; pseudocode; joins             |
-
+::: text-sm
+::: fragment
+| Passage               | Learning Objective(s)                                                           |
+|----------------------|--------------------------------------------------|
+| Storm Paths           | modeling; simulation; uncertainty                                               |
+| Movie Budgets 1       | compare summary statistics visually                                             |
+| Movie Budgets 2       | modeling; $R^2$; compare trends visually                                        |
+| Application Screening | ethics; modeling; proxy variable                                                |
+| Banana Conclusions    | causation; statistical communication                                            |
+| COVID Map             | complex visualization; spatial data; time series; sophisticated scales          |
+| He Said She Said      | basic visualization; sophisticated scales                                       |
+| Build-a-Plot          | data to visualization process                                                   |
+| Disease Screening     | compare classification diagnostics visually                                     |
+| Realty Tree           | modeling; regression tree; variable selection                                   |
+| Website Testing       | compare trends visually; uncertainty; modeling; time series; extrapolation      |
+| Image Recognition     | ethics; modeling; representativeness of training data                           |
+| Data Confidentiality  | ethics; data deidentification; statistical communication                        |
+| Activity Journal      | structure data; store data                                                      |
+| Movie Wrangling       | data cleaning; data wrangling; column-wise string operations; pseudocode; joins |
 :::
-
-:::::
+:::
 
 ## Case Study: Application Screening {.smaller}
 
@@ -139,6 +135,144 @@ Great! There is no issue with grading this on a large scale, as students will si
 I really like this current version for a few reasons. First, "none of the above." It doesn't solve everything, but the closest you can get to having an open-ended prompt in a true MC assignment is to have a "none of the above," and to use it! (roughly proportionally, so \~20-25% of the time). Second, the options are well-distributed and take some time to think through. We refined this in the gap between faculty and student interviews, and all three students had a similar response. A nice rhythm as they read through the responses, respectively "hmm, definitely not, ummmm maybe?, yeah definitely not, uh". Immediately eliminating "b" and "d", students debated "a" and "c" on a metric we hadn't even surmised when writing. "Well, in terms of figuring out who people are, class year and sports played would do that. BUT, knowing GPA and major wouldn't really let you identify anyone, but GPA is more sensitive data than class year/sports played in that it would be more harmful if released, and linked back to the people." Out of all the think-aloud interviews, this single moment stood out as justifying why we asked students to walk through their reasoning processes, and to "think out loud:" to catch unexpected thought processes like this.
 :::
 
+## Case Study: Movie Budgets 1
+
+::: {.panel-tabset}
+
+### Prompt
+
+::: columns
+::: {.column width="30%"}
+::: text-sm2
+A data scientist at IMDb has been given a dataset comprised of the revenues and budgets for 2,349 movies made between 1986 and 2016.
+
+Suppose they want to compare several distributional features of the budgets among four different genres---Horror, Drama, Action, and Animation. To do this, they create the following plots.
+:::
+:::
+
+::: {.column width="70%"}
+```{r}
+#| label: common-R
+#| echo: false
+#| eval: true
+
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  cache = TRUE,
+  fig.align = "center", 
+  out.width = "90%",
+  fig.asp = 0.618,
+  fig.width = 8
+)
+
+library(tidyverse)
+library(ggplot2)
+library(patchwork)
+library(ggridges)
+```
+
+```{r fig.asp=1, out.width="80%"}
+#| echo: false
+#| eval: true
+movies <- read_csv("https://raw.githubusercontent.com/danielgrijalva/movie-stats/master/movies.csv")
+
+# Select subset of movies
+genre_list <- c("Action", "Animation", "Drama", "Horror")
+set.seed(12345)
+movies_2 = movies |>
+  filter(genre %in% genre_list, budget > 0, budget < 300000000) |>
+  sample_n(n())
+
+# Bar chart
+p1 = movies_2 |>
+  group_by(genre) |>
+  summarise(mean_budget = mean(budget)) |>
+  ggplot(aes(x = genre, y = mean_budget, fill = genre)) +
+  labs(
+    x = "",
+    y = "",
+    title = "Plot A: Mean budget (in U.S. dollars)"
+  ) +
+  geom_col(alpha = 0.8, color = "black") +
+  scale_y_continuous(labels = scales::dollar_format(accuracy = 1, scale = (1 / 1000000), prefix = "$", suffix = "M"), limits = c(0, 100000000)) +
+  scale_fill_manual(
+    values = c("#6e7cb9", "#7bbcd5", "#e89c81", "#d2848d") # PNWColors::pnw_palette(name = "Sailboat", n = 4)
+  ) +
+  coord_flip() +
+  theme_bw() +
+  theme(legend.position = "none")
+
+
+# Ridge plot
+p2 = ggplot(movies_2, aes(x = budget, y = genre, fill = genre)) +
+  geom_density_ridges(alpha = 0.8) +
+  labs(
+    x = "",
+    y = "",
+    title = "Plot B: Budget (in U.S. dollars)"
+  ) +
+  scale_x_continuous(labels = scales::dollar_format(accuracy = 1, scale = (1 / 1000000), prefix = "$", suffix = "M"), limits = c(0, 300000000)) +
+  scale_fill_manual(
+    values = c("#6e7cb9", "#7bbcd5", "#e89c81", "#d2848d") # PNWColors::pnw_palette(name = "Sailboat", n = 4)
+  ) +
+  theme_bw() +
+  theme(legend.position = "none")
+
+
+# Strip plot
+p3 = ggplot(data = movies_2, aes(x = genre, y = budget, fill = genre)) +
+  geom_point(alpha = 0.8, color = "black", pch = 21) +
+  labs(
+    x = "",
+    y = "",
+    title = "Plot C: Budget (in U.S. dollars)"
+  ) +
+  scale_y_continuous(labels = scales::dollar_format(accuracy = 1, scale = (1 / 1000000), prefix = "$", suffix = "M"), limits = c(0, 300000000)) +
+  scale_fill_manual(
+    values = c("#6e7cb9", "#7bbcd5", "#e89c81", "#d2848d") # PNWColors::pnw_palette(name = "Sailboat", n = 4)
+  ) +
+  theme_bw() +
+  theme(legend.position = "none") +
+  coord_flip()
+
+
+p4 = ggplot(data = movies_2, aes(x = genre, y = budget, fill = genre)) +
+  geom_boxplot(alpha = 0.8, color = "black") +
+  labs(
+    x = "",
+    y = "",
+    title = "Plot D: Budget (in U.S. dollars)"
+  ) +
+  scale_y_continuous(labels = scales::dollar_format(accuracy = 1, scale = (1 / 1000000), prefix = "$", suffix = "M"), limits = c(0, 300000000)) +
+  scale_fill_manual(
+    values = c("#6e7cb9", "#7bbcd5", "#e89c81", "#d2848d") # PNWColors::pnw_palette(name = "Sailboat", n = 4)
+  ) +
+  theme_bw() +
+  theme(legend.position = "none") +
+  coord_flip()
+
+
+# Layout plots
+p1 / p2 / p3 / p4
+```
+:::
+:::
+
+### Item
+
+Fill in the following table by placing a check mark in the cells corresponding to the attributes of the data that can be determined by examining each of the plots.
+
+|        | Plot A | Plot B | Plot C | Plot D |
+|--------|--------|--------|--------|--------|
+| Mean   | ☐      | ☐      | ☐      | ☐      |
+| Median | ☐      | ☐      | ☐      | ☐      |
+| IQR    | ☐      | ☐      | ☐      | ☐      |
+| Shape  | ☐      | ☐      | ☐      | ☐      |
+
+:::
+
 ## Assessment Next Steps
 
 -   199 Pilot
@@ -174,66 +308,51 @@ I really like this current version for a few reasons. First, "none of the above.
 
 ## Sample Tutorial: Home Page
 
-![](images/00-main-menu.png){.absolute bottom=0 left=300 height="600"}
+![](images/00-main-menu.png){.absolute bottom="0" left="300" height="600"}
 
 ## Sample Tutorial: Code chunk with hint
 
-![](images/03-hint.png){.absolute bottom=0 left=250 height="600"}
+![](images/03-hint.png){.absolute bottom="0" left="250" height="600"}
 
 ## Sample Tutorial: Opening the hood
 
-:::: {.absolute bottom=480 left=300}
-
-::: {.fragment}
-
-````
+::: {.absolute bottom="480" left="300"}
+::: fragment
+````         
 ```{r common-themes, exercise = TRUE}`r ''`
 lego_sales |>
   ___(___)
 ```
 ````
-
+:::
 :::
 
-::::
-
-:::: {.absolute bottom=290 left=300}
-
-::: {.fragment}
-
-````
+::: {.absolute bottom="290" left="300"}
+::: fragment
+````         
 ```{r common-themes-hint-1}`r ''`
 Look at the previous question for help!
 ```
 ````
-
+:::
 :::
 
-::::
-
-:::: {.absolute bottom=90 left=300}
-
-::: {.fragment}
-
-````
+::: {.absolute bottom="90" left="300"}
+::: fragment
+````         
 ```{r common-themes-solution}`r ''`
 lego_sales |>
   count(theme, sort = TRUE)
 ```
 ````
-
 :::
-
-::::
-
+:::
 
 ## Sample Tutorial: Opening the hood
 
-:::: {.absolute bottom=0 left=100}
-
-::: {.fragment}
-
-````
+::: {.absolute bottom="0" left="100"}
+::: fragment
+```         
 ```{r common-themes-check}`r ''`
 grade_this({
   if(identical(as.character(.result[1,1]), "Star Wars")) {
@@ -245,8 +364,9 @@ grade_this({
   if(identical(as.character(.result[1,1]), "Classic")) {
     fail("Did you accidentally sort the counts in ascending order?")
   }
-````
-````
+```
+
+````         
   if(identical(as.character(.result[1,1]), "Adventure Camp")) {
     fail("Did you count subthemes instead of themes?")
   }
@@ -257,11 +377,8 @@ grade_this({
 })
 ```
 ````
-
 :::
-
-::::
-
+:::
 
 ## Releasing to CRAN
 
@@ -289,17 +406,11 @@ grade_this({
 
 ## Q&A
 
-::: {.nonincremental}
+::: nonincremental
+-   Browse at your own pace at <https://evandragich.github.io/thesis-work/>
 
--   Browse at your own pace at [https://evandragich.github.io/thesis-work/](https://evandragich.github.io/thesis-work/)
-
--   Email me at [emd48@duke.edu](mailto:emd48@duke.edu)
-
+-   Email me at [emd48\@duke.edu](mailto:emd48@duke.edu)
 :::
 
-::: {.footer}
-
+::: footer
 :::
-
-
-
