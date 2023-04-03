@@ -22,36 +22,76 @@ embed-resources: true
 
 <!-- quarto publish quarto-pub slides/presentation.qmd -->
 
-## Introduction/ About Me
+## About Me
 
--   Basic demographic background information
--   How i found myself in Duke StatSci (leads into)
--   How i found myself working on this thesis
+-   Statistical Science B.S. & Psychology B.S.
+-   Started StatSci sophomore spring
+-   Combination of previous research experiences and interest
+    -   STEM education 
+    -   TAing Intro Data Science (STA199)
 
-## Agenda/Thesis TOC
+::: notes
+I'm a senior double majoring in statsci and Psych.
+I had a bit of a roundabout path to the statsci major: I started college premed, wasn't entirely sure what I was doing, but knew I enjoyed STEM and quantitative problem solving. Got involved in research, working on a project possibly slightly out of my depth at the time that required a lot of teaching myself statistics. Realizing I wasn't as interested in the medicine aspects of medicine, more the problem-solving aspects of research, enjoyed statistical aspects more than I thought I would, so made somewhat of a leap of faith and declared statsci major.
+Due to making this decision so late, and having solid baseline from Psych major stat classes, AP stat in high school, research experiences, foregoing 199 (intro data science) to unlock higher-level electives earlier. Next semester, became TA for STA 199. Enjoyed thinking about the curriculum and how things were presented, also knew that the Statsci major undergoing some overhaul during my time. Knew I wanted to do an independent study and possibly a thesis at that point, asked Prof. Çetinkaya-Rundel if she had any research projects I could work on, and the rest was history.
+:::
 
--   explanation of the 2 strands
--   summary of following slides (and stuff like there will be time for questions, etc.)
+## Thesis TOC/Agenda {.smaller}
+
+-   Thesis divided into 2 strands:
+    -   Building a introductory data science concept inventory-style assessment
+    -   Building `dsbox`, an introductory data science tutorial package
+-   Agenda
+    -   Background
+    -   Initial Steps
+    -   Interview Process
+    -   Item Case Studies
+    -   Package Construction + Examples
+    -   Discussion
+    -   Q&A
+    
+::: notes
+My overall thesis project consists of two separate, yet related, projects. First, the construction of a concept inventory-style assessment to measure students' learning outcomes in introductory data science classes. Secondly, continuing the themes of introductory data science education and scalability, the construction and release of a package, `dsbox`, which contains 10 standalone tutorials testing similar concepts.
+The structure of my presentation today will be as follows: I will first motivate the need for such an assessment and the process used to develop it. Then, I will quickly discuss the initial steps of my work on the assessment, before taking time to dive into some case studies of several items which form a representative sample of the general iterative process of item creation and refinement.
+Then, I'll shift gears to give an overview of the `dsbox` package's goals, structure, and examples from tutorials. Finally, I'll conclude with a reflective discussion before leaving time for questions at the end.
+:::
 
 # Building a Data Science Assessment
 
 ## Background
 
--   Colloquially motivate the need for a DS concept inventory
-    -   CAOS, has 418 citations!
--   Data Science as it emerges as a field--what is it, exactly?
-    -   colloquially explain Cetinkaya Rundel/Ellison and Zhang/Zhang findings.
+-   Concept inventories for educational research
+    -   CAOS for statistics
+-   Data science (DS) as it emerges as a field--what is it, exactly?
 -   How exactly do people: (1) make, (2) pilot, (3) validate new concept inventories or scales?
-    -   colloquially explain Jorion papers
+    
+::: notes
+CAOS paper from 2007 has 418 citations! Cleary this is something people are interested in
+:::
 
-## Inital cleaning/getting my feet wet
+## Inital cleaning
 
--   Should i even present on this? Is any of it interesting/worth diving into?
+-   Combine questions into single set of passages and items
+-   Draft into Quarto Book for easy browsing
+
+## Inital cleaning
+
+![](images/assessment-book-example.png)
 
 ## Interviews
 
+::: notes
 -   reminder of what we tried to do (3 faculty to see if scope was appropriate from instructor perspective, 3 TA to see if questions were landing on a closer-to-target population, but still with some DS context)
 -   Summarize results from faculty, and themes (mainly that you could clearly tell the CS prof from the two stats ones via what they thought should be included, things pointed out like uncomfortable contexts (storm paths?))
+:::
+
+-   Two rounds of interviews:
+    -   3 faculty
+    -   3 intro DS teaching assistants
+-   Themes from faculty interviews
+    -   CS vs. Statistics perspectives
+    -   Context concerns
+    -   Cognitive load
 
 ## Current Prototype {.smaller}
 
