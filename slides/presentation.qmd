@@ -20,6 +20,8 @@ execute:
 embed-resources: true
 ---
 
+<!-- quarto publish quarto-pub slides/presentation.qmd -->
+
 ## Introduction/ About Me
 
 -   Basic demographic background information
@@ -306,6 +308,10 @@ kable(movie_table,
 :::
 
 ## Case Study: Movie Wrangling
+
+::: notes
+hit the idea of pre vs post appropriacy. anything with graphs. maybe the matrix movie budgets. if theres time to flash the code one, another challenge was asking somethign aobut computation (whcih is important) but in a language agnostic way. based on time, wont be going through how we came up with it, but this is a fake computing language but same time you can do it.
+:::
 
 ::: {.columns}
 

@@ -5,7 +5,7 @@ book:
   title: "Exploring Data Science Education: From Tutorials to Assessment"
   subtitle: "Duke Statistical Science | Graduation with Distinction"
   output-file: "Exploring-Data-Science-Education-From-Tutorials-to-Assessment"
-  date: last-modified
+  date: today
   date-format: long
   author: 
     - Evan Dragich
