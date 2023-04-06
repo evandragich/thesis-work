@@ -121,13 +121,14 @@ CAOS paper from 2007 has 418 citations! Cleary this is something people are inte
 
 ## Case Study: Application Screening {.smaller}
 
-start with AS: a question based on proxy variable.
-
 *You are working on a team that is making a deterministic model to quickly screen through applications for a new position at the company. Based on employment laws, your model may not include variables such as age, race, and gender, which could be potentially discriminatory.*
 
 *Your colleague suggests including a rule that eliminates candidates with more than 20 years of previous work experience, because they may have high salary expectations. Why might using this variable be considered unethical? Explain your answer.*
 
+::: notes
+start with AS: a question based on proxy variable.
 Oops, best practices would phrase this in a non-leading way. If a student wasn't initially going to think this would be unethical, but we told them it might be somehow, their explanation won't be as valuable as someone who would have answered right away. Okay, let's rephrase to make them answer whether it is or isnt:
+:::
 
 ## Case Study: Application Screening {.smaller}
 
@@ -135,11 +136,11 @@ Oops, best practices would phrase this in a non-leading way. If a student wasn't
 
 *Your colleague suggests including a rule that eliminates candidates with more than 20 years of previous work experience, because they may have high salary expectations.* ***Are there ethical implications of using this variable to select candidates?*** *Explain your answer.*
 
+::: notes
 Well... that doesn't help much. We still have the classic selection bias clouding results; students would think "well, if there wasn't an ethical problem, they wouldnt have included this as one of the only ethics questions on the assessment." Plus, how are we grading this? What are we looking for to confirm that they understand the proxy variable? It might work to set up an autograder that marks "correct" if they mark "yes" to the ethics question AND mention "proxy" in their response. But, this is an introductory-level assessment. Will students be able to concisely describe employment expeirence as a "proxy," or would explanations be wordier and might include "is correlated with," "is related to," "goes hand in hand with," "predicts." If we want autogradable, looking like MC is going to be main way to go. Note that, at this stage, Application Screening and several other similar questions are left in open-ended format to collect this type of data from the pilots.
+:::
 
 ## Case Study: Data Confidentiality {.smaller}
-
-so, after that whole mess, a general conclusion is that MC might be the only way to go. so how do we write a good MC ethics question? here's a start, with the focus on identifiable data and statistical communication:
 
 *A newspaper reports on the results of a survey from a small (\<2000 student) college. The college agrees to have the data released to the public so long as the students' identities and academic standing information are kept confidential. Which of the following combinations of variables is less likely to unintentionally identify any students? Explain.*
 
@@ -147,7 +148,10 @@ so, after that whole mess, a general conclusion is that MC might be the only way
 
 *b. Year, major*
 
+::: notes
+so, after that whole mess, a general conclusion is that MC might be the only way to go. so how do we write a good MC ethics question? here's a start, with the focus on identifiable data and statistical communication:
 Well, first of all, is "college" the best word here? While it's roughly synonymous with "university" in the US, they can have very different meanings country-to-country. Thus, let's eliminate any ambiguity right off the bat.
+:::
 
 ## Case Study: Data Confidentiality {.smaller}
 
@@ -157,7 +161,9 @@ Well, first of all, is "college" the best word here? While it's roughly synonymo
 
 *b. Year, major*
 
+::: notes
 Great! There is no issue with grading this on a large scale, as students will simply choose option "a" to be marked correct. But, how valid is this binary comparison of two nearly-identical options in measuring students' idea of data privacy (and key variables whose intersections can quickly narrow down populations). Would they choose "a" simply because of the "presence vs absence" heuristic, similar to the selection bias issue addressed earlier, or because they understand how it quickly narrows down who a respondent could be? This question took a lot of brainstorming and workshopping, and we ultimately landed on the following options:
+:::
 
 ## Case Study: Data Confidentiality {.smaller}
 
@@ -384,34 +390,57 @@ kable(directors_table,
 
 -   199 Pilot
 -   IRB Roadblocks
--   NSF Grant?
-    -   Turn into more robust JS framework like CAOS is
+-   NSF Grant
+
+::: notes
+Turn into more robust JS framework like CAOS is
+:::
 
 # Working on the `dsbox` package
 
-## `dsbox` package {.smaller}
+## `dsbox` package
 
--   Reference growing DS interest and scalability of education from the assessment talk earlier; that plus the opensource nature of R lends naturally to making such a standardized curriculum
+-   Growing interest in DS requires scalability
 
--   What is Data Science in a Box? Its that \^. Using `tidyverse` to practice basic data wrangling, visualization, and modeling.
+-   Data Science in a Box project
 
--   That curriculum set was then condensed into a package for self-learners called `dsbox`, which users can download and follow to become well-acquainted with basic data science in R.
+-   Turning it into `dsbox`
+
+::: notes
+Reference growing DS interest and scalability of education from the assessment talk earlier; that plus the opensource nature of R lends naturally to making such a standardized curriculum
+
+What is Data Science in a Box? Its that \^. Using `tidyverse` to practice basic data wrangling, visualization, and modeling.
+
+That curriculum set was then condensed into a package for self-learners called `dsbox`, which users can download and follow to become well-acquainted with basic data science in R.
+:::
 
 ## How does it work? {.smaller}
 
 -   2 key packages: `learnr` and `gradethis`.
 
--   `learnr` provides a robust framework for turning RMarkdown documents into interactive tutorials, where users can be guided through running and writing code, quiz questions, watching videos, etc, directly in the "Tutorial" pane in RStudio. A key feature is that progress is saved, so you can resume working in RStudio whenever.
+-   `learnr`: robust, broad framework.
 
--   `gradethis` takes that basic, broad framework, and provides tools for drilling down deeper when grading. Instructors can provide feedback for a variety of common mistakes with sophisticated testing logic.
+-   `gradethis`: sophisticated testing logic.
+
+::: notes
+`learnr` provides a robust framework for turning RMarkdown documents into interactive tutorials, where users can be guided through running and writing code, quiz questions, watching videos, etc, directly in the "Tutorial" pane in RStudio. A key feature is that progress is saved, so you can resume working in RStudio whenever
+
+`gradethis` takes that basic, broad framework, and provides tools for drilling down deeper when grading. Instructors can provide feedback for a variety of common mistakes with 
+:::
 
 ## Creating a Tutorial
 
--   9 existing, skeleton for 1 (these corresponded to all HWs from DSinaBox; the package had skeleton .Rd files for the dataset already).
+-  9 existing, 1 started
 
--   Decided I would try to recreate that tutorial, adding in some flair and thoughts based on best practices
+-  Modifying for interactive tutorial
 
-    -   scaffolded one of the exercises more to match the "interactive tutorial" modality vs the "take home, class homework assignment"
+    -   Scaffolding, clear section breaks, engaging flow
+    
+::: notes
+(these corresponded to all HWs from DSinaBox; the package had skeleton .Rd files for the dataset already).
+Decided I would try to recreate that tutorial, adding in some flair and thoughts based on best practices,
+so i expanded more on one of the exercises more to match the "interactive tutorial" modality vs the "take home, class homework assignment"
+:::
 
 ## Sample Tutorial: Home Page
 
@@ -489,27 +518,45 @@ grade_this({
 
 ## Releasing to CRAN
 
--   Explaining what CRAN is
+-   Comprehensive R Archive Network
 
--   Explaining what the DESCRIPTION folder and dependencies are
+-   Package DESCRIPTION file
 
--   Unfortunately, `gradethis` is still in development and thus not yet released on CRAN itself. In turn, we are unable to upload a package that specifies a package not on CRAN to be one of its dependencies. We have submitted an issue
+-   `gradethis` still in development
+
+::: notes
+explain what CRAN is/stands for,
+explain what the DESCRIPTION folder is and how we have to check for dependencies.
+Unfortunately, `gradethis` is still in development and thus not yet released on CRAN itself. In turn, we are unable to upload a package that specifies a package not on CRAN to be one of its dependencies. We have submitted an issue
+:::
 
 # Discussion
 
 ## Learning Takeaways
 
--   Learned advanced computing I wouldn't have gotten otherwise in my abbreviated trip through the Stat major
+-   Advanced computing
 
--   Learned how to interact with others' code beyond scope of classroom/research team (making and reviewing public PR requests, compiling and standardizing and revising the assessment and package)
+-   Interacting with others' code
+
+::: notes
+ advanced computing I wouldn't have gotten otherwise in my abbreviated trip through the Stat major (all sorts of HTML, CSS, ins and outs of R, Quarto, Shiny)
+ Learned how to interact with others' code beyond scope of classroom/research team (making and reviewing public PR requests, compiling and standardizing and revising the assessment and package)
+:::
 
 ## Reflections
 
--   Statement that "teaching material is only way to master it" had always been true for my tutoring and TAing experiences; developing and studying a curriculum to the point of scrutiny took my understanding to the next level
+-   "Teaching material is only way to master it"
 
--   Newfound appreciation for work that has gone into all the educational curriculum materials today, tools like `ghclass` and `learnr`, all packages that have been released and are maintained and what it takes to do that.
+-   New appreciation for existing educational materials
 
--   Inspired me to continue interacting with the world of open source software even though my job (for the meantime) is to be an Excel monkey for 40 hours a week
+-   Inspired me to continue interacting with the world of open source software 
+
+::: notes
+Statement that "teaching material is only way to master it" had always been true for my tutoring and TAing experiences; developing and studying a curriculum to the point of scrutiny took my understanding to the next level
+Newfound appreciation for work that has gone into all the educational curriculum materials today, tools like `ghclass` and `learnr`, all packages that have been released and are maintained and what it takes to do that.
+
+Inspired me to continue interacting with the world of open source software even though my job (for the meantime) is to be an Excel monkey for 40 hours a week
+:::
 
 ## Q&A
 
