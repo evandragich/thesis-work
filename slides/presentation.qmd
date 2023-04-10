@@ -51,7 +51,8 @@ Due to making this decision so late, and having solid baseline from Psych major 
     -   Q&A
     
 ::: notes
-My overall thesis project consists of two separate, yet related, projects. First, the construction of a concept inventory-style assessment to measure students' learning outcomes in introductory data science classes. Secondly, continuing the themes of introductory data science education and scalability, the construction and release of a package, `dsbox`, which contains 10 standalone tutorials testing similar concepts.
+My overall thesis project consists of two separate, yet related, projects. First, the construction of a concept inventory-style assessment to measure students' learning outcomes in introductory data science classes. Secondly, continuing the themes of introductory data science education and scalability, the construction and release of a package, `dsbox`, which contains 10 standalone tutorials testing similar concepts. those are the two things that are both helpful (they are busy developing own course content), developing tools to help teachers ASSESS their teaching, and the othr is to help teachers SCALE teaching
+
 The structure of my presentation today will be as follows: I will first motivate the need for such an assessment and the process used to develop it. Then, I will quickly discuss the initial steps of my work on the assessment, before taking time to dive into some case studies of several items which form a representative sample of the general iterative process of item creation and refinement.
 Then, I'll shift gears to give an overview of the `dsbox` package's goals, structure, and examples from tutorials. Finally, I'll conclude with a reflective discussion before leaving time for questions at the end.
 :::
@@ -66,7 +67,9 @@ Then, I'll shift gears to give an overview of the `dsbox` package's goals, struc
 -   How exactly do people: (1) make, (2) pilot, (3) validate new concept inventories or scales?
     
 ::: notes
-CAOS paper from 2007 has 418 citations! Cleary this is something people are interested in
+Say youre an xyz professor and you want to do research. What do you use to measure? some sort of assessment. Good thing a standardized one exists for calculus, etc. This assessment is most effective if its standard across courses/"validated', gives legimtimcacy to what you do in class, helpful to use as a legit benchmark for your teaching compared to random self-contained assessment. Work on such an assesment for introductory statistics, CAOS, led to paper from 2007 has 418 citations! Clearly this is something people are interested in. We look now to expand that to introductory data science courses--but first, what exactly is data science? As more and more courses and majors emerge, reviews of syllabi have found heavy focuses on computing or pseudocode, data wrangling and visualization, with some focus on statistics, modeling, as well as some smaller ethics component. 
+Once a scope has been set and questions drafted, how do we prepare such an assessment for a pilot? Key findings from research on think-aloud interviews has found that testing a variety of questions with specific misconceptions in mind via think-aloud interviews, in which a target population is asked to reason out loud through their thought process. After making refinements based on students' perceptions, assessments are then given at a large scale to collect enough data to test possible subscales. For example, if students' performance on questions on similar topics seemed to be correlated, there is a potential to calculate a separate subscore on that topic, such as data visualization.
+Those steps of the process constitute my work on the assessment portion of the thesis, and now I will now dive deeper into each phase of the development.
 :::
 
 ## Inital cleaning
@@ -82,16 +85,53 @@ CAOS paper from 2007 has 418 citations! Cleary this is something people are inte
 
 ::: notes
 -   reminder of what we tried to do (3 faculty to see if scope was appropriate from instructor perspective, 3 TA to see if questions were landing on a closer-to-target population, but still with some DS context)
--   Summarize results from faculty, and themes (mainly that you could clearly tell the CS prof from the two stats ones via what they thought should be included, things pointed out like uncomfortable contexts (storm paths?))
 :::
 
 -   Two rounds of interviews:
     -   3 faculty
     -   3 intro DS teaching assistants
+    
+## Interviews: Faculty {.smaller}
+
+::: notes
+-   still refining scope at this point, so were interested in getting a prior look at what they deemed important.
+-    comments and suggestions were small scale (formatting, wording) or large scale (removing question entirely)
+-   Summarize results from faculty, and themes (mainly that you could clearly tell the CS prof from the two stats ones via what they thought should be included, things pointed out like uncomfortable contexts (storm paths?)), cognitive load (repeatedd use of "log transformed")
+:::
+
+-   Flow:
+    -    What topics *must* be in an introductory data science course?
+    -    What topics are *nice to have* in an introductory data science course? 
+    -    Think-aloud thought process
+    -    Additional comments or suggestions
+    -    What are the strengths of the current assessment? 
+    -    What topics are missing from the current assessment?
+    -    What is in the current assessment, but doesn't belong?
 -   Themes from faculty interviews
     -   CS vs. Statistics perspectives
     -   Context concerns
     -   Cognitive load
+    
+## Interviews: Students {.smaller}
+
+::: notes
+-   no longer trying to refine scope, so we didnt start with any lead-off questions. did still ask based on their experiences as students in the curriculum
+-    we did demonstrate how to "think aloud" with the "how many windows are in your house?" question.
+-    in general, students were less verbose with feedback, we solved that somewhat with the think-aloud demonstration, but also showed we were converging on a good prototype.
+-    it was interesting to observe a gradient in mastery among those interviewed; they thought more about the questions than faculty and some got more of the trickier ones incorrect as we had thought students might
+-    
+:::
+
+-   Flow:
+    -    Think-aloud thought process
+    -    Additional comments or suggestions
+    -    Are the pacing and length appropriate? 
+    -    Based on what you remember learning in intro data science, what topics are missing from the current assessment? 
+    -    Based on what you remember learning in intro data science, what is in the current assessment, but doesn't belong?
+-   Themes from student interviews
+    -    General agreement
+    -    Gradient of mastery
+
 
 ## Current Prototype {.smaller}
 
@@ -224,7 +264,7 @@ library(knitr)
 library(kableExtra)
 ```
 
-```{r fig.asp=1.1, out.width="80%"}
+```{r fig.asp=1.1, out.width="75%"}
 #| echo: false
 #| eval: true
 movies <- read_csv("https://raw.githubusercontent.com/danielgrijalva/movie-stats/master/movies.csv")
@@ -356,7 +396,7 @@ kable(movie_table,
 ## Case Study: Movie Wrangling
 
 ::: notes
-hit the idea of pre vs post appropriacy. anything with graphs. maybe the matrix movie budgets. if theres time to flash the code one, another challenge was asking somethign aobut computation (whcih is important) but in a language agnostic way. based on time, wont be going through how we came up with it, but this is a fake computing language but same time you can do it.
+if theres time to flash the code one, another challenge was asking somethign aobut computation (whcih is important) but in a language agnostic way. based on time, wont be going through how we came up with it, but this is a fake computing language but same time you can do it.
 :::
 
 ::: {.columns}
@@ -407,14 +447,14 @@ Turn into more robust JS framework like CAOS is
 -   Turning it into `dsbox`
 
 ::: notes
-Reference growing DS interest and scalability of education from the assessment talk earlier; that plus the opensource nature of R lends naturally to making such a standardized curriculum
+one strand of thesis is developing tools to help instructors ASSESS teaching, and the other is to help teachers SCALE teaching. that plus the opensource nature of R lends naturally to making such a standardized curriculum
 
 What is Data Science in a Box? Its that \^. Using `tidyverse` to practice basic data wrangling, visualization, and modeling.
 
 That curriculum set was then condensed into a package for self-learners called `dsbox`, which users can download and follow to become well-acquainted with basic data science in R.
 :::
 
-## How does it work? {.smaller}
+## How does it work?
 
 -   2 key packages: `learnr` and `gradethis`.
 
@@ -547,13 +587,14 @@ Unfortunately, `gradethis` is still in development and thus not yet released on 
 
 -   "Teaching material is only way to master it"
 
--   New appreciation for existing educational materials
+-   New appreciation for existing educational materials and research
 
 -   Inspired me to continue interacting with the world of open source software 
 
 ::: notes
-Statement that "teaching material is only way to master it" had always been true for my tutoring and TAing experiences; developing and studying a curriculum to the point of scrutiny took my understanding to the next level
-Newfound appreciation for work that has gone into all the educational curriculum materials today, tools like `ghclass` and `learnr`, all packages that have been released and are maintained and what it takes to do that.
+Statement that "teaching material is only way to master it" had always been true for my tutoring and TAing experiences; developing and studying a curriculum to the point of scrutiny took my understanding to the next level. 
+
+Newfound appreciation for work that has gone into all the educational curriculum materials today, tools like `ghclass` and `learnr`, all packages that have been released and are maintained and what it takes to do that. as well, working with a collaboration where everyone is interested in education but has different areas of expertise 
 
 Inspired me to continue interacting with the world of open source software even though my job (for the meantime) is to be an Excel monkey for 40 hours a week
 :::
