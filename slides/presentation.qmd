@@ -101,7 +101,7 @@ Those steps of the process constitute my work on the assessment portion of the t
 
 -   Flow:
     -    What topics *must* be in an introductory data science course?
-    -    What topics are *nice to have* in an introductory data science course? 
+    -    What topics are *nice to have* in an introductory data science course?
     -    Think-aloud thought process
     -    Additional comments or suggestions
     -    What are the strengths of the current assessment? 
@@ -423,6 +423,33 @@ kable(directors_table,
   # row_spec(0, bold = TRUE)
 ```
 :::
+:::
+:::
+
+## Case Study: Movie Wrangling
+
+::: notes
+if theres time to flash the code one, another challenge was asking somethign aobut computation (whcih is important) but in a language agnostic way. based on time, wont be going through how we came up with it, but this is a fake computing language but same time you can do it.
+:::
+
+::: {.absolute bottom="450" left="210"}
+::: fragment
+```         
+start_with(the Movies table) then
+  keep_rows_where(the season value is "Fall") then
+  count(the number of rows)
+```
+:::
+:::
+
+::: {.absolute bottom="200" left="210"}
+::: fragment
+```         
+start_with(the Movies table) then
+  keep_rows_where(the season value is "Fall") then
+  add_columns_from(the Director table) matching_by(the director column) then
+  count(the number of rows) where (oscars value is 3) and (best_picture value is "No")
+  ```
 :::
 :::
 
