@@ -20,9 +20,9 @@ execute:
 embed-resources: true
 ---
 
-<!-- quarto publish quarto-pub slides/presentation.qmd -->
-
 ## About Me
+
+<!-- quarto publish quarto-pub slides/presentation.qmd -->
 
 -   Statistical Science B.S. & Psychology B.S.
 -   Combination of previous experiences and interest
