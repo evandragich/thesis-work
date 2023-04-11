@@ -25,14 +25,14 @@ embed-resources: true
 ## About Me
 
 -   Statistical Science B.S. & Psychology B.S.
--   Started StatSci sophomore spring
--   Combination of previous research experiences and interest
-    -   STEM education 
+-   Combination of previous experiences and interest
+    -   STEM education research
+    -   Started StatSci sophomore spring
     -   TAing Intro Data Science (STA199)
 
 ::: notes
 I'm a senior double majoring in statsci and Psych.
-I had a bit of a roundabout path to the statsci major: I started college premed, wasn't entirely sure what I was doing, but knew I enjoyed STEM and quantitative problem solving. Got involved in research, working on a project possibly slightly out of my depth at the time that required a lot of teaching myself statistics. Realizing I wasn't as interested in the medicine aspects of medicine, more the problem-solving aspects of research, enjoyed statistical aspects more than I thought I would, so made somewhat of a leap of faith and declared statsci major.
+I had a bit of a roundabout path to the statsci major: I started college premed, wasn't entirely sure what I was doing, but knew I enjoyed STEM and quantitative problem solving. Got involved in research, working on a STEM education project that was possibly slightly out of my depth at the time and required a lot of teaching myself statistics. Realizing I wasn't as interested in the medicine aspects of medicine, more the problem-solving aspects of research, enjoyed statistical aspects more than I thought I would, so made somewhat of a leap of faith and declared statsci major.
 Due to making this decision so late, and having solid baseline from Psych major stat classes, AP stat in high school, research experiences, foregoing 199 (intro data science) to unlock higher-level electives earlier. Next semester, became TA for STA 199. Enjoyed thinking about the curriculum and how things were presented, also knew that the Statsci major undergoing some overhaul during my time. Knew I wanted to do an independent study and possibly a thesis at that point, asked Prof. Çetinkaya-Rundel if she had any research projects I could work on, and the rest was history.
 :::
 
