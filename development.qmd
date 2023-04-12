@@ -14,7 +14,7 @@ By April 2022, concluding my first semester working on the project, we had a pol
 
 ## Phase 1: Faculty Interviews {.unnumbered}
 
-The remainder of the time spent working on the assessment---April 2022 to February 2023---was spent gathering feedback via interviews, iteratively updating items, and removing weaker questions based on group discussions. We conducted a series of three think-aloud informational interviews with various faculty nationwide who teach or have taught introductory data science courses. Participants were recruited from a shortlist of Dr. Çetinkaya-Rundel's data science assessment contacts, and were specifically chosen to represent a breadth of data science curricula. The three interviewees chosen were, in order of interview:
+The remainder of the time spent working on the assessment---April 2022 to February 2023---was spent gathering feedback via interviews, iteratively updating items, and removing weaker questions based on group discussions. We conducted a series of three think-aloud informational interviews with various faculty nationwide who teach or have taught introductory data science courses. Participants were recruited from a shortlist of Dr. Çetinkaya-Rundel's data science education contacts, and were specifically chosen to represent a breadth of data science curricula. The three interviewees chosen were, in order of interview:
 
 | Name        | Department Affiliation           | Institution Type                      | Field of Ph.D. Dissertation |
 |------------------|------------------|-------------------|------------------|

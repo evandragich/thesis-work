@@ -12,7 +12,7 @@ book:
     - supervised by Mine Çetinkaya-Rundel, PhD.
   chapters:
     - index.qmd
-    - thesis-intro.qmd
+    - introduction.qmd
     - background.qmd
     - development.qmd
     - package.qmd

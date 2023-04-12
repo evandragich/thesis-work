@@ -53,7 +53,7 @@ Due to making this decision so late, and having solid baseline from Psych major 
 ::: notes
 My overall thesis project consists of two separate, yet related, projects. First, the construction of a concept inventory-style assessment to measure students' learning outcomes in introductory data science classes. Secondly, continuing the themes of introductory data science education and scalability, the construction and release of a package, `dsbox`, which contains 10 standalone tutorials testing similar concepts. those are the two things that are both helpful (they are busy developing own course content), developing tools to help teachers ASSESS their teaching, and the othr is to help teachers SCALE teaching
 
-The structure of my presentation today will be as follows: I will first motivate the need for such an assessment and the process used to develop it. Then, I will quickly discuss the initial steps of my work on the assessment, before taking time to dive into some case studies of several items which form a representative sample of the general iterative process of item creation and refinement.
+The structure of my presentation today will be as follows: I will first motivate the need for such an assessment and the process used to develop it. Then, I will quickly discuss the initial steps of my work on the assessment before describing the interview process and taking time to dive into some case studies of several items which form a representative sample of the general iterative process of item creation and refinement.
 Then, I'll shift gears to give an overview of the `dsbox` package's goals, structure, and examples from tutorials. Finally, I'll conclude with a reflective discussion before leaving time for questions at the end.
 :::
 
@@ -67,7 +67,7 @@ Then, I'll shift gears to give an overview of the `dsbox` package's goals, struc
 -   How exactly do people: (1) make, (2) pilot, (3) validate new concept inventories or scales?
     
 ::: notes
-Say youre an xyz professor and you want to do research. What do you use to measure? some sort of assessment. Good thing a standardized one exists for calculus, etc. This assessment is most effective if its standard across courses/"validated', gives legimtimcacy to what you do in class, helpful to use as a legit benchmark for your teaching compared to random self-contained assessment. Work on such an assesment for introductory statistics, CAOS, led to paper from 2007 has 418 citations! Clearly this is something people are interested in. We look now to expand that to introductory data science courses--but first, what exactly is data science? As more and more courses and majors emerge, reviews of syllabi have found heavy focuses on computing or pseudocode, data wrangling and visualization, with some focus on statistics, modeling, as well as some smaller ethics component. 
+Say youre an xyz professor and you want to do research--will flipping the lectures and lab of your classroom lead to better learning outcomes, do earlier lab sections perform better than afternoon ones, etc. What do you use to measure? some sort of assessment. Good thing a standardized one exists for calculus, etc. This assessment is most effective if its standard across courses/"validated', gives legimtimcacy to what you do in class, helpful to use as a legit benchmark for your teaching compared to random self-contained assessment. Work on such an assesment for introductory statistics, CAOS, led to paper from 2007 has 418 citations! Clearly this is something people are interested in. We look now to expand that to introductory data science courses--but first, what exactly is data science? As more and more courses and majors emerge, reviews of syllabi have found heavy focuses on computing or pseudocode, data wrangling and visualization, with some focus on statistics, modeling, as well as some smaller ethics component. 
 Once a scope has been set and questions drafted, how do we prepare such an assessment for a pilot? Key findings from research on think-aloud interviews has found that testing a variety of questions with specific misconceptions in mind via think-aloud interviews, in which a target population is asked to reason out loud through their thought process. After making refinements based on students' perceptions, assessments are then given at a large scale to collect enough data to test possible subscales. For example, if students' performance on questions on similar topics seemed to be correlated, there is a potential to calculate a separate subscore on that topic, such as data visualization.
 Those steps of the process constitute my work on the assessment portion of the thesis, and now I will now dive deeper into each phase of the development.
 :::
@@ -94,7 +94,7 @@ Those steps of the process constitute my work on the assessment portion of the t
 ## Interviews: Faculty {.smaller}
 
 ::: notes
--   still refining scope at this point, so were interested in getting a prior look at what they deemed important.
+-   still refining scope at this point, so were interested in getting a prior look at what they deemed important. here is the flow of the interviews:
 -    comments and suggestions were small scale (formatting, wording) or large scale (removing question entirely)
 -   Summarize results from faculty, and themes (mainly that you could clearly tell the CS prof from the two stats ones via what they thought should be included, things pointed out like uncomfortable contexts (storm paths?)), cognitive load (repeatedd use of "log transformed")
 :::
@@ -115,7 +115,7 @@ Those steps of the process constitute my work on the assessment portion of the t
 ## Interviews: Students {.smaller}
 
 ::: notes
--   no longer trying to refine scope, so we didnt start with any lead-off questions. did still ask based on their experiences as students in the curriculum
+-   no longer trying to refine scope, so we didnt start with any lead-off questions. did still ask based on their experiences as students in the curriculum. here is the flow:
 -    we did demonstrate how to "think aloud" with the "how many windows are in your house?" question.
 -    in general, students were less verbose with feedback, we solved that somewhat with the think-aloud demonstration, but also showed we were converging on a good prototype.
 -    it was interesting to observe a gradient in mastery among those interviewed; they thought more about the questions than faculty and some got more of the trickier ones incorrect as we had thought students might
@@ -177,7 +177,7 @@ Oops, best practices would phrase this in a non-leading way. If a student wasn't
 *Your colleague suggests including a rule that eliminates candidates with more than 20 years of previous work experience, because they may have high salary expectations.* ***Are there ethical implications of using this variable to select candidates?*** *Explain your answer.*
 
 ::: notes
-Well... that doesn't help much. We still have the classic selection bias clouding results; students would think "well, if there wasn't an ethical problem, they wouldnt have included this as one of the only ethics questions on the assessment." Plus, how are we grading this? What are we looking for to confirm that they understand the proxy variable? It might work to set up an autograder that marks "correct" if they mark "yes" to the ethics question AND mention "proxy" in their response. But, this is an introductory-level assessment. Will students be able to concisely describe employment expeirence as a "proxy," or would explanations be wordier and might include "is correlated with," "is related to," "goes hand in hand with," "predicts." If we want autogradable, looking like MC is going to be main way to go. Note that, at this stage, Application Screening and several other similar questions are left in open-ended format to collect this type of data from the pilots.
+Well... that doesn't help much. We still have the classic selection bias, or the "presence vs absence" heuristic clouding results; students would think "well, if there wasn't an ethical problem, they wouldnt have included this as one of the only ethics questions on the assessment." Plus, how are we grading this? What are we looking for to confirm that they understand the proxy variable? It might work to set up an autograder that marks "correct" if they mark "yes" to the ethics question AND mention "proxy" in their response. But, this is an introductory-level assessment. Will students be able to concisely describe employment expeirence as a "proxy," or would explanations be wordier and might include "is correlated with," "is related to," "goes hand in hand with," "predicts." If we want autogradable, looking like MC is going to be main way to go. Note that, at this stage, Application Screening and several other similar questions are left in open-ended format to collect this type of data from the pilots.
 :::
 
 ## Case Study: Data Confidentiality {.smaller}
@@ -202,7 +202,7 @@ Well, first of all, is "college" the best word here? While it's roughly synonymo
 *b. Year, major*
 
 ::: notes
-Great! There is no issue with grading this on a large scale, as students will simply choose option "a" to be marked correct. But, how valid is this binary comparison of two nearly-identical options in measuring students' idea of data privacy (and key variables whose intersections can quickly narrow down populations). Would they choose "a" simply because of the "presence vs absence" heuristic, similar to the selection bias issue addressed earlier, or because they understand how it quickly narrows down who a respondent could be? This question took a lot of brainstorming and workshopping, and we ultimately landed on the following options:
+Great! There is no issue with grading this on a large scale, as students will simply choose option "a" to be marked correct. But, how valid is this binary comparison of two nearly-identical options in terms of measuring students' idea of data privacy (and key variables whose intersections can quickly narrow down populations). Would they choose "a" simply because of the "presence vs absence" heuristic, similar to the selection bias issue addressed earlier, or because they understand how it quickly narrows down who a respondent could be? This question took a lot of brainstorming and workshopping, and we ultimately landed on the following options:
 :::
 
 ## Case Study: Data Confidentiality {.smaller}
@@ -353,7 +353,7 @@ p1 / p2 / p3 / p4
 :::
 
 ::: notes
-we iterated over a variety of statistics, such as outliers, skewness, mode, variance, and number of observations. We ultimately landed on these because we think it strikes an appropriate balance as a pre- and post-test. However, note that grading matrices like this is slightly more complex than simple multiple choice questions. Should each checkbox be considered one question, weighting this the same as 16 other items? (half the assessment). Or, 1/16th of a point each? so missing half is only half a point off? This is the kind of thing observing large-scale student trends will be helpful for, to see if there are any critical distinctions that separate discrete stratifications of students
+we iterated over a variety of statistics, such as outliers, skewness, mode, variance, and number of observations. We ultimately landed on these shown because we think it strikes an appropriate balance as a pre- and post-test. However, note that grading matrices like this is slightly more complex than simple multiple choice questions. Should each checkbox be considered one question, weighting this the same as 16 other items? (half the assessment). Or, 1/16th of a point each? so missing half is only half a point off? This is the kind of thing observing large-scale student trends will be helpful for, to see if there are any critical distinctions that separate discrete stratifications of students
 :::
 
 ## Case Study: Movie Budgets 1
@@ -396,7 +396,7 @@ kable(movie_table,
 ## Case Study: Movie Wrangling
 
 ::: notes
-if theres time to flash the code one, another challenge was asking somethign aobut computation (whcih is important) but in a language agnostic way. based on time, wont be going through how we came up with it, but this is a fake computing language but same time you can do it.
+another challenge was asking somethign aobut computation (whcih is an important topic from the review of syllabi) but in a language agnostic way. we wrote some questions around the processes of reading in data or noticing something was wrong in the data with mock computer software displays, but all of those questions ended up being too language-specific and were removed after faculty interviews. Thus, we consolidated some of the data manipulation questions to include more explicit psuedocode: "a general recipe" of steps to result in a desired outcome that does not align exactly with any real programming language. However, this is an opportunity to instructors using this assessment to possibly tailor it to their own courses, by replacing with an actual language and testing syntax, etc.
 :::
 
 ::: {.columns}
@@ -429,7 +429,7 @@ kable(directors_table,
 ## Case Study: Movie Wrangling
 
 ::: notes
-if theres time to flash the code one, another challenge was asking somethign aobut computation (whcih is important) but in a language agnostic way. based on time, wont be going through how we came up with it, but this is a fake computing language but same time you can do it.
+another challenge was asking somethign aobut computation (whcih is an important topic from the review of syllabi) but in a language agnostic way. we wrote some questions around the processes of reading in data or noticing something was wrong in the data with mock computer software displays, but all of those questions ended up being too language-specific and were removed after faculty interviews. Thus, we consolidated some of the data manipulation questions to include more explicit psuedocode: "a general recipe" of steps to result in a desired outcome that does not align exactly with any real programming language. However, this is an opportunity to instructors using this assessment to possibly tailor it to their own courses, by replacing with an actual language and testing syntax, etc.
 :::
 
 ::: {.absolute bottom="450" left="210"}
@@ -460,7 +460,8 @@ start_with(the Movies table) then
 -   NSF Grant
 
 ::: notes
-Turn into more robust JS framework like CAOS is
+We have been working with IRB this semester to get a large-scale distribution of the assessment to current STA 199 students. We encountered some road blocks early on as we initially intended to offer students extra credit in exchange for participation, but have since worked with the instructors
+Turn into more robust JS framework like CAOS is. 
 :::
 
 # Working on the `dsbox` package

@@ -79,7 +79,7 @@ ggplot(bike02, aes(x = CITY, fill = as.factor(YEAR))) +
 
 The bar chart (a) shows the the percentage of docks in each city that were bike docks for each year from 2015--2020.
 
-```{r out.width="70%", fig.width=6}
+```{r}
 # Stacked bar chart
 p_bar <- ggplot(bike01, aes(
   x = CITY,
@@ -106,7 +106,7 @@ p_bar <- ggplot(bike01, aes(
 
 The pie chart (b) was created by plotting the percentage of bike docks for each year in one particular city. Unfortunately, the data scientist has forgotten which city this is. Using the information in the bar chart, identify the city. Explain how you determined this or if you cannot answer it from the visualization, explain why not.
 
-```{r out.width="50%", fig.width=5}
+```{r}
 # Piechart
 p_pie <- ggplot(data = bike05, aes(x = "", y = n, fill = as.factor(YEAR))) +
   geom_bar(stat = "identity", width = 1, color = "black") +
@@ -118,8 +118,8 @@ p_pie <- ggplot(data = bike05, aes(x = "", y = n, fill = as.factor(YEAR))) +
   guides(fill = "none")
 ```
 
-```{r out.width="100%", fig.width=6}
-(p_bar | p_pie) + plot_annotation(tag_levels = "a")
+```{r out.width="90%", fig.width=7.9}
+(p_bar + p_pie) + plot_annotation(tag_levels = "a")
 ```
 
 
