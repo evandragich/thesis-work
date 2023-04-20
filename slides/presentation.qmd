@@ -632,7 +632,7 @@ Inspired me to continue interacting with the world of open source software even 
 ::: nonincremental
 -   Browse at your own pace at <https://evandragich.github.io/thesis-work/>
 
--   Email me at [emd48\@duke.edu](mailto:emd48@duke.edu)
+-   Email me at [evandragich\@gmail.com](mailto:evandragich@gmail.com)
 :::
 
 ::: footer
