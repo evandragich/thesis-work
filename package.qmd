@@ -5,7 +5,7 @@ In addition to developing the introductory data science assessment, my work focu
 
 ## Phase 1: Initial tidying work
 
-During my first semester (Spring 2022) working on the project, our goal was to get myself oriented with `learnr` and the process of package creation on Github, and create all content for publication. At this time, the package had nine tutorials already created as well as their associated data sets and documentation. 
+During my first semester (Spring 2022) working on the project, our goal was to get myself oriented with `learnr` and the process of package creation on GitHub, and create all content for publication. At this time, the package had nine tutorials already created as well as their associated data sets and documentation. 
 
 During this time, my first edits and associated pull requests mostly had to do with the wording of answer choices. Given the introductory nature of the tutorials, I added more descriptive language for explaining statistical concepts (e.g. “multiple peaks” vs “bimodal”) in several places. When giving feedback on a multiple choice question, `gradethis` allows you to specify a specific feedback message alongside each possible answer choice. In several places, I took advantage of these messages to give more scaffolded feedback on what was incorrect about the chosen answer, versus just “try again.”
 
