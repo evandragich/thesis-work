@@ -1,4 +1,4 @@
-# Appendix C: dsbox in action {.unnumbered}
+# Appendix C: dsbox in Action {.unnumbered}
 
 The following screenshots show the user experience with the tutorials from `dsbox` in the RStudio IDE.
 
