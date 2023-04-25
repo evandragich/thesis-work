@@ -1,0 +1,40 @@
+---
+title: "STA 493 Data Science Education: From Tutorials to Assessment"
+subtitle: "Spring 2023 Reflection"
+author: 
+  - Evan Dragich
+  - supervised by Dr. Mine Çetinkaya-Rundel, PhD.
+format:
+  pdf:
+    number-sections: false
+---
+
+The following document serves as the final artifact representing my work in STA493 this Spring 2023 semester. I met with Dr. Çetinkaya-Rundel weekly on Thursdays from 2:45-3:30pm this semester, as well as with the research team from 2:00-3:00pm on alternating Tuesdays.
+
+## Thesis
+
+The work this semester culminated in my Graduation with Distinction project: [Exploring Data Science Education: From Tutorials to Assessment](https://evandragich.github.io/thesis-work/). The link contains my project in an easily-browsable, HTML format. The PDF version copy can be downloaded at that link, and is also stored in department archives.
+
+![](rcr_completion2.png){fig-align="center" width="500" fig-pos="!ht"}
+
+## Responsible Conduct in Research Requirement
+
+The final portion of my required work as a student in a research independent study is attendance at, and reflection upon, one Duke-sponsored Responsible Conduct in Research (RCR) event during the enrolled semester. I attended the 90 minute ["Registered Reports"](https://dosi.duke.edu/events/registered-reports-potential-new-way-publish-research-4) research town hall held on April 24th, 2023.
+
+The RCR requirement also entails completing the three required RCR Basics courses and one additional elective. I had previously completed those for another research experience; see the attached pdf at the end of this document.
+
+The following summarizes the roundtable discussion's topics and connections to my work:
+
+Currently, academia is facing some issues with regards to the longstanding journal publication process. Particularly in social sciences such as psychology, issues such as "p-hacking" (exploiting statistical tests for the sole goal of achieving statistical significance), "HARKing" (hypothesizing after the results are known) are becoming more and more rampant as researchers feel funding- and tenure-driven pressure to publish at all costs. To attempt to alleviate these issues, many journals have begun accepting *registered reports* in addition to traditional manuscripts.
+
+In a nutshell, researchers are able to design a study, identify particular hypotheses, write an introduction and analysis plan, and submit this *registered report* to journals before any data is collected. After this initial submission, journal reviewers can offer a desk rejection, acceptance with minor revisions (to the study plan), or acceptance with major revisions, as per usual. Once accepted, the researcher carries out data collection, writes up the results, and submits again. Here, the study is *published on principle*--its validity and relevance has already been confirmed by the first round of review--before undergoing a second round of review, this time focusing on whether the approved study design was actually followed.
+
+The benefits to adopting this paradigm, the presenters explained, were many-fold. There is a reduce in publication bias, as not only significant findings would be published and researchers would feel confident examining a wider variety of research questions. Fewer resources would be wasted as insignificant findings, previously unpublished nor shared, would discourage other researchers from conducting the same study. Finally, addressing researchers' concern about "publishing or perishing," adopting the registered report paradigm allows researchers to have more CV entries, as well as a more clear timeline of their research efforts over time.
+
+However, significantly changing such a longstanding publication process is not without pushback. Several researchers who were participating in the roundtable alongside me shared that some of their colleagues had attempted to submit registered reports, but were dissuaded by the time and effort required, and that thier registered reports had usually resulted in higher rates of rejection compared to traditional papers. As well, several researchers in fields such as physics and political science shared that they don't think registered reports will make a large impact on the status quo in their fields. In response to this hesitation, one of the roundtable leaders shared an intriguing idea: letting younger researchers in those fields complete a registered report in full, once, as a learning exercise. After that initial exposure, she explained, senior mentors can acknowledge that sometimes such a process may be infeasible in all cases in that field. However, given the close mentor-mentee relationship and this means of transfering of knowledge being key to academia, such an exercise can have a strong effect on shaping the careers of younger researchers.
+
+Regarding my independent study project, in which I and a team of researchers have developed a concept inventory-style assessment for introductory data science, I can see clear benefits to making use of a registered report as we continue piloting our work. Much of the work to date has been exploratory and qualitative, conducting think-aloud interviews and iterating over questions based on group discussions. However, we are transitioning to large-scale student pilots, from which we hope to begin exploring potential *subscales* for the assessment (i.e. in addition to a student's overall score, additional *subscores* could be calculated based on their responses to a set of several items clustered around one topic, e.g. data visualization).
+
+Before doing so, I believe that submitting a registered report of the work collected so far and any *a priori* ideas for such subscales would be valuable. While some subscales may end up being the result of exploratory analysis at this stage, I believe detailing hypotheses on specific potential subscales before collecting data will corroborate the strength and validity of the assessment that we have already observed in qualitative interviews. As well, one of the largest strengths of our efforts is novelty; such concept inventories exist for statistics and computer science, but none yet for data science. By publishing our work as early as possible, we attenuate the risk of being "scooped," or watching someone else develop and publish such a concept inventory before we have finalized our results.
+
+![](DragichCITISTA393copy.pdf) ![](DragichCITISTA393copy2.pdf)
